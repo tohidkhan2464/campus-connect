@@ -1,0 +1,84 @@
+
+.post-container {
+  max-width: 500px;
+  max-height: max-content;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+  margin-bottom: 2px;
+}
+/* Style the user info section */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Add spacing between user info and post image */
+  color: black;
+}
+
+.user-info img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info span {
+  font-weight: bold;
+}
+
+/* Style the post image */
+.post-image {
+  max-width: 100%;
+  height: auto;
+  /* max-height: 500px; */
+   /* Set a maximum height for the post image */
+  object-fit: contain; /* Center and maintain aspect ratio */
+  margin-bottom: 10px;
+  flex: 1;
+  
+}
+
+/* Style the interaction buttons */
+.interaction-buttons {
+ 
+  display: flex;
+  flex-direction: row;
+  /* align-items: left; */
+  justify-content:space-between ;
+  /* gap: 10px;
+   */
+}
+.interaction-buttons button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333; /* Dark gray text */
+  font-size: 14px; /* Adjust button font size */
+  margin-bottom: 10px; /* Add spacing between buttons */
+  outline: none; /* Remove outline/border on click */
+}
+.interaction-buttons button img{
+    max-width: 30px;
+  max-height: 30px;
+}
+
+/* Add hover effect to the buttons */
+.interaction-buttons button:hover {
+  color: #007bff; /* Change color on hover (you can customize this) */
+}
+
+.caption p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  font-weight: bold; /* Add this line to make the caption bold */
+}
+.details p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  font-weight: bold; /* Add this line to make the caption bold */
+}

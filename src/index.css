@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.filter-btn {
+    @apply px-4 py-2 bg-blue-500 text-white rounded cursor-pointer;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.post {
+    @apply p-4 border border-gray-300 rounded shadow-md;
+    display: block;
+    /* Initially show all posts */
+}
+
+/* Add more styles for different filters as needed */
+
+.tech {
+    background-color: #ffcccb;
+    /* Light red for tech posts */
+}
+
+.travel {
+    background-color: #add8e6;
+    /* Light blue for travel posts */
+}
+
+.food {
+    background-color: #98fb98;
+    /* Pale green for food posts */
 }
