@@ -52,14 +52,14 @@ function App() {
           >
             <Route path="/my-profile" element={<MyProfile />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="/edit-profile" element={<EditProfile />} />
+            {/* <Route path="/edit-profile" element={<EditProfile />} /> */}
             <Route path="/home" element={<MyDash />} />
-            <Route path="/messages" element={<Messages />} />
-            <Route path="/notifications" element={<Notifications />} />
+            {/* <Route path="/messages" element={<Messages />} /> */}
+            {/* <Route path="/notifications" element={<Notifications />} /> */}
             <Route path="/user-posts" element={<Post />} />
             <Route path="/view-post/:postId" element={<PostCard />} />
             <Route path="/create" element={<CreatePost />} />
-            <Route path="/search" element={<Search />} />
+            {/* <Route path="/search" element={<Search />} /> */}
           </Route>
         </Routes>
       </div>
