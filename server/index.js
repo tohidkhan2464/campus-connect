@@ -9,7 +9,7 @@ const postRoutes = require("./routes/Post");
 // const notificationRoutes = require("./routes/Notification");
 // const messageRoutes = require("./routes/Message");
 // const broadcastRoutes = require("./routes/Broadcast");
-// const adminRoutes = require("./routes/Admin");
+const adminRoutes = require("./routes/Admin");
 
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
@@ -26,7 +26,7 @@ app.use(fileUpload({ useTempFiles: true, tempFileDir: "/tmp" }));
 cloudinaryConnect();
 
 app.use("/api/v1/auth", userRoutes);
-// app.use("/api/v1/admin", adminRoutes);
+app.use("/api/v1/admin", adminRoutes);
 app.use("/api/v1/profile", profileRoutes);
 // app.use("/api/v1/broadcast", broadcastRoutes);
 // app.use("/api/v1/message", messageRoutes);

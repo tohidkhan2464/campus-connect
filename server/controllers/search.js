@@ -49,7 +49,7 @@ exports.searchUser = async (req, res) => {
     const users = [];
 
     if (userName) {
-      const profileDetails = await Profile.find({ userName: userName });
+      const profileDetails = await User.find({ userName: userName });
       users.push(profileDetails);
     }
 

@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { CiTrash } from "react-icons/ci";
 import DeleteModal from "./deleteModal";
+import { RxCross2 } from "react-icons/rx";
 
 const Settings = () => {
   const dispatch = useDispatch();
@@ -48,7 +49,11 @@ const Settings = () => {
             </p>
             <div className="flex flex-col justify-center items-center w-10/12 gap-y-10">
               {/* Change Password */}
-              <div className="bg-white w-full p-8 rounded-xl border-[3px] border-secondary-500">
+              <div className="relative bg-white w-full p-8 rounded-xl border-[3px] border-secondary-500">
+                <RxCross2
+                  onClick={() => navigate("/my-profile")}
+                  className="absolute right-7 text-secondary-500 text-2xl cursor-pointer hover:text-secondary-900"
+                />
                 <p className="text-center text-2xl font-semibold underline text-secondary-500 mb-5">
                   CHANGE PASSWORD
                 </p>

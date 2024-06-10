@@ -11,50 +11,58 @@ require("dotenv").config();
 exports.updateProfile = async (req, res) => {
   try {
     // fetch data
-    const { updates } = req.body;
-    console.log("Updates", updates);
+    const {
+      about,
+      branchName,
+      cityName,
+      collegeName,
+      contactNumber,
+      dateOfBirth,
+      departmentName,
+      enrollmentNumber,
+      firstName,
+      gender,
+      lastName,
+      year,
+    } = req.body.data;
+
     // get userId
     const id = req.user.id;
-    // const user = await User.findById(id)
-    // const accountType = user.accountType;
+
     const userDetails = await User.findById(id)
       .populate("additionalDetails")
       .exec();
-    console.log("USERDETAILS", userDetails);
+    // console.log("USERDETAILS", userDetails);
     const profileId = userDetails.additionalDetails;
 
     const profileDetails = await Profile.findById(profileId);
-    console.log("profileDetails", profileDetails);
-    // Update only the fields that are present in the request body
-    for (const key in updates) {
-      if (updates.hasOwnProperty(key)) {
-        if (key === "firstName" || key === "lastName") {
-          userDetails[key] = updates[key];
-        } else {
-          profileDetails[key] = updates[key];
-        }
-      }
-    }
+    // console.log("profileDetails", profileDetails);
 
-    // userDetails.enrollmentNumber = enrollmentNumber;
-    // userDetails.year = year;
-    // userDetails.collegeName = collegeName;
-    // userDetails.departmentName = departmentName;
-    // userDetails.branchName = branchName;
+    userDetails.firstName = firstName;
+    userDetails.lastName = lastName;
     await userDetails.save();
 
-    // profileDetails.dateOfBirth = dateOfBirth;
-    // profileDetails.gender = gender;
-    // profileDetails.contactNumber = contactNumber;
-    // profileDetails.about = about;
+    profileDetails.enrollmentNumber = enrollmentNumber;
+    profileDetails.year = year;
+    profileDetails.collegeName = collegeName;
+    profileDetails.departmentName = departmentName;
+    profileDetails.branchName = branchName;
+    profileDetails.dateOfBirth = dateOfBirth;
+    profileDetails.gender = gender;
+    profileDetails.contactNumber = contactNumber;
+    profileDetails.about = about;
+    profileDetails.cityName = cityName;
     await profileDetails.save();
-    console.log("USERDETAILS 2", userDetails);
-    console.log("profileDetails 2", profileDetails);
 
+    // console.log("USERDETAILS 2", userDetails);
+    // console.log("profileDetails 2", profileDetails);
+    const updatedUserDetails = await User.findById(id)
+      .populate("additionalDetails")
+      .exec();
     return res.status(200).json({
       success: true,
       message: "Profile updated successfully.",
-      updatedUserDetails: userDetails,
+      updatedUserDetails: updatedUserDetails,
     });
   } catch (err) {
     console.log(err);
@@ -181,6 +189,40 @@ exports.getUserDetails = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: "Unable to get user Details.",
+      error: err.message,
+    });
+  }
+};
+
+exports.getUserProfile = async (req, res) => {
+  try {
+    // get id
+    const { userName } = req.query;
+    // console.log("USERNAME", userName);
+    // get user details
+    const userProfile = await User.findOne({ userName: userName })
+      .populate("additionalDetails")
+      .exec();
+
+    // validation
+    if (!userProfile) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found.",
+      });
+    }
+    // console.log("userProfile", userProfile);
+    // return response
+    return res.status(200).json({
+      success: true,
+      message: "Fetched User Profile successfully.",
+      data: userProfile,
+    });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({
+      success: false,
+      message: "Unable to get user Profile.",
       error: err.message,
     });
   }

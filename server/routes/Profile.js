@@ -12,6 +12,7 @@ const {
   updateProfile,
   deleteAccount,
   getUserDetails,
+  getUserProfile,
   getAllUsers,
   updateDisplayPicture,
 } = require("../controllers/Profile");
@@ -19,6 +20,7 @@ const {
 router.delete("/deleteProfile", auth, deleteAccount);
 router.put("/updateProfile", auth, updateProfile);
 router.get("/getUserDetails", auth, getUserDetails);
+router.get("/getUserProfile", auth, getUserProfile);
 router.get("/getAllUsers", auth, getAllUsers);
 router.put("/updateDisplayPicture", auth, updateDisplayPicture);
 

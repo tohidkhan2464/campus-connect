@@ -27,11 +27,11 @@ const MyProfile = () => {
               {/* Details div */}
               <div
                 className="flex flex-row gap-x-10 items-center justify-between rounded-xl border-[3px] border-secondary-600
-               mx-auto w-11/12 bg-white p-8"
+               mx-auto w-11/12 bg-white p-8 px-14"
               >
                 {/* Profile Photo Div */}
-                {/* <Link to={"/edit-profile"}> */}
-                  <div onClick={()=>naviagate("/edit-profile")} className="relative border-[2px] border-secondary-600 cursor-pointer group p-2 rounded-full  h-44 w-44">
+                <Link to={`/my-profile/${user?.userName}`}>
+                  <div className="relative border-[2px] border-secondary-600 cursor-pointer group p-2 rounded-full  h-44 w-44">
                     <img
                       src={user?.profileImage}
                       className="h-full w-full rounded-full group-hover:opacity-80"
@@ -39,16 +39,16 @@ const MyProfile = () => {
 
                     <CiEdit className="text-5xl hidden group-hover:flex z-50 text-secondary-900 group-hover:scale-125 cursor-pointer absolute bottom-1 left-[50%] translate-x-[-50%] transition-all duration-200" />
                   </div>
-                {/* </Link> */}
+                </Link>
 
                 {/* Details Div */}
                 <div>
                   <div className="">
                     <div className="text-xl flex flex-row gap-x-2 items-center justify-between font-semibold">
-                      {user?.userName}
+                      <p className="underline">{user?.userName}</p>
 
                       <div className="flex flex-row items-center gap-x-2 text-3xl">
-                        <Link to={"/edit-profile"}>
+                        <Link to={`/my-profile/${user?.userName}`}>
                           <p className="flex flex-row gap-x-2 hover:text-red whitespace-nowrap font-semibold transition-all duration-200 items-center">
                             <CiEdit className="hover:scale-125 transition-transform duration-200" />
                           </p>
@@ -65,21 +65,26 @@ const MyProfile = () => {
                   </div>
                   <div className="flex flex-row gap-x-2">
                     {/* no of posts */}
-                    <p>{user?.posts?.length || 0} Posts</p>
+                    <p>{user?.posts?.length} Posts</p>
                     {/* no of followers */}
-                    <p>Total followers</p>
+                    <p>{user?.follower?.length} Followers</p>
                     {/* no of followings */}
-                    <p>Total followings</p>
+                    <p>{user?.following?.length} Followings</p>
                   </div>
-                  <div className="flex flex-row gap-x-2">
+                  <div className="flex flex-row justify-between gap-x-2">
                     {/* name */}
                     <p>
                       {user?.firstName} {user?.lastName}
                     </p>
                     {/* account Type */}
-                    <p>{user?.accountType}</p>
+                    <p className="text-secondary-800 underline">
+                      {user?.accountType}
+                    </p>
                   </div>
-                  <div>{user?.email}</div>
+                  <p className="text-sm">{user?.email}</p>{" "}
+                  <p className="mt-1 text-secondary-600">
+                    {user?.additionalDetails?.about}
+                  </p>
                 </div>
               </div>
             </div>

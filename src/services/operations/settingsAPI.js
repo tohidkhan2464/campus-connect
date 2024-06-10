@@ -12,6 +12,7 @@ const {
 } = settingsEndpoints;
 
 export function updateProfile(token, data) {
+  // console.log("DATA", data);
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
@@ -19,20 +20,19 @@ export function updateProfile(token, data) {
       const response = await apiConnector({
         method: "PUT",
         url: UPDATE_PROFILE_API,
-        bodyData: {
-          data,
-        },
+        bodyData: { data },
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log("UPDATE PROFILE RESPONSE", response);
-      
+      // console.log("UPDATE PROFILE RESPONSE", response);
+
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
       dispatch(
         setUser({
+          
           ...response.data.updatedUserDetails,
           ...response.data.updatedUserDetails.additionalDetails,
         })

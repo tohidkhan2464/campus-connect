@@ -13,6 +13,7 @@ export const AuthEndpoints = {
 // PROFILE ENDPOINTS
 export const profileEndpoints = {
   GET_USER_DETAILS_API: BASE_URL + "/profile/getUserDetails",
+  GET_USER_PROFILE_API: BASE_URL + "/profile/getUserProfile",
   GET_USER_FOLLOWERS_API: BASE_URL + "/profile/getFollowers",
   GET_ALL_USERS_API: BASE_URL + "/profile/getAllUsers",
   GET_ALL_USER_FOLLOWING_API: BASE_URL + "/profile/getFollowing",

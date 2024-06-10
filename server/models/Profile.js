@@ -9,11 +9,11 @@ const profileSchema = new mongoose.Schema({
   },
   about: {
     type: String,
-    trim: true,
+    
   },
   contactNumber: {
     type: Number,
-    trim: true,
+   
   },
   departmentName: {
     type: String,

@@ -1,5 +1,8 @@
+import { ACCOUNT_TYPE } from "../utils/constants";
+
 export const NavbarLinks = [
   {
+    id: 1,
     title: "Home",
     path: "/home",
     icon: "HiHome",
@@ -38,5 +41,12 @@ export const NavbarLinks = [
     title: "More",
     path: "/more",
     icon: "HiOutlineViewList",
+  },
+  // Lecturer Routes
+  {
+    title: "Broad-casting",
+    path: "/more",
+    icon: "HiOutlineViewList",
+    type: ACCOUNT_TYPE.INSTRUCTOR,
   },
 ];

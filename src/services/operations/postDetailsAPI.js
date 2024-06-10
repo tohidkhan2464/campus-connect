@@ -85,14 +85,14 @@ export const getAllPosts = async (token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log("GET_ALL_COURSE_API API response............", response);
+    console.log("GET_POST_API API response............", response);
 
     if (!response?.data?.success) {
-      throw new Error("Could Not Fetch Course Categories");
+      throw new Error("Could Not  GET_POST");
     }
     result = response?.data?.data;
   } catch (error) {
-    // console.log("GET_ALL_COURSE_API API ERROR............", error);
+    // console.log("GET_POST_API API ERROR............", error);
     toast.error(error.message);
   }
   toast.dismiss(toastId);
@@ -211,7 +211,7 @@ export const getPostDetails = async (postId, token) => {
     const response = await apiConnector({
       method: "POST",
       url: GET_POST_DETAILS_API,
-      bodyData: {postId},
+      bodyData: { postId },
       headers: {
         Authorization: `Bearer ${token}`,
       },

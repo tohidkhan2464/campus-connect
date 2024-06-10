@@ -19,6 +19,7 @@ const Sidebar = () => {
         <div className="flex flex-col gap-y-10">
           {NavbarLinks.map((link, index) => {
             let Icon = Icons[link.icon];
+            if (link.type && user?.accountType !== link.type) return null;
             return (
               <React.Fragment key={index}>
                 {link.title === "Profile" ? (

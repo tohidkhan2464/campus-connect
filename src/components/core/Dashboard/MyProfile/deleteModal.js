@@ -5,6 +5,7 @@ import { deleteProfile } from "../../../../services/operations/settingsAPI";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { CiTrash } from "react-icons/ci";
+import { RxCross2 } from "react-icons/rx";
 
 const DeleteModal = ({ token, user, deleteModal, setDeleteModal }) => {
   const dispatch = useDispatch();
@@ -27,7 +28,14 @@ const DeleteModal = ({ token, user, deleteModal, setDeleteModal }) => {
     <div className="absolute h-screen w-screen mt-0 -top-[5.8rem] -left-16 z-[1000]">
       <div className="mt-16 w-full h-full flex items-center justify-center bg-primary-200 bg-opacity-40 backdrop-blur-md">
         <div className="w-full h-full flex items-center justify-center">
-          <div className="flex flex-col items-center justify-center bg-white py-10 px-8 rounded-xl border-[3px] border-secondary-600">
+          <div className="relative flex flex-col items-center justify-center bg-white py-10 px-8 rounded-xl border-[3px] border-secondary-600">
+            <RxCross2
+              onClick={() => {
+                setDeleteModal(false);
+                navigate("/my-profile");
+              }}
+              className="absolute top-7 right-7 text-secondary-500 text-2xl cursor-pointer hover:text-secondary-900"
+            />
             <div className="bg-primary-100 p-2 rounded-full mb-6">
               <CiTrash className="h-14 w-14 text-black" />
             </div>

@@ -14,6 +14,7 @@ const {
   SEND_FOLLOW_REQUEST_API,
   GET_ALL_USER_PENDING_FOLLOWING_API,
   ACCEPT_FOLLOW_REQUEST_API,
+  GET_USER_PROFILE_API,
 } = profileEndpoints;
 
 export async function getUserDetails(token) {
@@ -40,6 +41,32 @@ export async function getUserDetails(token) {
   toast.dismiss(toastId);
   return result;
 }
+
+export const getUserProfile = async (token, userName) => {
+  const toastId = toast.loading("Loading...");
+  // console.log("userName IN", userName);
+  let result = [];
+  try {
+    const response = await apiConnector({
+      method: "GET",
+      url: `${GET_USER_PROFILE_API}?userName=${userName}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    // console.log("GET_USER_PROFILE_API API response............", response);
+
+    if (!response?.data?.success) {
+      throw new Error("Could Not Fetch User Profile");
+    }
+    result = response?.data?.data;
+  } catch (error) {
+    // console.log("GET_USER_PROFILE_API API ERROR............", error);
+    toast.error(error.message);
+  }
+  toast.dismiss(toastId);
+  return result;
+};
 
 export async function getAllUsers(token) {
   const toastId = toast.loading("loading...");
@@ -82,7 +109,7 @@ export async function sendFollowRequest(receivingUserId, token) {
       },
     });
 
-    console.log("RESPONSE GET_ALL_USERS_API", response)
+    console.log("RESPONSE GET_ALL_USERS_API", response);
 
     if (!response.data.success) {
       throw new Error(response.data.message);

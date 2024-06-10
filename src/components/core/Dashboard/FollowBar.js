@@ -6,13 +6,14 @@ import {
   sendFollowRequest,
 } from "../../../services/operations/profileAPI";
 import { FiUserPlus, FiCheckCircle, FiClock } from "react-icons/fi";
+import { Link, useLocation } from "react-router-dom";
 
 const FollowBar = () => {
   const [usersData, setUsersData] = useState({});
   const { user } = useSelector((state) => state.profile);
   const { token } = useSelector((state) => state.auth);
   const [requestSent, setRequestSent] = useState(false);
-
+  const location = useLocation();
   const sendRequest = (userId) => {
     sendFollowRequest({
       receivingUserId: userId,
@@ -24,10 +25,13 @@ const FollowBar = () => {
   useEffect(() => {
     const getAllUsersData = async () => {
       const result = await getAllUsers(token);
-      setUsersData(result);
+      const filteredData = result.filter(
+        (data) => data.userName !== user.userName
+      );
+      setUsersData(filteredData);
     };
     getAllUsersData();
-  }, [requestSent]);
+  }, [requestSent, user, location.pathname, token]);
 
   return (
     <div className="fixed top-[60px] right-0 max-h-[calc(100vh-3.5rem)] h-full">
@@ -39,44 +43,49 @@ const FollowBar = () => {
               // filtered user entry and user active followings
               return (
                 <React.Fragment key={index}>
-                  {user._id === userData._id ? (
+                  {userData?._id === user?._id ? (
                     <div></div>
                   ) : (
-                    <div className="flex bg-white p-2 rounded-lg max-w-[250px]">
-                      <div className="flex flex-row gap-x-2 mx-4">
-                        <img
-                          src={userData?.profileImage}
-                          alt={`Profile Image of ${userData?.firstName} ${userData?.lastName}`}
-                          className="rounded-full h-12 w-12"
-                        />
-                        <div className="flex w-full flex-col">
-                          <p>
-                            {userData?.firstName} {userData?.lastName}
-                          </p>
+                    <Link to={`profile/${userData?.userName}`}>
+                      <div className="flex bg-white p-2 rounded-lg max-w-[250px]">
+                        <div className="flex flex-row gap-x-2 mx-4">
+                          <img
+                            src={userData?.profileImage}
+                            alt={`Profile Image of ${userData?.firstName} ${userData?.lastName}`}
+                            className="rounded-full h-12 w-12"
+                          />
+                          <div className="flex w-full flex-col">
+                            <p>
+                              {userData?.firstName} {userData?.lastName}
+                            </p>
 
-                          <p className="flex flex-row gap-x-2 hover:text-primary-700 font-semibold cursor-pointer transition-all duration-200 items-center">
-                            {user?.following?.includes(userData?._id) ? (
-                              <span className="flex gap-x-2 items-center">
-                                <FiCheckCircle /> Following
-                              </span>
-                            ) : user?.pendingFollowing?.includes(
-                                userData?._id
-                              ) ? (
-                              <span className="flex gap-x-2 items-center">
-                                <FiClock /> Pending
-                              </span>
-                            ) : (
-                              <span
-                                className="flex gap-x-2 items-center"
-                                onClick={() => sendRequest(userData?._id)}
-                              >
-                                <FiUserPlus /> Follow
-                              </span>
-                            )}
-                          </p>
+                            <p className="flex flex-row gap-x-2 hover:text-primary-700 font-semibold cursor-pointer transition-all duration-200 items-center">
+                              {user?.following?.includes(userData?._id) ? (
+                                <span className="flex gap-x-2 items-center">
+                                  <FiCheckCircle /> Following
+                                </span>
+                              ) : user?.pendingFollowing?.includes(
+                                  userData?._id
+                                ) ? (
+                                <span className="flex gap-x-2 items-center">
+                                  <FiClock /> Pending
+                                </span>
+                              ) : (
+                                <span
+                                  className="flex gap-x-2 items-center"
+                                  onClick={(e) => {
+                                    sendRequest(userData?._id);
+                                    e.stopPropagation();
+                                  }}
+                                >
+                                  <FiUserPlus /> Follow
+                                </span>
+                              )}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   )}
                 </React.Fragment>
               );
