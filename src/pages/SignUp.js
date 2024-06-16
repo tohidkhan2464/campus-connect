@@ -75,7 +75,7 @@ const SignUp = () => {
                 </label>
                 <div className="flex flex-row px-2 py-1 bg-secondary-300 rounded-full">
                   <div
-                    className={`px-3 py-1 rounded-full transition-colors duration-500 ease-linea ${
+                    className={`px-3 py-1 rounded-full transition-all duration-200 cursor-pointer ${
                       accountType === "Student"
                         ? " text-secondary-100 bg-secondary-900"
                         : ""
@@ -85,7 +85,7 @@ const SignUp = () => {
                     <p>Student</p>
                   </div>
                   <div
-                    className={` px-3 py-1 rounded-full transition-colors duration-500 ease-linea ${
+                    className={` px-3 py-1 rounded-full transition-all duration-200 cursor-pointer ${
                       accountType === "Lecturer"
                         ? " text-secondary-100 bg-secondary-900"
                         : ""

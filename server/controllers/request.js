@@ -1,6 +1,5 @@
 const Activity = require("../models/Activity");
 const User = require("../models/User");
-const mongoose = require("mongoose");
 const { ObjectId } = require("mongodb");
 // var objectId = mongoose.Types.ObjectId('569ed8269353e9f4c51617aa');
 
@@ -65,89 +64,206 @@ exports.acceptRequest = async (req, res) => {
   }
 };
 
-exports.getPendingFollowingRequests = async (req, res) => {
-  try {
-    const userId = req.user.id;
+// exports.getPendingFollowingRequests = async (req, res) => {
+//   try {
+//     const userId = req.user.id;
 
-    if (!userId) {
-      return res.status(400).json({
-        success: false,
-        message: "Login first",
-      });
-    }
+//     if (!userId) {
+//       return res.status(400).json({
+//         success: false,
+//         message: "Login first",
+//       });
+//     }
 
-    const userDetails = await User.findById(userId)
-      .populate("pendingFollowing")
-      .exec();
+//     const userDetails = await User.findById(userId)
+//       .populate("pendingFollowing")
+//       .exec();
 
-    const pendingFollowingRequests = userDetails.pendingFollowing;
+//     const pendingFollowingRequests = userDetails.pendingFollowing;
 
-    if (pendingFollowingRequests.length < 1) {
-      return res.status(4200).json({
-        success: true,
-        message: "No pending Following request",
-      });
-    }
-    return res.status(200).json({
-      success: true,
-      message: "Pending Following request successfully fetched",
-      data: pendingFollowingRequests,
-    });
-  } catch (err) {
-    console.log(err);
-    return res.status(500).json({
-      success: false,
-      message: err.message + "error while getting follow requests.",
-    });
-  }
-};
+//     if (pendingFollowingRequests.length < 1) {
+//       return res.status(4200).json({
+//         success: true,
+//         message: "No pending Following request",
+//       });
+//     }
+//     return res.status(200).json({
+//       success: true,
+//       message: "Pending Following request successfully fetched",
+//       data: pendingFollowingRequests,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     return res.status(500).json({
+//       success: false,
+//       message: err.message + "error while getting follow requests.",
+//     });
+//   }
+// };
+
+// exports.sendFollowRequest = async (req, res) => {
+//   try {
+//     const { receivingUserId } = req.body;
+//     const sendingUserId = req.user.id;
+//     // console.log(
+//     //   "SENDING",
+//     //   typeof sendingUserId,
+//     //   "RECEIVING",
+//     //   typeof receivingUserId
+//     // );
+
+//     const sendingUserActivity = await Activity.create({
+//       senderId: sendingUserId,
+//       message: "Sends you a following request.",
+//       isSeen: "False",
+//     });
+
+//     // const receiverUserActivity = await Activity.create({
+//     //   senderId: sendingUserId,
+//     //   message: "You sends a following request.",
+//     //   isSeen: "False",
+//     // });
+
+//     const receiverUserDetails = await User.findByIdAndUpdate(
+//       { _id: receivingUserId },
+//       {
+//         $push: {
+//           pendingFollower: sendingUserId,
+//           activity: sendingUserActivity._id,
+//         },
+//       },
+
+//       { new: true }
+//     );
+
+//     if (!receiverUserDetails) {
+//       return res.status(400).json({
+//         success: false,
+//         message: "No such User Exists.",
+//       });
+//     }
+//     const sendingUserDetails = await User.findByIdAndUpdate(
+//       sendingUserId,
+//       { $push: { pendingFollowing: receiverUserDetails._id } },
+//       { new: true }
+//     );
+
+//     return res.status(200).json({
+//       success: true,
+//       message: "Request sent successfully",
+//       data: { receiverUserDetails, sendingUserDetails },
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     return res.status(500).json({
+//       success: false,
+//       message: err.message + "error while sending follow requests.",
+//     });
+//   }
+// };
+
+// exports.getPendingFollowerRequest = async (req, res) => {
+//   try {
+//     const userId = req.user.id;
+
+//     if (!userId) {
+//       return res.status(400).json({
+//         success: false,
+//         message: "Login first",
+//       });
+//     }
+
+//     const userDetails = await User.findById(userId)
+//       .populate("pendingFollowing")
+//       .exec();
+
+//     const pendingFollowerRequests = userDetails.pendingFollower;
+
+//     if (pendingFollowerRequests.length < 1) {
+//       return res.status(400).json({
+//         success: true,
+//         message: "No pending Follower request",
+//       });
+//     }
+//     return res.status(200).json({
+//       success: true,
+//       message: "pending Follower Requests successfully fetched",
+//       data: pendingFollowerRequests,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     return res.status(500).json({
+//       success: false,
+//       message: err.message + "error while getting follow requests.",
+//     });
+//   }
+// };
 
 exports.sendFollowRequest = async (req, res) => {
   try {
     const { receivingUserId } = req.body;
     const sendingUserId = req.user.id;
-    // console.log(
-    //   "SENDING",
-    //   typeof sendingUserId,
-    //   "RECEIVING",
-    //   typeof receivingUserId
-    // );
-
-    const sendingUserActivity = await Activity.create({
-      senderId: sendingUserId,
-      message: "Sends you a following request.",
-      isSeen: "False",
-    });
-
-    // const receiverUserActivity = await Activity.create({
-    //   senderId: sendingUserId,
-    //   message: "You sends a following request.",
-    //   isSeen: "False",
-    // });
-
-    const receiverUserDetails = await User.findByIdAndUpdate(
-      { _id: receivingUserId },
-      {
-        $push: {
-          pendingFollower: sendingUserId,
-          activity: sendingUserActivity._id,
-        },
-      },
-
-      { new: true }
+    console.log(
+      "SENDING",
+      typeof sendingUserId,
+      "RECEIVING",
+      typeof receivingUserId
     );
 
-    if (!receiverUserDetails) {
-      return res.status(400).json({
+    let receiverUserDetails;
+    let sendingUserDetails;
+
+    const sender = await User.findById(sendingUserId);
+    const receiver = await User.findById(receivingUserId);
+
+    if (!receiver) {
+      return res.status(500).json({
         success: false,
-        message: "No such User Exists.",
+        message: "No user Exists.",
       });
     }
-    const sendingUserDetails = await User.findByIdAndUpdate(
-      sendingUserId,
-      { $push: { pendingFollowing: receiverUserDetails._id } },
-      { new: true }
-    );
+
+    if (
+      receiver?.follower?.includes(sendingUserId) ||
+      sender?.follower?.includes(receivingUserId)
+    ) {
+      receiverUserDetails = await User.findByIdAndUpdate(
+        receivingUserId,
+        {
+          $pull: {
+            follower: sendingUserId,
+          },
+        },
+        { new: true }
+      );
+      sendingUserDetails = await User.findByIdAndUpdate(
+        sendingUserId,
+        { $pull: { following: receiverUserDetails._id } },
+        { new: true }
+      );
+    } else {
+      const sendingUserActivity = await Activity.create({
+        senderId: sendingUserId,
+        message: "started following you.",
+        isSeen: "False",
+      });
+
+      receiverUserDetails = await User.findByIdAndUpdate(
+        { _id: receivingUserId },
+        {
+          $push: {
+            follower: sendingUserId,
+            activity: sendingUserActivity._id,
+          },
+        },
+        { new: true }
+      );
+      sendingUserDetails = await User.findByIdAndUpdate(
+        sendingUserId,
+        { $push: { following: receiverUserDetails._id } },
+        { new: true }
+      );
+    }
 
     return res.status(200).json({
       success: true,
@@ -159,43 +275,6 @@ exports.sendFollowRequest = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: err.message + "error while sending follow requests.",
-    });
-  }
-};
-
-exports.getPendingFollowerRequest = async (req, res) => {
-  try {
-    const userId = req.user.id;
-
-    if (!userId) {
-      return res.status(400).json({
-        success: false,
-        message: "Login first",
-      });
-    }
-
-    const userDetails = await User.findById(userId)
-      .populate("pendingFollowing")
-      .exec();
-
-    const pendingFollowerRequests = userDetails.pendingFollower;
-
-    if (pendingFollowerRequests.length < 1) {
-      return res.status(400).json({
-        success: true,
-        message: "No pending Follower request",
-      });
-    }
-    return res.status(200).json({
-      success: true,
-      message: "pending Follower Requests successfully fetched",
-      data: pendingFollowerRequests,
-    });
-  } catch (err) {
-    console.log(err);
-    return res.status(500).json({
-      success: false,
-      message: err.message + "error while getting follow requests.",
     });
   }
 };

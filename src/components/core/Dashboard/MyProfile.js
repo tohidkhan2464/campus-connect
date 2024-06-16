@@ -1,20 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import { useSelector } from "react-redux";
-// import { FiEdit } from "react-icons/fi";
-import {
-  FiUserPlus,
-  FiCheckCircle,
-  FiMessageSquare,
-  FiShare,
-  FiClock,
-} from "react-icons/fi";
 import { CiEdit, CiSettings } from "react-icons/ci";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MyProfile = () => {
   const { user } = useSelector((state) => state.profile);
-  const naviagate = useNavigate();
   // console.log("USER", user);
   return (
     <div>

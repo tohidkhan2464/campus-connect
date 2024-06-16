@@ -1,16 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-// import { FiEdit } from "react-icons/fi";
-import {
-  FiUserPlus,
-  FiCheckCircle,
-  FiMessageSquare,
-  FiShare,
-  FiClock,
-} from "react-icons/fi";
-import { CiEdit, CiSettings } from "react-icons/ci";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { FiUserPlus, FiCheckCircle } from "react-icons/fi";
+import { useParams } from "react-router-dom";
 import {
   getUserProfile,
   sendFollowRequest,
@@ -77,10 +69,6 @@ const OtherUserProfile = () => {
                         {userData?.follower?.includes(user?._id) ? (
                           <span className="flex gap-x-2 items-center">
                             <FiCheckCircle /> Following
-                          </span>
-                        ) : userData?.pendingFollower?.includes(user?._id) ? (
-                          <span className="flex gap-x-2 items-center">
-                            <FiClock /> Pending
                           </span>
                         ) : (
                           <span

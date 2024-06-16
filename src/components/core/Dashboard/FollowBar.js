@@ -6,7 +6,7 @@ import {
   sendFollowRequest,
   // acceptFollowRequest,
 } from "../../../services/operations/profileAPI";
-import { FiUserPlus, FiCheckCircle, FiClock } from "react-icons/fi";
+import { FiUserPlus, FiCheckCircle } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
 import { setUsersData } from "../../../redux/slices/activitySlice";
 
@@ -19,31 +19,23 @@ const FollowBar = () => {
   const dispatch = useDispatch();
   const location = useLocation();
 
-  const sendRequest = (userId) => {
+  function sendRequest(userId) {
     sendFollowRequest({
       receivingUserId: userId,
       token,
     });
-    setRequestSent(!requestSent);
-  };
 
-  // const acceptRequest = (userId) => {
-  //   acceptFollowRequest({
-  //     acceptingUserid: userId,
-  //     token,
-  //   });
-  //   setRequestSent(!requestSent);
-  // };
+    setRequestSent(!requestSent);
+  }
 
   useEffect(() => {
-    const getAllUsersData = async () => {
+    (async () => {
       const result = await getAllUsers(token);
       const filteredData = result.filter(
         (data) => data.userName !== user.userName
       );
       dispatch(setUsersData(filteredData));
-    };
-    getAllUsersData();
+    })();
   }, [requestSent, user, location.pathname, token, dispatch]);
 
   return (
@@ -79,19 +71,14 @@ const FollowBar = () => {
 
                             <p className="flex flex-row gap-x-2 hover:text-primary-700 font-semibold cursor-pointer transition-all duration-200 items-center">
                               {userData?.follower?.includes(user?._id) ? (
-                                <span className="flex gap-x-2 items-center">
-                                  <FiCheckCircle /> Following
-                                </span>
-                              ) : userData?.following?.includes(user?._id) ? (
-                                <span className="flex gap-x-2 items-center">
-                                  <FiCheckCircle className="text-primary-700" />{" "}
-                                  Follower
-                                </span>
-                              ) : userData?.pendingFollower?.includes(
-                                  user?._id
-                                ) ? (
-                                <span className="flex gap-x-2 items-center">
-                                  <FiClock /> Pending
+                                <span
+                                  className="flex gap-x-2 items-center"
+                                  onClick={(e) => {
+                                    sendRequest(userData?._id);
+                                    e.stopPropagation();
+                                  }}
+                                >
+                                  <FiCheckCircle /> Unfollow
                                 </span>
                               ) : (
                                 <span
@@ -101,7 +88,7 @@ const FollowBar = () => {
                                     e.stopPropagation();
                                   }}
                                 >
-                                  <FiUserPlus /> Follow{" "}
+                                  <FiUserPlus /> Follow
                                 </span>
                               )}
                             </p>

@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const { auth } = require("../middleware/Auth");
 const {
-  getPendingFollowingRequests,
-  getPendingFollowerRequest,
+  // getPendingFollowingRequests,
+  // getPendingFollowerRequest,
   sendFollowRequest,
   acceptRequest,
 } = require("../controllers/request");
@@ -24,8 +24,8 @@ router.get("/getUserProfile", auth, getUserProfile);
 router.get("/getAllUsers", auth, getAllUsers);
 router.put("/updateDisplayPicture", auth, updateDisplayPicture);
 
-router.get("/follow", auth, getPendingFollowingRequests);
-router.get("/followers", auth, getPendingFollowerRequest);
+// router.get("/follow", auth, getPendingFollowingRequests);
+// router.get("/followers", auth, getPendingFollowerRequest);
 router.post("/send-request", auth, sendFollowRequest);
 router.post("/accept-request", auth, acceptRequest);
 

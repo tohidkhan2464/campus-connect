@@ -40,20 +40,20 @@ const userSchema = new mongoose.Schema({
   resetPasswordExpires: {
     type: Date,
   },
-  pendingFollower: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      unique:true,
-    },
-  ],
-  pendingFollowing: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      unique:true,
-    },
-  ],
+  // pendingFollower: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "User",
+  //     unique:true,
+  //   },
+  // ],
+  // pendingFollowing: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "User",
+  //     unique:true,
+  //   },
+  // ],
   following: [
     {
       type: mongoose.Schema.Types.ObjectId,
