@@ -6,7 +6,7 @@ const userRoutes = require("./routes/User");
 const profileRoutes = require("./routes/Profile");
 // const searchRoutes = require("./routes/Search");
 const postRoutes = require("./routes/Post");
-// const notificationRoutes = require("./routes/Notification");
+const notificationRoutes = require("./routes/Notification");
 // const messageRoutes = require("./routes/Message");
 // const broadcastRoutes = require("./routes/Broadcast");
 const adminRoutes = require("./routes/Admin");
@@ -30,7 +30,7 @@ app.use("/api/v1/admin", adminRoutes);
 app.use("/api/v1/profile", profileRoutes);
 // app.use("/api/v1/broadcast", broadcastRoutes);
 // app.use("/api/v1/message", messageRoutes);
-// app.use("/api/v1/notification", notificationRoutes);
+app.use("/api/v1/notification", notificationRoutes);
 app.use("/api/v1/post", postRoutes);
 // app.use("/api/v1/search", searchRoutes);
 

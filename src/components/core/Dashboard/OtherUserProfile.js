@@ -41,7 +41,7 @@ const OtherUserProfile = () => {
       setUserData(result);
     };
     getUserData();
-  }, [userName]);
+  }, [userName, requestSent, token]);
 
   return (
     <div>
@@ -74,13 +74,11 @@ const OtherUserProfile = () => {
                       <p className="underline">{userData?.userName}</p>
 
                       <div className="flex flex-row gap-x-2 hover:text-primary-700 text-xl font-semibold cursor-pointer transition-all duration-200 items-center">
-                        {userData?.following?.includes(user?._id) ? (
+                        {userData?.follower?.includes(user?._id) ? (
                           <span className="flex gap-x-2 items-center">
                             <FiCheckCircle /> Following
                           </span>
-                        ) : userData?.pendingFollowing?.includes(
-                            userData?._id
-                          ) ? (
+                        ) : userData?.pendingFollower?.includes(user?._id) ? (
                           <span className="flex gap-x-2 items-center">
                             <FiClock /> Pending
                           </span>
@@ -92,7 +90,7 @@ const OtherUserProfile = () => {
                               e.stopPropagation();
                             }}
                           >
-                            <FiUserPlus /> Follow
+                            <FiUserPlus /> Follow{" "}
                           </span>
                         )}
                       </div>

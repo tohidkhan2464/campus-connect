@@ -20,6 +20,7 @@ import Settings from "./components/core/Dashboard/MyProfile/Settings";
 import EditProfile from "./components/core/Dashboard/MyProfile/EditProfile";
 import OtherUserProfile from "./components/core/Dashboard/OtherUserProfile";
 import { useSelector } from "react-redux";
+import Activity from "./pages/Activity";
 // import { ACCOUNT_TYPE } from "./utils/constants";
 // import Broadcast from "./components/core/Dashboard/Broadcast";
 
@@ -61,6 +62,7 @@ function App() {
             <Route path="/my-profile/:userName" element={<EditProfile />} />
             <Route path="/home" element={<MyDash />} />
             <Route path="/profile/:userName" element={<OtherUserProfile />} />
+            <Route path="/activity" element={<Activity />} />
             {/* <Route path="/messages" element={<Messages />} /> */}
             {/* <Route path="/notifications" element={<Notifications />} /> */}
             <Route path="/user-posts" element={<Post />} />

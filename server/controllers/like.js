@@ -4,6 +4,8 @@ const fs = require("fs");
 const fetch = require("node-fetch");
 const path = require("path");
 const os = require("os");
+const Activity = require("../models/Activity");
+const User = require("../models/User");
 
 exports.likePost = async (req, res) => {
   try {
@@ -15,17 +17,32 @@ exports.likePost = async (req, res) => {
     let updatedPost;
 
     if (postDetails.likes.includes(userId)) {
-      // Already liked
+      // Already liked then unlike it now
       updatedPost = await Post.findByIdAndUpdate(
         postId,
         { $pull: { likes: userId } },
         { new: true }
       );
     } else {
-      // Not liked
+      // Not liked already then like it now
       updatedPost = await Post.findByIdAndUpdate(
         postId,
         { $push: { likes: userId } },
+        { new: true }
+      );
+
+      const activity = await Activity.create({
+        senderId: userId,
+        message: "Likes a post.",
+        postId: updatedPost._id,
+        isSeen: "False",
+      });
+
+      const activityUserId = postDetails.user;
+
+      await User.findByIdAndUpdate(
+        activityUserId,
+        { $push: { activity: activity._id } },
         { new: true }
       );
     }
@@ -43,33 +60,6 @@ exports.likePost = async (req, res) => {
     });
   }
 };
-
-// exports.unlikePost = async (req, res) => {
-//   try {
-//     const { post, like } = req.body;
-//     // find and delete the like collection data as per the ID given
-//     const deletedLike = await Like.findOneAndDelete({ post: post, _id: like });
-
-//     // update th epost collections
-//     const updatedPost = await Post.findByIdAndUpdate(
-//       post,
-//       { $pull: { likes: deletedLike._id } },
-//       { new: true }
-//     );
-
-//     return res.status(200).json({
-//       success: true,
-//       message: "Post unliked successfully",
-//       post: updatedPost,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     return res.status(500).json({
-//       success: false,
-//       message: err.message + "error while unliking",
-//     });
-//   }
-// };
 
 exports.createComment = async (req, res) => {
   try {
@@ -103,6 +93,21 @@ exports.createComment = async (req, res) => {
       .populate("comments")
       .exec();
 
+    const activity = await Activity.create({
+      senderId: userId,
+      message: "comments on a post.",
+      postId: updatedPost._id,
+      isSeen: "False",
+    });
+
+    const activityUserId = updatedPost.user;
+
+    await User.findByIdAndUpdate(
+      activityUserId,
+      { $push: { activity: activity._id } },
+      { new: true }
+    );
+
     return res.status(200).json({
       success: true,
       message: "Post commented successfully",
@@ -121,6 +126,7 @@ exports.savePost = async (req, res) => {
   try {
     const { postId } = req.body;
     const postdetails = await Post.findById(postId);
+    const userId = req.user.id;
     const imageURL = postdetails.postImageUrl;
     const dirPath = os.homedir() + "/Downloads";
 
@@ -129,6 +135,20 @@ exports.savePost = async (req, res) => {
     }
     const fileName = crypto.randomUUID() + ".png";
 
+    const activity = await Activity.create({
+      senderId: userId,
+      message: "Saves a post.",
+      postId: postdetails._id,
+      isSeen: "False",
+    });
+
+    const activityUserId = postdetails.user;
+
+    await User.findByIdAndUpdate(
+      activityUserId,
+      { $push: { activity: activity._id } },
+      { new: true }
+    );
     fetch(imageURL)
       .then((response) => response.buffer())
       .then((buffer) => {

@@ -1,47 +1,60 @@
+const Activity = require("../models/Activity");
 const User = require("../models/User");
+const mongoose = require("mongoose");
+const { ObjectId } = require("mongodb");
+// var objectId = mongoose.Types.ObjectId('569ed8269353e9f4c51617aa');
 
 exports.acceptRequest = async (req, res) => {
   try {
-    const userId = req.user.id;
-    const { acceptingUserid } = req.body;
+    let userId = req.user.id;
+    let { acceptingUserid } = req.body;
+    acceptingUserid = new ObjectId(acceptingUserid);
+    userId = new ObjectId(userId);
+    // console.log("UserID", typeof userId);
+    // console.log("Accepting userid", typeof acceptingUserid);
+
     if (!acceptingUserid) {
       return res.status(404).json({
         success: false,
         message: "Please enter valid user id",
       });
     }
-    console.log("UserID", userId);
-    console.log("Accepting user id", acceptingUserid);
-    const acceptingUserDetails = await User.findByIdAndUpdate(
-      { _id: acceptingUserid },
-      { $pull: { pendingFollowing: { $in: [userId] } } },
 
-      // { $pull: { fruits: { $in: ["apples", "oranges"] }, vegetables: "carrots" } },
-
-      { $push: { following: userId } },
-      { new: true }
-    );
+    const acceptingUserActivity = await Activity.create({
+      senderId: userId,
+      message: "accepted your follow request.",
+      isSeen: "False",
+    });
 
     const updatedUserDetails = await User.findByIdAndUpdate(
       { _id: userId },
-      { $pull: { pendingFollower: { $in: [acceptingUserid] } } },
-      { $push: { follower: acceptingUserid } },
+      // { pendingFollower: { $elemMatch: { $eq: harshita } } },
+      {
+        $pull: { pendingFollower: { $in: [acceptingUserid] } },
+        $push: { follower: acceptingUserid },
+      },
+
       { new: true }
     );
 
-    updatedUserDetails.activity =
-      acceptingUserDetails.firstName + " Started following you.";
-    await updatedUserDetails.save();
+    const acceptingUserDetails = await User.findByIdAndUpdate(
+      { _id: acceptingUserid },
+      {
+        $pull: { pendingFollowing: { $in: [userId] } },
+        $push: { following: userId, activity: acceptingUserActivity._id },
+      },
+      // { pendingFollowing: { $elemMatch: { $eq: khan } } },
+      // { $pull: { fruits: { $in: ["apples", "oranges"] }, vegetables: "carrots" } },
 
-    acceptingUserDetails.activity =
-      updatedUserDetails.firstName + " accepted your follow request.";
-    await acceptingUserDetails.save();
+      { new: true }
+    );
+
+    // console.log("updatedUserDetails", updatedUserDetails);
+    // console.log("acceptingUserDetails", acceptingUserDetails);
 
     return res.status(200).json({
       success: true,
       message: "You have successfully accepted the follow request.",
-      acceptingUserDetails: acceptingUserDetails,
-      UserDetails: updatedUserDetails,
     });
   } catch (err) {
     console.log(err);
@@ -99,9 +112,28 @@ exports.sendFollowRequest = async (req, res) => {
     //   "RECEIVING",
     //   typeof receivingUserId
     // );
+
+    const sendingUserActivity = await Activity.create({
+      senderId: sendingUserId,
+      message: "Sends you a following request.",
+      isSeen: "False",
+    });
+
+    // const receiverUserActivity = await Activity.create({
+    //   senderId: sendingUserId,
+    //   message: "You sends a following request.",
+    //   isSeen: "False",
+    // });
+
     const receiverUserDetails = await User.findByIdAndUpdate(
       { _id: receivingUserId },
-      { $push: { pendingFollower: sendingUserId } },
+      {
+        $push: {
+          pendingFollower: sendingUserId,
+          activity: sendingUserActivity._id,
+        },
+      },
+
       { new: true }
     );
 

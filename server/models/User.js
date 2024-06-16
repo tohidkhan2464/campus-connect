@@ -44,34 +44,40 @@ const userSchema = new mongoose.Schema({
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+      unique:true,
     },
   ],
   pendingFollowing: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+      unique:true,
     },
   ],
   following: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+      unique:true,
     },
   ],
   follower: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+      unique:true,
     },
   ],
   notification: [
     {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Notification",
     },
   ],
   activity: [
     {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Activity",
     },
   ],
   posts: [

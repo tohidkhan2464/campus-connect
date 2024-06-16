@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  userPostData: null,
   loading: false,
+  usersData: null,
 };
 
-const postSlice = createSlice({
+const activitySlice = createSlice({
   name: "post",
   initialState: initialState,
   reducers: {
-    setUserPostData(state, value) {
-      state.userPostData = value.payload;
+    setUsersData(state, value) {
+      state.usersData = value.payload;
     },
     setLoading(state, value) {
       state.loading = value.payload;
@@ -18,5 +18,5 @@ const postSlice = createSlice({
   },
 });
 
-export const { setUserPostData, setLoading } = postSlice.actions;
-export default postSlice.reducer;
+export const { setUsersData, setLoading } = activitySlice.actions;
+export default activitySlice.reducer;

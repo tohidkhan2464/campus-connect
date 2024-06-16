@@ -30,7 +30,7 @@ const Post = () => {
       setPostData(result);
     };
     getPostData();
-  }, [likedPost]);
+  }, [likedPost, token]);
 
   async function clickHandler(postId) {
     if (likedPost.includes(postId)) {
@@ -74,7 +74,7 @@ const Post = () => {
                       <img
                         src={post?.postImageUrl}
                         alt="post"
-                        className="h-fit w-[300px] max-h-[230px] object-cover rounded-md"
+                        className="h-fit w-[300px] max-h-[230px] object-contain rounded-md"
                       />
                     </Link>
                     <div className="flex flex-row justify-between items-center text-3xl">

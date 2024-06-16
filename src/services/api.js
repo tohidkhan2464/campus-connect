@@ -29,6 +29,7 @@ export const profileEndpoints = {
 export const notifications = {
   GET_NOTIFICATIONS: BASE_URL + "/notification",
   GET_ACTIVITY: BASE_URL + "/notification/activity",
+  SET_ACTIVITY_SEEN: BASE_URL + "/notification/setActivity",
 };
 
 // BROADCAST

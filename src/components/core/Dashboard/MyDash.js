@@ -30,7 +30,7 @@ const MyDash = () => {
       setPostData(result);
     };
     getPostData();
-  }, [likedPost]);
+  }, [likedPost, token]);
 
   console.log("Post data", postData);
   async function clickHandler(postId) {
@@ -75,7 +75,7 @@ const MyDash = () => {
                       <img
                         src={post?.postImageUrl}
                         alt="post"
-                        className="h-fit w-[300px] max-h-[230px] object-cover rounded-md"
+                        className="h-fit w-[300px] max-h-[230px] object-contain rounded-md"
                       />
                     </Link>
                     <div className="flex flex-row justify-between items-center text-3xl">

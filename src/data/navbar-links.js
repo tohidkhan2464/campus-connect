@@ -23,8 +23,8 @@ export const NavbarLinks = [
     icon: "HiOutlineChatAlt",
   },
   {
-    title: "Notifications",
-    path: "/notifications",
+    title: "Activity",
+    path: "/activity",
     icon: "HiOutlineBell",
   },
   {
