@@ -3,7 +3,7 @@ const { JWT } = require("google-auth-library");
 const fs = require("fs");
 
 const SERVICE_ACCOUNT_FILE =
-  "./react-chat-app-25799-firebase-adminsdk-3lnzb-0784d09dd5.json";
+  "./firebase-admin.json";
 const serviceAccount = JSON.parse(fs.readFileSync(SERVICE_ACCOUNT_FILE));
 const SCOPES = ["https://www.googleapis.com/auth/firebase.messaging"];
 const client = new JWT({
