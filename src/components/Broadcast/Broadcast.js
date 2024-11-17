@@ -47,11 +47,12 @@ const Broadcast = () => {
   };
 
   return (
-    <div className="mt-16 w-full h-full flex items-center justify-center">
+    <div className="mt-16 mobileS:mt-5 w-full h-full flex items-center justify-center">
       <div className="w-full h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="rounded-md border-secondary-700 flex flex-col items-center max-w-[800px] justify-center border-[1px] bg-secondary-100 my-10 p-8 space-y-4"
+          className="rounded-md border-secondary-700 mobileS:max-w-[300px] mobileS:text-sm mobileS:p-3 flex flex-col items-center 
+          max-w-[800px] justify-center border-[1px]  bg-secondary-100 my-10 p-8 mobileS:space-y-1 space-y-4"
         >
           <div className="w-full">
             <div className="w-full">
@@ -65,10 +66,10 @@ const Broadcast = () => {
                 id="messageTitle"
                 placeholder="Enter Message Title"
                 {...register("messageTitle", { required: true })}
-                className="outline-none mt-2 border-[2px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b"
+                className="outline-none mt-2 mobileS:mt-0 border-[2px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b"
               />
             </div>
-            <div className="w-full">
+            <div className="w-full mobileS:mt-2">
               <label
                 className="font-semibold w-fit group-focus-within:text-red group-focus-within:border-b-[2px] transition-colors duration-200 ease-linear"
                 htmlFor="message"
@@ -79,12 +80,12 @@ const Broadcast = () => {
                 id="message"
                 placeholder="Enter Message"
                 {...register("message", { required: true })}
-                className="outline-none mt-2 border-[2px] min-h-[120px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b"
+                className="outline-none mt-2 mobileS:mt-0 border-[2px]  min-h-[120px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b"
               />
             </div>
           </div>
 
-          <div className="flex gap-x-10 w-full justify-between">
+          <div className="flex gap-x-10 w-full mobileS:flex-col mobileS:gap-2 justify-between">
             <div className="w-full">
               <label
                 className="font-semibold w-fit group-focus-within:text-red group-focus-within:border-b-[2px] transition-colors duration-200 ease-linear"
@@ -96,7 +97,7 @@ const Broadcast = () => {
                 type="text"
                 name="broadcastBy"
                 id="broadcastBy"
-                className="outline-none mt-2 border-[2px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b text-left p-2 cursor-pointer"
+                className="outline-none mt-2 mobileS:mt-0 border-[2px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b text-left p-2 cursor-pointer"
                 {...register("broadcastBy")}
                 defaultValue={"College"}
                 onChange={(e) => setBroadcastBy(e.target.value)}
@@ -122,7 +123,7 @@ const Broadcast = () => {
                   type="broadcastToYear"
                   name="broadcastToYear"
                   id="broadcastToYear"
-                  className="outline-none mt-2 border-[2px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b text-left p-2 cursor-pointer"
+                  className="outline-none mt-2 mobileS:mt-0 mobileS:mt- border-[2px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b text-left p-2 cursor-pointer"
                   {...register("broadcastToYear", { required: true })}
                   defaultValue={1}
                 >
@@ -139,7 +140,7 @@ const Broadcast = () => {
                   type="broadcastToCollege"
                   name="broadcastToCollege"
                   id="broadcastToCollege"
-                  className="outline-none mt-2 border-[2px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b text-left p-2 cursor-pointer"
+                  className="outline-none mt-2 mobileS:mt-0 border-[2px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b text-left p-2 cursor-pointer"
                   {...register("broadcastToCollege", { required: true })}
                   defaultValue={1}
                 >
@@ -151,7 +152,7 @@ const Broadcast = () => {
                   id="broadcastTo"
                   placeholder={`Enter ${broadcastBy} Name`}
                   {...register("broadcastTo", { required: true })}
-                  className="outline-none mt-2 border-[2px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b"
+                  className="outline-none mt-2 mobileS:mt-0 border-[2px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b"
                 />
               )}
             </div>
@@ -161,7 +162,7 @@ const Broadcast = () => {
             <button
               type="submit"
               disabled={loading}
-              className="bg-gradient-to-r  w-full from-blue font-semibold to-red text-secondary-100 my-4 py-2 transition-all duration-200 ease-linear 
+              className="bg-gradient-to-r mobileS:text-sm mobileS:my-1  w-full from-blue font-semibold to-red text-secondary-100 my-4 py-2 transition-all duration-200 ease-linear 
           hover:text-secondary-900 rounded-lg text-lg"
             >
               {loading ? "Loading..." : "SEND"}
@@ -170,7 +171,7 @@ const Broadcast = () => {
               type="button"
               disabled={loading}
               onClick={() => navigate("/home")}
-              className="bg-gradient-to-r to-blue font-semibold from-red text-secondary-100 w-full my-4 py-2 transition-all duration-200 ease-linear 
+              className="bg-gradient-to-r  mobileS:text-sm mobileS:my-1 to-blue font-semibold from-red text-secondary-100 w-full my-4 py-2 transition-all duration-200 ease-linear 
           hover:text-secondary-900 rounded-lg text-lg"
             >
               {loading ? "Loading..." : "CANCEL"}

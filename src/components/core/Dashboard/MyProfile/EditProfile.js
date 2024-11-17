@@ -37,7 +37,7 @@ const EditProfile = () => {
   return (
     <div>
       <div className="mt-16 mobileS:mt-7 w-full h-full flex items-center justify-center">
-        <div className="w-8/12 mobileS:w-full mx-auto h-full flex items-center justify-center">
+        <div className="w-8/12 mobileS:w-11/12 mx-auto h-full flex items-center justify-center">
           <div className="h-full w-full">
             <h1 className="text-center text-4xl mobileS:text-xl underline font-semibold">
               Edit Profile
@@ -237,7 +237,7 @@ const EditProfile = () => {
                   </div>
                 </div>
 
-                <div className="flex w-full mt-10 items-center justify-center">
+                <div className="flex w-full mt-10 mobileS:mt-5 items-center justify-center">
                   <p className="text-4xl mobileS:text-xl underline font-semibold">
                     College Information
                   </p>

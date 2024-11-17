@@ -41,7 +41,7 @@ export default function ChipInput({
   return (
     <div className="flex flex-col space-y-2">
       <label
-        className="font-semibold w-fit group-focus-within:text-red group-focus-within:border-b-[2px] my-1 transition-colors duration-200 ease-linear"
+        className="font-semibold w-fit group-focus-within:text-red group-focus-within:border-b-[2px] my-1 mobileS:mb-0 transition-colors duration-200 ease-linear"
         htmlFor={name}
       >
         {label} <sup className="text-pink-200">*</sup>
@@ -51,7 +51,7 @@ export default function ChipInput({
         {chips.map((chip, index) => (
           <div
             key={index}
-            className="m-1 flex items-center rounded-full bg-primary-200 px-2 py-1 text-sm text-richblack-5"
+            className="m-1 mobileS:py-0 mobileS:m-0 mobileS:mx-1 flex items-center rounded-full bg-primary-200 px-2 py-1 text-sm text-richblack-5"
           >
             {chip}
             <button

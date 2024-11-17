@@ -71,7 +71,7 @@ const MyProfile = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-row mobileS:flex-co gap-x-2 mobileS:text-sm">
+                  <div className="flex flex-row gap-x-2 mobileS:text-sm">
                     {/* no of posts */}
                     <p>{user?.posts?.length} Posts</p>
                     {/* no of followers */}

@@ -8,7 +8,7 @@ import { getUserProfile, sendFollowRequest } from "../../../../../services/opera
 import { setOtherUsersData } from "../../../../../redux/slices/authSlice";
 import toast from "react-hot-toast";
 
-const AddUser = () => {
+const AddUser = ({ addMode, setAddMode }) => {
 
     const [user, setUser] = useState(null);
     const { token } = useSelector((state) => state.auth)
@@ -68,10 +68,11 @@ const AddUser = () => {
                         updatedAt: Date.now(),
                     })
                 });
+                setAddMode((prev)=>!prev);
             } catch (error) {
                 toast.error("Error in creating chat");
             }
-        }  else {
+        } else {
             toast.error("Error in sending follow request");
         }
     }

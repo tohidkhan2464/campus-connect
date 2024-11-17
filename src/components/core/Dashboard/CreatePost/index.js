@@ -33,13 +33,14 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="mt-16 w-full h-full flex items-center justify-center">
+    <div className="mt-16 mobileS:mt-3 w-full h-full flex items-center justify-center">
       <div className="w-full h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="rounded-md border-secondary-700 flex flex-col items-center max-w-[800px] justify-center border-[1px] bg-secondary-100 my-10 p-8 space-y-4"
+          className="rounded-md border-secondary-500 flex mobileS:w-full flex-col items-center max-w-[800px] mobileS:max-w-[300px]
+           justify-center border-[3px] bg-secondary-100 my-10 p-8 mobileS:p-4 space-y-4 mobileS:text-sm"
         >
-          <div className="flex gap-x-10">
+          <div className="flex mobileS:flex-col mobileS:w-full gap-x-10">
             {/* Post  Image */}
             <Upload
               name="postImage"
@@ -54,7 +55,7 @@ const CreatePost = () => {
               {/* Course Short Description */}
               <div>
                 <label
-                  className="font-semibold w-fit group-focus-within:text-red group-focus-within:border-b-[2px] transition-colors duration-200 ease-linear"
+                  className="font-semibold w-fit mobileS:w-full group-focus-within:text-red group-focus-within:border-b-[2px] transition-colors duration-200 ease-linear"
                   htmlFor="postCaption"
                 >
                   Post Caption
@@ -63,7 +64,7 @@ const CreatePost = () => {
                   id="postCaption"
                   placeholder="Enter Post Caption"
                   {...register("postCaption", { required: true })}
-                  className="outline-none mt-2 border-[2px] min-h-[120px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b"
+                  className="outline-none mt-2 border-[2px] min-h-[120px] mobileS:min-h-[90px] border-slate-300 py-1 px-2 rounded-md  w-[100%] outline-b"
                 />
               </div>
 
@@ -84,16 +85,16 @@ const CreatePost = () => {
           <div className="flex flex-row w-full gap-x-4">
             <button
               type="submit"
-              className="bg-gradient-to-r  w-full from-blue font-semibold to-red text-secondary-100 my-4 py-2 transition-all duration-200 ease-linear 
-            hover:text-secondary-900 rounded-lg text-lg"
+              className="bg-gradient-to-r w-full from-blue font-semibold to-red text-secondary-100 my-4 mobileS:my-2 py-2 transition-all duration-200 ease-linear 
+            hover:text-secondary-900 rounded-lg text-lg mobileS:text-sm"
             >
               SEND
             </button>
             <button
               type="button"
               onClick={() => navigate("/home")}
-              className="bg-gradient-to-r to-blue font-semibold from-red text-secondary-100 w-full my-4 py-2 transition-all duration-200 ease-linear 
-            hover:text-secondary-900 rounded-lg text-lg"
+              className="bg-gradient-to-r to-blue font-semibold from-red text-secondary-100 w-full my-4 mobileS:my-2 py-2 transition-all duration-200 ease-linear 
+            hover:text-secondary-900 rounded-lg text-lg mobileS:text-sm"
             >
               CANCEL
             </button>

@@ -24,22 +24,23 @@ const Messages = () => {
     };
   }, [fetchUserInfo, user?._id, isCurrentUserBlocked, isReceiverBlocked]);
 
+  // useEffect(() => {}, [chatId]);
   if (isLoading) return <div className="loader">Loading...</div>;
 
   return (
-    <div className="w-10/12 h-full mx-auto flex items-start justify-center">
-      <div className="w-11/12 mx-auto h-full flex items-start justify-start bg-[#111928bf] rounded-xl mt-10">
+    <div className="w-10/12 mobileS:w-11/12 h-full mx-auto flex items-start justify-center">
+      <div className="w-11/12 mobileS:w-full mx-auto h-full flex items-start justify-start bg-[#111928bf] rounded-xl mt-10">
         <div
-          className={`h-[800px] w-[100%] mx-auto flex  items-start justify-start `}
+          className={`h-[800px] mobileS:h-[80vh] w-[100%] mx-auto flex mobileS:flex-col  items-start justify-start `}
         >
-          <List />
-          {chatId && <Chat />}
+          {/* <List /> */}
+          {/* {chatId && <Chat />} */}
           {chatId && <Detail />}
           {!chatId && (
             <div
-              className={`flex flex-col w-[70%] items-center justify-center h-[800px] border-l-[1px] border-l-[#dddddd35]`}
+              className={`flex flex-col w-[70%] mobileS:w-full mobileS:h-full mobileS:justify-start mobileS:mt-10 items-center justify-center h-[800px] border-l-[1px] border-l-[#dddddd35]`}
             >
-              <h1 className="text-white w-full text-4xl text-center">
+              <h1 className="text-white w-full text-4xl mobileS:text-2xl text-center">
                 Select a chat to start messaging
               </h1>
             </div>

@@ -44,8 +44,8 @@ const VerifyEmail = () => {
   return (
     <div className="bg-gradient-to-br from-blue to-red w-screen min-h-screen flex items-center justify-center">
       <div>
-        <div className=" bg-white flex flex-col items-center justify-center mt-16 p-10 rounded-lg desktop:w-[500px]">
-          <div className="text-4xl mt-4 mb-1 font-semibold w-full text-center text-red border-b-[2px]">
+        <div className=" bg-white flex flex-col items-center justify-center mt-16 mobileS:p-5 p-10 rounded-lg w-[600px] mobileS:w-[300px]">
+          <div className="text-4xl mobileS:text-xl mt-4 mb-1 font-semibold w-full text-center text-red border-b-[2px]">
             VERFIY YOUR EMAIL
           </div>
 
@@ -66,8 +66,8 @@ const VerifyEmail = () => {
                     style={{
                       boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                     }}
-                    className="w-[48px] desktop:w-[60px] border-0 bg-primary-800 rounded-[0.5rem] text-white 
-                  text-2xl font-bold  aspect-square text-center focus:border-0 my-3 focus:outline-4 focus:outline-black"
+                    className="w-[48px] mobileS:w-[35px] border-0 bg-primary-800 rounded-[0.5rem] text-white 
+                  text-2xl mobileS:text-xl font-bold  aspect-square text-center focus:border-0 my-3 focus:outline-4 focus:outline-black"
                   />
                 )}
               />
@@ -75,22 +75,22 @@ const VerifyEmail = () => {
             <button
               type="submit"
               className="bg-gradient-to-r from-blue font-semibold to-red text-secondary-100 w-full my-4 py-2 transition-all duration-200 ease-linear 
-           hover:text-secondary-900 rounded-lg text-lg"
+           hover:text-secondary-900 rounded-lg text-lg mobileS:text-sm mobileS:my-1"
             >
               SUBMIT
             </button>
           </form>
-          <div className="flex flex-row items-center justify-between w-full mt-2">
+          <div className="flex flex-row items-center mobileS:mt-1 justify-between w-full mt-2">
             <div>
               <Link to="/login">
-                <p className=" text-[16px] mt-1 w-full text-secondary-600 max-w-max flex flex-row items-center gap-1 hover:text-black hover:underline transition-all duration-200">
+                <p className=" text-[16px] mobileS:text-sm mt-1 w-full text-secondary-600 max-w-max flex flex-row items-center gap-1 hover:text-black hover:underline transition-all duration-200">
                   Back to Login
                 </p>
               </Link>
             </div>
             <button
               type="button"
-              className=" text-primary-900 text-[16px] flex flex-row gap-1 items-center hover:text-primary-500 hover:underline"
+              className=" text-primary-900 text-[16px]  mobileS:text-sm flex flex-row gap-1 items-center hover:text-primary-500 hover:underline"
             >
               Resent it
             </button>

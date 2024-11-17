@@ -9,12 +9,12 @@ const Dashboard = () => {
     <div className="bg-gradient-to-br from-blue to-red w-screen min-h-screen  flex items-center mx-auto overflow-x-hidden justify-center">
       <div className="relative min-h-[calc(100vh - 3.5rem)] h-full w-11/12 mobileS:w-full">
         <Sidebar />
+        <Bottombar />
         <FollowBar />
         <div className="min-h-[calc(100vh-3.5rem)] h-full overflow-auto w-full ">
           <div className="mx-auto w-full py-10 ">
             <Outlet />
           </div>
-           <Bottombar/>
         </div>
       </div>
     </div>

@@ -84,9 +84,7 @@ const Detail = () => {
                                         <span>{photo?.imgName || "Image"}</span>
                                     </div>
                                     <FiDownload className="icon" onClick={() => saveImage(photo?.img, token)} />
-                                    {/* <div className="icon" onClick={() => saveImage(photo?.img, token)}>
-                                        <img src="./assets/download.png" alt="" />
-                                    </div> */}
+
                                 </div>
                             ))}
                         </div>

@@ -162,7 +162,7 @@ const Chat = () => {
                     <img src="./assets/emoji.png" alt=""
                         onClick={() => setOpenEmoji((prev) => !prev)} />
                     <div className="picker">
-                        <EmojiPicker open={openEmoji} onEmojiClick={handleEmoji} />
+                        <EmojiPicker open={openEmoji} onEmojiClick={handleEmoji} className="emojiBox" />
                     </div>
                 </div>
                 <button className="sendButton" onClick={handleSend} disabled={isCurrentUserBlocked || isReceiverBlocked}>{loading ? "Sending..." : "Send"}</button>

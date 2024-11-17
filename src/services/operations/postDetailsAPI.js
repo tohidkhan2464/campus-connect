@@ -45,7 +45,7 @@ export const sendPost = async (data, token) => {
 export const createComment = async (data, token) => {
   let result = null;
   // console.log("FORM DATA.....", data);
-  const toastId = toast.loading("Loading...");
+  // const toastId = toast.loading("Loading...");
   try {
     const response = await apiConnector({
       method: "POST",
@@ -66,7 +66,7 @@ export const createComment = async (data, token) => {
     console.log("Create Comment API ERROR............", error);
     toast.error(error.message);
   }
-  toast.dismiss(toastId);
+  // toast.dismiss(toastId);
   return result;
 };
 
@@ -171,7 +171,7 @@ export const saveImage = async (imageURL, token) => {
 };
 
 export const getComments = async (postId, token) => {
-  const toastId = toast.loading("Loading...");
+  // const toastId = toast.loading("Loading...");
   console.log("POST ID IN COMMENTS", postId);
   let result = [];
   try {
@@ -192,7 +192,7 @@ export const getComments = async (postId, token) => {
     console.log("GET_POST_COMMENTS_API API ERROR............", error);
     toast.error(error.message);
   }
-  toast.dismiss(toastId);
+  // toast.dismiss(toastId);
   return result;
 };
 

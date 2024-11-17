@@ -52,9 +52,9 @@ export default function Upload({
   }, [selectedFile, setValue]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mobileS:h-[200px]">
       <label
-        className="font-semibold w-fit group-focus-within:text-red group-focus-within:border-b-[2px] transition-colors duration-200 ease-linear"
+        className="font-semibold mobileS:text-sm w-fit group-focus-within:text-red group-focus-within:border-b-[2px] transition-colors duration-200 ease-linear"
         htmlFor={name}
       >
         {" "}
@@ -64,23 +64,25 @@ export default function Upload({
       <div
         className={`${
           isDragActive ? "bg-richblack-600" : "bg-white"
-        } flex min-h-[250px] cursor-pointer items-center outline-none border-slate-300 p-2 mt-2 justify-center rounded-md border-2 `}
+        } flex mobileS:flex-col min-h-[250px] mobileS:min-h-[150px] cursor-pointer items-center outline-none border-slate-300 p-2 mobileS:p-0 mt-2 justify-center rounded-md border-2 `}
         {...getRootProps()}
         onClick={() => inputRef.current.click()} // Ensure file explorer opens
       >
         <input
           {...getInputProps()}
           ref={inputRef}
-          style={{ display: "none" }}
+          hidden
+          className="h-0"
+          // style={{ display: "none" }}
         />
         {previewSource ? (
           // Show preview if file is selected
-          <div className="flex w-full flex-col px-6 py-4">
+          <div className="flex w-full flex-col px-6 mobileS:p-1 py-4">
             {!video ? (
               <img
                 src={previewSource}
                 alt="Preview"
-                className="h-[165px] w-full rounded-md object-cover"
+                className="h-[165px] mobileS:h-[100px] w-full rounded-md object-contain"
               />
             ) : (
               <Player aspectRatio="3:4" playsInline src={previewSource} />
@@ -101,17 +103,16 @@ export default function Upload({
             )}
           </div>
         ) : (
-          // Show prompt when no file is selected
-          <div className="flex w-full flex-col items-center p-6 min-w-[320px]">
-            <div className="grid aspect-square w-14 place-items-center rounded-full bg-pure-greys-800">
-              <FiUploadCloud className="text-2xl text-secondary-400" />
+          <div className="flex w-full flex-col items-center p-6 mobileS:p-0 min-w-[320px] mobileS:min-w-[250px]">
+            <div className="grid aspect-square w-14 mobileS:w-7 place-items-center rounded-full bg-pure-greys-800">
+              <FiUploadCloud className="text-2xl mobileS:text-xl text-secondary-400" />
             </div>
-            <p className="mt-2 max-w-[200px] text-center text-sm text-secondary-400">
+            <p className="mt-2 mobileS:mt-1 max-w-[200px] mobileS:text-sm text-center text-sm text-secondary-400">
               Drag and drop an {!video ? "image" : "video"}, or click to{" "}
               <span className="font-semibold text-primary-700">Browse</span> a
               file
             </p>
-            <ul className="mt-10 flex list-disc justify-between space-x-12 text-center  text-xs text-secondary-400">
+            <ul className="mt-10 mobileS:mt-1 flex list-disc justify-between space-x-12 text-center  text-xs text-secondary-400">
               <li>Recommended Aspect ratio 3:4</li>
             </ul>
           </div>

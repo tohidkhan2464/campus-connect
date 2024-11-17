@@ -4,8 +4,10 @@ importScripts(
 importScripts(
   "https://www.gstatic.com/firebasejs/10.13.2/firebase-messaging-compat.js"
 );
+const secretKey = "%REACT_APP_SECRET_KEY%";
+
 firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  apiKey: secretKey,
   authDomain: "react-chat-app-25799.firebaseapp.com",
   projectId: "react-chat-app-25799",
   storageBucket: "react-chat-app-25799.appspot.com",
