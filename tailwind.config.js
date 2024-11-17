@@ -40,13 +40,13 @@ module.exports = {
         },
       },
       screens: {
-        mobile: { max: "480px" },
-        largeMobile: { min: "481px", max: "639px" },
-        tablet: { min: "640px", max: "768px" },
-        ipad: { min: "769px", max: "1024px" },
-        laptop: { min: "1025px", max: "1200px" },
-        desktop: { min: "1201px", max: "1600px" },
-        largeScreen: { min: "1600px" },
+        mobileS: { max: "320px" },
+        mobileM: { min: "320px", max: "375px" },
+        mobileL: { min: "375px", max: "425px" },
+        tablet: { min: "425px", max: "768px" },
+        laptop: { min: "768px", max: "1024px" },
+        laptopL: { min: "1024px", max: "1440px" },
+        display4K: { min: "1440px" },
       },
       extend: {
         maxWidth: {

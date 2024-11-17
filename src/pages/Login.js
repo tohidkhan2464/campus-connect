@@ -33,14 +33,14 @@ const Login = () => {
   return (
     <div className="bg-gradient-to-br from-blue to-red w-screen min-h-screen flex items-center justify-center">
       <div>
-        <div className=" bg-white flex items-center justify-center p-10 rounded-lg w-[500px]">
+        <div className=" bg-white flex items-center justify-center p-10 mobileS:p-4 rounded-lg w-[500px] mobileS:w-[300px]">
           <div className="flex flex-col items-center w-full">
-            <div className="text-4xl my-4 font-semibold w-full text-center">
+            <div className="text-4xl my-4 mobileS:my-1 font-semibold w-full text-center mobileS:text-xl">
               LOGIN
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className="w-full">
               {/* Email or User-Name */}
-              <div className="flex flex-col items-center my-2 group w-full">
+              <div className="flex flex-col items-center my-2 group w-full mobileS:text-sm">
                 <label htmlFor="email" className="label-style">
                   E-MAIL OR USER-NAME<sup className=" text-red">*</sup>
                 </label>
@@ -60,7 +60,7 @@ const Login = () => {
               </div>
 
               {/* Password */}
-              <div className="flex flex-col items-center my-2 mx-auto group w-full">
+              <div className="flex flex-col items-center my-2 mx-auto group w-full mobileS:text-sm">
                 <label htmlFor="password" className="label-style">
                   PASSWORD <sup className=" text-red">*</sup>
                 </label>
@@ -80,16 +80,16 @@ const Login = () => {
               </div>
 
               <div>
-                <p className=" w-fit hover:text-red underline my-4 cursor-pointer">
+                <p className=" w-fit hover:text-red underline my-4 mobileS:my-1 cursor-pointer mobileS:text-sm">
                   Forgot Password?
                 </p>
               </div>
 
-              <button type="submit" className="submit-button-style">
+              <button type="submit" className="submit-button-style mobileS:text-sm mobileS:my-2">
                 SUBMIT
               </button>
             </form>
-            <div>
+            <div className="mobileS:text-sm">
               <p>
                 Didn't have a Account?{" "}
                 <span

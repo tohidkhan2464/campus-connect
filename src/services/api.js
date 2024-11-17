@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_API_URL;
+const BASE_URL = `${process.env.REACT_APP_API_URL}/api/v1`;
 
 // AUTH ENDPOINTS
 export const AuthEndpoints = {

@@ -58,25 +58,25 @@ const EditProfilePicture = () => {
 
   return (
     <div>
-      <div className="w-9/12 mx-auto">
-        <div className="relative flex flex-col justify-between mt-4  bg-white p-6 rounded-lg border-[3px] border-secondary-600 z-0">
+      <div className="w-9/12 mobileS:w-full mx-auto ">
+        <div className="relative flex flex-col justify-between mt-4  bg-white p-6 mobileS:p-3 rounded-lg border-[3px] border-secondary-600 z-0">
           <RxCross2
             onClick={() => navigate("/my-profile")}
             className="absolute right-7 text-secondary-500 text-2xl cursor-pointer hover:text-secondary-900"
           />
-          <div className="flex flex-row gap-x-6 w-full items-center ">
+          <div className="flex flex-row mobileS:flex-col gap-x-6 w-full items-center ">
             <div className="p-1 border-[2px] border-secondary-500 rounded-full">
               <img
                 src={
                   previewSource || user?.profileImage || `${user?.profileImage}`
                 }
                 alt={`profile-${user?.firstName}`}
-                className="aspect-square w-[80px] rounded-full object-cover"
+                className="aspect-square w-[80px] mobileS:w-[60px] rounded-full object-cover"
               />
             </div>
 
-            <div className="flex flex-col items-start space-y-2">
-              <p className="text-xl font-semibold">Change Profile Picture</p>
+            <div className="flex flex-col items-start mobileS:items-center space-y-2">
+              <p className="text-xl font-semibold mobileS:text-sm">Change Profile Picture</p>
               <div className="flex flex-row gap-x-3">
                 <input
                   type="file"
@@ -90,7 +90,7 @@ const EditProfilePicture = () => {
                   onClick={handleClick}
                   disabled={loading}
                   className="bg-primary-100 text-secondary-500 border-[2px] border-secondary-500  w-full transition-all duration-200 ease-linear font-semibold
-                  hover:text-secondary-900 text-lg cursor-pointer flex flex-row gap-x-2 items-center rounded-md py-2 px-6 hover:border-secondary-900"
+                  hover:text-secondary-900 mobileS:text-sm text-lg cursor-pointer flex flex-row gap-x-2 items-center rounded-md py-2 px-6 hover:border-secondary-900"
                 >
                   Select
                 </button>
@@ -99,17 +99,17 @@ const EditProfilePicture = () => {
                   {!loading ? (
                     <p
                       className="bg-gradient-to-r to-blue from-red text-secondary-100 w-full transition-all duration-200 ease-linear font-semibold
-                  hover:text-secondary-900 text-lg cursor-pointer flex flex-row gap-x-2 items-center rounded-md py-2 px-6"
+                  hover:text-secondary-900 mobileS:text-sm text-lg cursor-pointer flex flex-row gap-x-2 items-center rounded-md py-2 px-6"
                     >
-                      <FiUpload className="text-lg text-richblack-900" />
+                      <FiUpload className="text-lg mobileS:text-sm  text-richblack-900" />
                       Upload
                     </p>
                   ) : (
                     <p
                       className="bg-gradient-to-r to-blue from-red text-secondary-100 w-full transition-all duration-200 ease-linear font-semibold
-                    hover:text-secondary-900 text-lg cursor-pointer flex flex-row gap-x-2 items-center rounded-md py-2 px-6"
+                    hover:text-secondary-900 text-lg mobileS:text-sm cursor-pointer flex flex-row gap-x-2 items-center rounded-md py-2 px-6"
                     >
-                      <FiUpload className="text-lg text-richblack-900" />
+                      <FiUpload className="text-lg mobileS:text-sm text-richblack-900" />
                       Uploading...
                     </p>
                   )}
