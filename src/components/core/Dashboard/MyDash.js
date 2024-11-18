@@ -47,23 +47,24 @@ const MyDash = () => {
     }
   }
 
-  
-
   return (
-    <div className="mt-16 mobileS:mt-3 mobileM:mt-3 w-full h-full flex items-center justify-center ">
+    <div className="mt-16 mobileS:mt-3 mobileM:mt-3 mobileL:mt-3 w-full h-full flex items-center justify-center ">
       <div className="w-full h-full flex items-center justify-center ">
         <div className="">
           {postData?.length < 1 ? (
             <div className="flex w-full mt-44 items-center justify-center ">
               <div
-                className="bg-white p-2 pb-0 mobileS:text-3xl mobileM:text-3xl rounded-lg text-center w-full text-[3rem] font-semibold 
+                className="bg-white p-2 pb-0 mobileS:text-3xl mobileM:text-3xl mobileL:text-3xl rounded-lg text-center w-full text-[3rem] font-semibold 
               text-transparent bg-clip-text bg-gradient-to-t from-[#b5faff] to-[#f1ff77] border-b-[2px]"
               >
                 No Data Found
               </div>
             </div>
           ) : (
-            <div className="rounded-md border-secondary-700  grid grid-cols-2 mobileS:grid-cols-1 mobileM:grid-cols-1 mobileM:max-w-[350px] mobileS:max-w-[300px] mobileS:gap-3 gap-8 flex-col max-w-[750px]  ">
+            <div
+              className="rounded-md border-secondary-700  grid grid-cols-2 mobileS:grid-cols-1 mobileL:grid-cols-1
+             mobileM:grid-cols-1 mobileM:max-w-[350px] mobileS:max-w-[300px] mobileL:max-w-[400px] mobileS:gap-3 mobileL:gap-3 gap-8 flex-col max-w-[750px]  "
+            >
               {postData?.map((post) => (
                 <div
                   key={post._id}
@@ -129,7 +130,7 @@ const MyDash = () => {
                       </div>
                     </div>
                     {post?.tags?.slice(0, 5).map((tag, index) => (
-                      <span key={index}>#{tag}{" "}</span>
+                      <span key={index}>#{tag} </span>
                     ))}
                     {post?.comments?.length > 0 && (
                       <div>

@@ -50,13 +50,13 @@ const Post = () => {
   }
 
   return (
-    <div className="mt-16 mobileS:mt-3 mobileM:mt-3 w-full h-full flex items-center justify-center">
+    <div className="mt-16 mobileS:mt-3 mobileL:mt-3 mobileM:mt-3 w-full h-full flex items-center justify-center">
       <div className="w-full h-full flex items-center justify-center">
         <div>
           {postData?.length < 1 ? (
             <div className="flex w-full mt-44 items-center justify-center">
               <div
-                className="bg-white p-2 pb-0 mobileS:text-3xl mobileM:text-3xl rounded-lg text-center w-full text-[3rem] font-semibold 
+                className="bg-white p-2 pb-0 mobileS:text-3xl mobileL:text-3xl mobileM:text-3xl rounded-lg text-center w-full text-[3rem] font-semibold 
               text-transparent bg-clip-text bg-gradient-to-t from-[#b5faff] to-[#f1ff77] border-b-[2px]"
               >
                 No Data Found
@@ -64,7 +64,7 @@ const Post = () => {
             </div>
           ) : (
             <div
-              className="rounded-md border-secondary-700 grid grid-cols-2 mobileM:grid-cols-1 mobileM:max-w-[350px] mobileM:gap-3
+              className="rounded-md border-secondary-700 grid mobileL:grid-cols-1 mobileL:max-w-[400px] grid-cols-2 mobileM:grid-cols-1 mobileM:max-w-[350px] mobileM:gap-3
              mobileS:grid-cols-1 mobileS:max-w-[300px] mobileS:gap-3 gap-8 flex-col max-w-[750px] "
             >
               {postData?.map((post) => (

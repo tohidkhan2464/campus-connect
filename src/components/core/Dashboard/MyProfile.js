@@ -24,22 +24,23 @@ const MyProfile = () => {
 
   return (
     <div>
-      <div className="mt-16 w-full h-full flex items-center justify-center">
-        <div className="w-8/12 mobileS:w-full mobileM:w-full mx-auto h-full flex items-center justify-center">
+      <div className="mt-16 mobileL:mt-3 mobileS:mt-3 mobileM:mt-3 w-full h-full flex items-center justify-center">
+        <div className="w-8/12 mobileS:w-full mobileM:w-full mobileL:w-full mx-auto h-full flex items-center justify-center">
           {/* Heading */}
           <div className="h-full w-11/12 flex flex-col items-center justify-center gap-y-5">
-            <p className="text-center text-4xl mobileS:text-xl mobileM:text-xl underline font-semibold">
+            <p className="text-center text-4xl mobileS:text-xl mobileL:text-2xl mobileM:text-xl underline font-semibold">
               My Profile
             </p>
-            <div className="flex flex-col mobileS:w-full mobileM:w-full justify-center items-center w-10/12 gap-y-10">
+            <div className="flex flex-col mobileS:w-full mobileL:w-full mobileM:w-full justify-center items-center w-10/12 gap-y-10">
               {/* Details div */}
               <div
-                className="flex flex-row mobileS:flex-col mobileM:flex-col gap-10 mobileM:gap-5 items-center justify-between rounded-xl border-[3px] border-secondary-600
-               mx-auto w-11/12 mobileS:w-full mobileM:w-full mobileM:px-4 bg-white p-8 px-14 mobileS:px-4"
+                className="flex flex-row mobileS:flex-col mobileM:flex-col mobileL:flex-col gap-10 mobileM:gap-5 items-center justify-between rounded-xl border-[3px] border-secondary-600
+               mx-auto w-11/12 mobileS:w-full mobileM:w-full mobileM:px-4 mobileL:gap-5 mobileL:px-5 bg-white p-8 px-14 mobileS:px-4"
               >
                 {/* Profile Photo Div */}
                 <Link to={`/my-profile/${user?.userName}`}>
-                  <div className="relative border-[2px] border-secondary-600 cursor-pointer group p-2 rounded-full mobileS:h-28 mobileS:w-28 mobileM:w-32 mobileM:h-32  h-44 w-44">
+                  <div className="relative border-[2px] border-secondary-600 cursor-pointer group p-2 rounded-full mobileS:h-28 mobileS:w-28 mobileM:w-32 mobileM:h-32 
+                  mobileL:h-36 mobileL:w-36 h-44 w-44">
                     <img
                       src={user?.profileImage}
                       className="h-full w-full rounded-full group-hover:blur-[4px] transition-all duration-200"

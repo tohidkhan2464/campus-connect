@@ -47,11 +47,12 @@ const Broadcast = () => {
   };
 
   return (
-    <div className="mt-16 mobileS:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
+    <div className="mt-16 mobileS:mt-5 mobileL:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
       <div className="w-full h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="rounded-md border-secondary-700 mobileS:max-w-[300px] mobileM:max-w-[350px] mobileM:text-sm mobileM:p-3 mobileM:space-y-1 mobileS:text-sm mobileS:p-3 flex flex-col items-center 
+          className="rounded-md border-secondary-700 mobileS:max-w-[300px] mobileL:max-w-[400px] mobileL:p-3 mobileL:space-y-1 mobileM:max-w-[350px] mobileM:text-sm 
+          mobileM:p-3 mobileM:space-y-1 mobileS:text-sm mobileS:p-3 flex flex-col items-center 
           max-w-[800px] justify-center border-[1px]  bg-secondary-100 my-10 p-8 mobileS:space-y-1 space-y-4"
         >
           <div className="w-full">

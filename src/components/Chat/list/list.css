@@ -12,9 +12,15 @@
     margin: auto;
 
   }
-  @media ((max-width: 375px ) and ( min-width: 321px)) {
+  @media ((max-width: 375px ) and ( min-width: 320px)) {
     height: auto;
     max-width: 370px;
+    width: 100%;
+    margin: auto;
+  }
+  @media ((max-width: 425px ) and ( min-width: 376px)) {
+    height: auto;
+    max-width: 420px;
     width: 100%;
     margin: auto;
   }

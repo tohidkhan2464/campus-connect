@@ -12,11 +12,15 @@
     max-width: 310px;
     height: auto;
     width: 100%;
-
   }
 
   @media ((max-width: 375px) and (min-width: 321px)) {
     max-width: 360px;
+    width: 100%;
+    height: auto;
+  }
+  @media ((max-width: 425px ) and ( min-width: 376px)) {
+    max-width: 410px;
     width: 100%;
     height: auto;
   }
@@ -48,6 +52,12 @@
         justify-content: space-between;
         gap: 10px;
       }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
+        padding: 10px 20px;
+        padding-right: 10px;
+        justify-content: space-between;
+        gap: 10px;
+      }
 
       input {
         background-color: transparent;
@@ -63,6 +73,9 @@
         @media ((max-width: 375px) and (min-width: 321px)) {
           font-size: 0.8rem;
         }
+        @media ((max-width: 425px ) and ( min-width: 376px)) {
+          font-size: 0.8rem;
+        }
       }
 
       img {
@@ -75,6 +88,10 @@
         }
 
         @media ((max-width: 375px) and (min-width: 321px)) {
+          width: 15px;
+          height: 15px;
+        }
+        @media ((max-width: 425px ) and ( min-width: 376px)) {
           width: 15px;
           height: 15px;
         }
@@ -106,10 +123,13 @@
     @media (max-width: 320px) {
       padding: 5px;
       gap: 10px;
-
     }
 
     @media ((max-width: 375px) and (min-width: 321px)) {
+      padding: 5px;
+      gap: 10px;
+    }
+    @media ((max-width: 425px ) and ( min-width: 376px)) {
       padding: 5px;
       gap: 10px;
     }
@@ -140,10 +160,13 @@
       @media (max-width: 320px) {
         width: 20px;
         height: 20px;
-
       }
 
       @media ((max-width: 375px) and (min-width: 321px)) {
+        width: 25px;
+        height: 25px;
+      }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
         width: 25px;
         height: 25px;
       }
@@ -156,10 +179,12 @@
 
       @media (max-width: 320px) {
         gap: 0px;
-
       }
 
       @media ((max-width: 375px) and (min-width: 321px)) {
+        gap: 0px;
+      }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
         gap: 0px;
       }
 
@@ -169,10 +194,12 @@
 
         @media (max-width: 320px) {
           font-size: 12px;
-
         }
 
         @media ((max-width: 375px) and (min-width: 321px)) {
+          font-size: 12px;
+        }
+        @media ((max-width: 425px ) and ( min-width: 376px)) {
           font-size: 12px;
         }
       }
@@ -184,10 +211,12 @@
 
         @media (max-width: 320px) {
           font-size: 10px;
-
         }
 
         @media ((max-width: 375px) and (min-width: 321px)) {
+          font-size: 10px;
+        }
+        @media ((max-width: 425px ) and ( min-width: 376px)) {
           font-size: 10px;
         }
       }

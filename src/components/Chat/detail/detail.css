@@ -12,6 +12,11 @@
     width: 100%;
     height: 100%;
   }
+  @media ((max-width: 425px ) and ( min-width: 376px)) {
+    max-width: 410px;
+    width: 100%;
+    height: 100%;
+  }
 
   .user {
     padding: 30px 20px;
@@ -33,6 +38,12 @@
       gap: 10px;
       padding: 10px;
       width: 330px;
+      /* justify-content: center; */
+    }
+    @media ((max-width: 425px ) and ( min-width: 376px)) {
+      gap: 10px;
+      padding: 10px;
+      width: 410px;
       /* justify-content: center; */
     }
 
@@ -63,6 +74,10 @@
         width: 50px;
         height: 50px;
       }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
+        width: 50px;
+        height: 50px;
+      }
     }
 
     h2 {
@@ -77,6 +92,9 @@
       @media ((max-width: 375px) and (min-width: 321px)) {
         font-size: 14px;
       }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
+        font-size: 14px;
+      }
     }
 
     p {
@@ -89,6 +107,9 @@
       }
 
       @media ((max-width: 375px) and (min-width: 321px)) {
+        font-size: 10px;
+      }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
         font-size: 10px;
       }
     }
@@ -109,6 +130,10 @@
       gap: 10px;
       padding: 10px;
     }
+    @media ((max-width: 425px ) and ( min-width: 376px)) {
+      gap: 10px;
+      padding: 10px;
+    }
 
     .option {
       .title {
@@ -122,6 +147,9 @@
         }
 
         @media ((max-width: 375px) and (min-width: 321px)) {
+          font-size: 14px;
+        }
+        @media ((max-width: 425px ) and ( min-width: 376px)) {
           font-size: 14px;
         }
 
@@ -162,6 +190,9 @@
           @media ((max-width: 375px) and (min-width: 321px)) {
             font-size: 10px;
           }
+          @media ((max-width: 425px ) and ( min-width: 376px)) {
+            font-size: 10px;
+          }
 
           &:hover {
             font-weight: 500;
@@ -186,6 +217,10 @@
           gap: 10px;
           margin-top: 10px;
         }
+        @media ((max-width: 425px ) and ( min-width: 376px)) {
+          gap: 10px;
+          margin-top: 10px;
+        }
 
         button {
           padding: 15px;
@@ -204,6 +239,10 @@
             padding: 5px;
             font-size: 12px;
           }
+          @media ((max-width: 425px ) and ( min-width: 376px)) {
+            padding: 5px;
+            font-size: 12px;
+          }
 
           &:hover {
             background-color: rgba(230, 74, 105, 1);
@@ -219,6 +258,10 @@
             }
 
             @media ((max-width: 375px) and (min-width: 321px)) {
+              padding: 5px;
+              font-size: 12px;
+            }
+            @media ((max-width: 425px ) and ( min-width: 376px)) {
               padding: 5px;
               font-size: 12px;
             }
@@ -242,6 +285,9 @@
         @media ((max-width: 375px) and (min-width: 321px)) {
           margin-top: 5px;
         }
+        @media ((max-width: 425px ) and ( min-width: 376px)) {
+          margin-top: 5px;
+        }
 
         .photoItem {
           display: flex;
@@ -256,6 +302,9 @@
           }
 
           @media ((max-width: 375px) and (min-width: 321px)) {
+            padding: 5px 0;
+          }
+          @media ((max-width: 425px ) and ( min-width: 376px)) {
             padding: 5px 0;
           }
 
@@ -277,6 +326,9 @@
             @media ((max-width: 375px) and (min-width: 321px)) {
               gap: 10px;
             }
+            @media ((max-width: 425px ) and ( min-width: 376px)) {
+              gap: 10px;
+            }
 
             img {
               width: 40px;
@@ -293,6 +345,10 @@
                 width: 30px;
                 height: 30px;
               }
+              @media ((max-width: 425px ) and ( min-width: 376px)) {
+                width: 30px;
+                height: 30px;
+              }
             }
 
             span {
@@ -305,6 +361,9 @@
               }
 
               @media ((max-width: 375px) and (min-width: 321px)) {
+                font-size: 10px;
+              }
+              @media ((max-width: 425px ) and ( min-width: 376px)) {
                 font-size: 10px;
               }
             }
@@ -330,6 +389,10 @@
             }
 
             @media ((max-width: 375px) and (min-width: 321px)) {
+              width: 30px;
+              height: 30px;
+            }
+            @media ((max-width: 425px ) and ( min-width: 376px)) {
               width: 30px;
               height: 30px;
             }

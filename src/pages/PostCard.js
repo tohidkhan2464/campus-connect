@@ -96,16 +96,16 @@ const PostCard = () => {
   if (IsLoading) return <div className="loader">Loading...</div>;
 
   return (
-    <div className="absolute h-screen w-screen mt-0 mobileS:-top-[4.5rem] mobileM:left-0 mobileM:-top-[5.5rem] mobileS:left-0 -top-[5.8rem] -left-16 z-[1000]">
-      <div className="mt-16 mobileS:mt-10 mobileM:mt-10  w-full h-full flex items-center justify-center bg-white bg-opacity-10 backdrop-blur-sm">
-        <div className="w-10/12 mobileS:w-full mobileM:w-full h-full flex items-center justify-center">
+    <div className="absolute h-screen w-screen mt-0 mobileS:-top-[4.5rem] mobileL:left-0 mobileM:left-0 mobileM:-top-[5.5rem] mobileS:left-0 -top-[5.8rem] -left-16 z-[1000]">
+      <div className="mt-16 mobileS:mt-10  mobileL:mt-10mobileM:mt-10  w-full h-full flex items-center justify-center bg-white bg-opacity-10 backdrop-blur-sm">
+        <div className="w-10/12 mobileS:w-full mobileL:w-full mobileM:w-full h-full flex items-center justify-center">
           <div
-            className="border-[2px] w-10/12 mobileS:w-full mobileM:w-full mobileM:max-w-[360px] mobileM:max-h-[90vh]
-           mobileS:max-w-[310px] mobileS:max-h-[90vh] max-w-[900px] border-secondary-600 rounded-lg overflow-hidden"
+            className="border-[2px] w-10/12 mobileL:w-full mobileS:w-full mobileM:w-full mobileM:max-w-[360px] mobileM:max-h-[90vh]
+           mobileS:max-w-[310px] mobileS:max-h-[90vh] mobileL:max-h-[90vh] mobileL:max-w-[400px] max-w-[900px] border-secondary-600 rounded-lg overflow-hidden"
           >
             {/* Post Header */}
-            <div className="flex flex-row justify-between items-center bg-primary-100 mobileS:p-2 mobileM:p-2 p-5">
-              <p className="flex flex-row gap-x-2 mobileS:text-lg mobileM:text-lg items-center text-secondary-900 text-xl font-semibold">
+            <div className="flex flex-row justify-between items-center mobileL:p-2 bg-primary-100 mobileS:p-2 mobileM:p-2 p-5">
+              <p className="flex flex-row gap-x-2 mobileS:text-lg mobileL:text-lg mobileM:text-lg items-center text-secondary-900 text-xl font-semibold">
                 <img
                   src={postData?.user?.profileImage}
                   className="h-8 w-8 rounded-full"
@@ -118,9 +118,9 @@ const PostCard = () => {
             </div>
 
             {/* Post Content */}
-            <div className="flex flex-row h-full mobileS:flex-col mobileM:flex-col mx-auto w-full">
+            <div className="flex flex-row h-full mobileS:flex-col mobileL:flex-col mobileM:flex-col mx-auto w-full">
               <div
-                className="max-h-[400px] mobileS:h-full mobileS:w-full mobileM:w-full mobileM:h-[300px] flex items-center justify-center 
+                className="max-h-[400px] mobileS:h-full mobileL:w-full mobileS:w-full mobileM:w-full mobileM:h-[300px] mobileL:h-[350px] flex items-center justify-center 
               w-[50%] p-2 bg-white border-t-[2px] border-t-secondary-600 border-r-[0px] border-r-secondary-600"
               >
                 <img
@@ -129,7 +129,7 @@ const PostCard = () => {
                 />
               </div>
               {/* Comments */}
-              <div className="relative flex flex-col mobileS:w-full mobileM:w-full w-[50%] max-h-[400px]">
+              <div className="relative flex flex-col mobileS:w-full mobileL:w-full mobileM:w-full w-[50%] max-h-[400px]">
                 {/* User Comments */}
                 <div className="flex flex-row gap-x-2 items-center bg-primary-100 border-t-[2px] border-t-secondary-600 p-5 py-2">
                   <img

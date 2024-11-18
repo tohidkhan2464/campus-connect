@@ -25,7 +25,7 @@ const DeleteModal = ({ token, user, deleteModal, setDeleteModal }) => {
   };
 
   return (
-    <div className="absolute h-screen w-screen mt-0 -top-[5.8rem] mobileS:top-0 mobileS:left-0 mobileM:top-0 mobileM:left-0 -left-16 z-[1000]">
+    <div className="absolute h-screen w-screen mt-0 -top-[5.8rem] mobileS:top-0 mobileL:left-0 mobileS:left-0 mobileM:top-0 mobileM:left-0 -left-16 z-[1000]">
       <div className="mt-16 mobileS:-mt-2 mobileM:-mt-2 w-full h-full flex items-center justify-center bg-primary-200 bg-opacity-40 backdrop-blur-md">
         <div className="w-full h-full flex items-center justify-center">
           <div className="relative w-11/12 flex flex-col items-center  justify-center bg-white py-10 mobileS:p-4 mobileM:p-4
@@ -33,7 +33,7 @@ const DeleteModal = ({ token, user, deleteModal, setDeleteModal }) => {
             <RxCross2
               onClick={() => {
                 setDeleteModal(false);
-                navigate("/my-profile");
+                navigate('/settings');
               }}
               className="absolute top-7 right-7 text-secondary-500 text-2xl cursor-pointer hover:text-secondary-900"
             />
@@ -66,7 +66,7 @@ const DeleteModal = ({ token, user, deleteModal, setDeleteModal }) => {
                   name="currentPassword"
                   placeholder="Enter your Current Password"
                   {...register("currentPassword", { required: true })}
-                  className="input-style w-8/12 mobileS:w-full mobileM:w-full mt-1"
+                  className="input-style w-8/12 mobileS:w-full mobileL:w-full mobileM:w-full mt-1"
                 />
                 {errors.currentPassword && (
                   <span className=" text-red underline animate-bounce">
@@ -80,7 +80,7 @@ const DeleteModal = ({ token, user, deleteModal, setDeleteModal }) => {
                   type="button"
                   onClick={() => {
                     setDeleteModal(false);
-                    navigate("/my-profile");
+                    navigate("/settings");
                   }}
                   className="cancel-button-style mobileS:my-2 mobileM:my-2 mobileM:text-sm mobileS:text-sm"
                 >
@@ -90,7 +90,7 @@ const DeleteModal = ({ token, user, deleteModal, setDeleteModal }) => {
                   type="submit"
                   className="submit-button-style mobileS:my-2 mobileM:my-2 mobileM:text-sm mobileS:text-sm"
                 >
-                  DELETE ACCOUNT
+                  DELETE
                 </button>
               </div>
             </form>

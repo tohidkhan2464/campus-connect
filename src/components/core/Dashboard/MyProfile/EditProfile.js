@@ -36,10 +36,10 @@ const EditProfile = () => {
 
   return (
     <div>
-      <div className="mt-16 mobileS:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
-        <div className="w-8/12 mobileS:w-11/12 mobileM:w-11/12 mx-auto h-full flex items-center justify-center">
+      <div className="mt-16 mobileS:mt-5 mobileL:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
+        <div className="w-8/12 mobileS:w-11/12 mobileL:w-11/12 mobileM:w-11/12 mx-auto h-full flex items-center justify-center">
           <div className="h-full w-full">
-            <h1 className="text-center text-4xl mobileS:text-xl mobileM:text-xl underline font-semibold">
+            <h1 className="text-center text-4xl mobileL:text-xl mobileS:text-xl mobileM:text-xl underline font-semibold">
               Edit Profile
             </h1>
             <div>
@@ -48,18 +48,18 @@ const EditProfile = () => {
 
             <form
               onSubmit={handleSubmit(submitProfileForm)}
-              className="w-9/12 mx-auto mobileS:w-full mobileM:w-full"
+              className="w-9/12 mx-auto mobileS:w-full mobileL:w-full mobileM:w-full"
             >
               <div className="flex flex-col justify-between mt-16 mobileS:mt-5 mobileM:mt-5 mobileM:p-3  bg-white p-6 mobileS:p-3 rounded-lg border-[3px] border-secondary-600 z-0">
                 <div className="flex flex-row w-full items-center justify-center">
-                  <p className="text-4xl underline mobileS:text-xl mobileM:text-xl font-semibold">
+                  <p className="text-4xl underline mobileS:text-xl mobileL:text-xl mobileM:text-xl font-semibold">
                     Public Information
                   </p>
                 </div>
 
                 <div>
-                  <div className="flex gap-x-10  mt-5 mobileS:flex-col mobileM:flex-col">
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                  <div className="flex gap-x-10  mt-5 mobileS:flex-col mobileL:flex-col mobileM:flex-col">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="firstName" className="label-style">
                         First Name
                       </label>
@@ -79,7 +79,7 @@ const EditProfile = () => {
                       )}
                     </div>
 
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="lastName" className="label-style">
                         Last Name
                       </label>
@@ -100,8 +100,8 @@ const EditProfile = () => {
                     </div>
                   </div>
 
-                  <div className="flex gap-x-10 mt-5 mobileS:mt-0 mobileM:mt-0 mobileM:flex-col mobileM:gap-y-4 mobileS:flex-col mobile:gap-y-4 ">
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                  <div className="flex gap-x-10 mt-5 mobileS:mt-0  mobileL:flex-col mobileM:mt-0  mobileL:mt-0  mobileM:flex-col  mobileS:flex-col  ">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="email" className="label-style">
                         Email
                       </label>
@@ -122,7 +122,7 @@ const EditProfile = () => {
                       )}
                     </div>
 
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full  mobileL:w-full mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="userName" className="label-style">
                         User-Name
                       </label>
@@ -146,8 +146,8 @@ const EditProfile = () => {
                 </div>
 
                 <div>
-                  <div className="flex gap-x-10 mt-5 mobileS:mt-0 mobileM:mt-0 mobileM:flex-col mobileM:gap-y-4 mobileS:flex-col mobile:gap-y-4">
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                  <div className="flex gap-x-10 mt-5 mobileS:mt-0  mobileL:flex-col mobileM:mt-0 mobileM:flex-col mobileL:mt-0  mobileS:flex-col ">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full  mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="gender" className="label-style">
                         Gender
                       </label>
@@ -174,7 +174,7 @@ const EditProfile = () => {
                       )}
                     </div>
 
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full  mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="about" className="label-style">
                         Type something your about yourself.
                       </label>
@@ -195,8 +195,8 @@ const EditProfile = () => {
                     </div>
                   </div>
 
-                  <div className="flex gap-x-10 mt-5 mobileS:mt-0 mobileM:mt-0 mobileM:flex-col mobileM:gap-y-4 mobileS:flex-col mobile:gap-y-4">
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                  <div className="flex gap-x-10 mt-5 mobileS:mt-0 mobileM:mt-0  mobileL:flex-col mobileM:flex-col mobileL:mt-0  mobileS:flex-col ">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full  mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="contactNumber" className="label-style">
                         Contact Number
                       </label>
@@ -216,7 +216,7 @@ const EditProfile = () => {
                       )}
                     </div>
 
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full  mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="dateOfBirth" className="label-style">
                         Date of Birth
                       </label>
@@ -237,15 +237,15 @@ const EditProfile = () => {
                   </div>
                 </div>
 
-                <div className="flex w-full mt-10 mobileS:mt-5 mobileM:mt-5 items-center justify-center">
-                  <p className="text-4xl mobileS:text-xl mobileM:text-xl underline font-semibold">
+                <div className="flex w-full mt-10 mobileS:mt-5 mobileM:mt-5 mobileL:mt-5 items-center justify-center">
+                  <p className="text-4xl mobileS:text-xl mobileL:text-xl mobileM:text-xl underline font-semibold">
                     College Information
                   </p>
                 </div>
 
                 <div>
-                  <div className="flex gap-x-10 mt-5 mobileS:flex-col mobileM:flex-col mobileM:gap-y-4 mobile:gap-y-4">
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                  <div className="flex gap-x-10 mt-5 mobileS:flex-col  mobileL:flex-col mobileM:flex-col mobileM:gap-y-4 mobile:gap-y-4">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full  mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="branchName" className="label-style">
                         Name of your Branch / Stream
                       </label>
@@ -265,7 +265,7 @@ const EditProfile = () => {
                       )}
                     </div>
 
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm  mobileS:text-sm">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full  mobileM:text-sm  mobileS:text-sm">
                       <label htmlFor="departmentName" className="label-style">
                         Name of your Department
                       </label>
@@ -286,8 +286,8 @@ const EditProfile = () => {
                     </div>
                   </div>
 
-                  <div className="flex gap-x-10 mt-5 mobileS:mt-0 mobileM:mt-0 mobileM:flex-col mobileM:gap-y-4 mobileS:flex-col mobile:gap-y-4">
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                  <div className="flex gap-x-10 mt-5 mobileS:mt-0 mobileM:mt-0 mobileM:flex-col mobileL:flex-col mobileL:mt-0 mobileS:flex-col">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full  mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="enrollmentNumber" className="label-style">
                         Enrollment Number
                       </label>
@@ -307,7 +307,7 @@ const EditProfile = () => {
                       )}
                     </div>
 
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full  mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="year" className="label-style">
                         Year
                       </label>
@@ -337,8 +337,8 @@ const EditProfile = () => {
                 </div>
 
                 <div>
-                  <div className="flex gap-x-10 mt-5 mobileS:mt-0 mobileM:mt-0 mobileM:flex-col mobileM:gap-y-4 mobileS:flex-col mobile:gap-y-4">
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                  <div className="flex gap-x-10 mt-5 mobileS:mt-0 mobileM:mt-0  mobileL:flex-col mobileM:flex-col mobileL:mt-0 mobileS:flex-col">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full  mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="collegeName" className="label-style">
                         Name of your College
                       </label>
@@ -358,7 +358,7 @@ const EditProfile = () => {
                       )}
                     </div>
 
-                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileM:text-sm mobileS:text-sm">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full mobileL:w-full  mobileM:text-sm mobileS:text-sm">
                       <label htmlFor="cityName" className="label-style">
                         Name of your City
                       </label>
@@ -380,18 +380,18 @@ const EditProfile = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-row mobileS:flex-col-reverse mobileM:flex-col-reverse gap-x-4 ml-[53%] mobileS:ml-0 mobileM:ml-0 
-                mobileM:max-w-[100%] mobileS:max-w-[100%] max-w-[49%] my-10 mobileS:my-5 mobileM:my-5 justify-end items-center">
+                <div className="flex flex-row mobileS:flex-col-reverse  mobileL:flex-col-reverse mobileM:flex-col-reverse gap-x-4 ml-[53%] mobileS:ml-0 mobileL:ml-0 mobileM:ml-0 
+                mobileM:max-w-[100%] mobileS:max-w-[100%] mobileL:max-w-[100%]  max-w-[49%] my-10 mobileS:my-5 mobileL:my-5 mobileM:my-5 justify-end items-center">
                   <button
                     type="button"
                     onClick={() => navigate("/my-profile")}
-                    className="cancel-button-style mobileS:my-2 mobileM:my-2 mobileM:text-sm mobileS:text-sm"
+                    className="cancel-button-style mobileS:my-2 mobileM:my-2 mobileL:my-2 mobileM:text-sm mobileS:text-sm"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="submit-button-style  mobileS:my-2 mobileM:my-2 mobileM:text-sm mobileS:text-sm"
+                    className="submit-button-style  mobileS:my-2 mobileM:my-2 mobileL:my-2 mobileM:text-sm mobileS:text-sm"
                   >
                     Update
                   </button>

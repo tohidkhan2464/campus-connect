@@ -11,7 +11,6 @@
     max-width: 300px;
     border: none;
     width: 100%;
-
     font-size: smaller;
   }
 
@@ -19,7 +18,13 @@
     height: max-content;
     max-width: 360px;
     width: 100%;
-
+    border: none;
+    font-size: smaller;
+  }
+  @media ((max-width: 425px ) and ( min-width: 376px)) {
+    height: max-content;
+    max-width: 410px;
+    width: 100%;
     border: none;
     font-size: smaller;
   }
@@ -42,6 +47,11 @@
       max-width: 350px;
       width: 100%;
     }
+    @media ((max-width: 425px ) and ( min-width: 376px)) {
+      padding: 10px;
+      max-width: 400px;
+      width: 100%;
+    }
 
     .user {
       display: flex;
@@ -53,6 +63,9 @@
       }
 
       @media ((max-width: 375px) and (min-width: 321px)) {
+        gap: 10px;
+      }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
         gap: 10px;
       }
 
@@ -80,6 +93,10 @@
           height: 40px;
           width: 40px;
         }
+        @media ((max-width: 425px ) and ( min-width: 376px)) {
+          height: 40px;
+          width: 40px;
+        }
       }
 
       .texts {
@@ -100,6 +117,9 @@
           @media ((max-width: 375px) and (min-width: 321px)) {
             font-size: 14px;
           }
+          @media ((max-width: 425px ) and ( min-width: 376px)) {
+            font-size: 14px;
+          }
 
           &:hover {
             text-decoration: underline;
@@ -116,6 +136,9 @@
           }
 
           @media ((max-width: 375px) and (min-width: 321px)) {
+            font-size: 10px;
+          }
+          @media ((max-width: 425px ) and ( min-width: 376px)) {
             font-size: 10px;
           }
         }
@@ -136,6 +159,10 @@
         gap: 10px;
       }
 
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
+        gap: 10px;
+      }
+
       .img {
         width: 30px;
         height: 30px;
@@ -147,6 +174,10 @@
         }
 
         @media ((max-width: 375px) and (min-width: 321px)) {
+          width: 20px;
+          height: 20px;
+        }
+        @media ((max-width: 425px ) and ( min-width: 376px)) {
           width: 20px;
           height: 20px;
         }
@@ -176,6 +207,10 @@
       gap: 10px;
       padding: 10px;
     }
+    @media ((max-width: 425px ) and ( min-width: 376px)) {
+      gap: 10px;
+      padding: 10px;
+    }
 
     .message {
       max-width: 70%;
@@ -189,6 +224,10 @@
       }
 
       @media ((max-width: 375px) and (min-width: 321px)) {
+        max-width: 360px;
+        gap: 10px;
+      }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
         max-width: 360px;
         gap: 10px;
       }
@@ -231,6 +270,10 @@
             width: 160px;
             height: 100%;
           }
+          @media ((max-width: 425px ) and ( min-width: 376px)) {
+            width: 160px;
+            height: 100%;
+          }
         }
 
         p {
@@ -246,6 +289,9 @@
           @media ((max-width: 375px) and (min-width: 321px)) {
             padding: 10px;
           }
+          @media ((max-width: 425px ) and ( min-width: 376px)) {
+            padding: 10px;
+          }
         }
 
         span {
@@ -257,6 +303,9 @@
           }
 
           @media ((max-width: 375px) and (min-width: 321px)) {
+            font-size: 10px;
+          }
+          @media ((max-width: 425px ) and ( min-width: 376px)) {
             font-size: 10px;
           }
         }
@@ -282,6 +331,10 @@
       padding: 10px;
       gap: 5px;
     }
+    @media ((max-width: 425px ) and ( min-width: 376px)) {
+      padding: 10px;
+      gap: 5px;
+    }
 
     .icons {
       display: flex;
@@ -292,6 +345,9 @@
       }
 
       @media ((max-width: 375px) and (min-width: 321px)) {
+        gap: 10px;
+      }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
         gap: 10px;
       }
 
@@ -307,6 +363,10 @@
           }
 
           @media ((max-width: 375px) and (min-width: 321px)) {
+            width: 20px;
+            height: 20px;
+          }
+          @media ((max-width: 425px ) and ( min-width: 376px)) {
             width: 20px;
             height: 20px;
           }
@@ -328,6 +388,10 @@
         width: 15px;
         height: 15px;
       }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
+        width: 15px;
+        height: 15px;
+      }
     }
 
     input {
@@ -341,12 +405,13 @@
 
       @media (max-width: 320px) {
         padding: 5px;
-        /* max-width: 150px; */
       }
 
       @media ((max-width: 375px) and (min-width: 321px)) {
         padding: 5px;
-        /* max-width: 150px; */
+      }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
+        padding: 5px;
       }
 
       &:disabled {
@@ -371,6 +436,10 @@
           width: 20px;
           height: 20px;
         }
+        @media ((max-width: 425px ) and ( min-width: 376px)) {
+          width: 20px;
+          height: 20px;
+        }
       }
 
       .picker {
@@ -379,15 +448,17 @@
         left: 0;
 
         @media (max-width: 320px) {
-          max-width: 300px;
           bottom: 40px;
           left: -220px;
         }
 
         @media ((max-width: 375px) and (min-width: 321px)) {
-          max-width: 360px;
           bottom: 40px;
-          left: -220px;
+          left: -265px;
+        }
+        @media ((max-width: 425px ) and ( min-width: 376px)) {
+          bottom: 40px;
+          left: -290px;
         }
 
         .emojiBox {
@@ -397,7 +468,11 @@
           }
 
           @media ((max-width: 375px) and (min-width: 321px)) {
-            max-width: 350px;
+            max-width: 340px;
+            max-height: 400px;
+          }
+          @media ((max-width: 425px ) and ( min-width: 376px)) {
+            max-width: 410px;
             max-height: 400px;
           }
         }
@@ -420,6 +495,10 @@
       }
 
       @media ((max-width: 375px) and (min-width: 321px)) {
+        padding: 5px;
+        font-weight: normal;
+      }
+      @media ((max-width: 425px ) and ( min-width: 376px)) {
         padding: 5px;
         font-weight: normal;
       }

@@ -7,7 +7,7 @@ import Bottombar from "../components/core/Dashboard/Bottombar";
 const Dashboard = () => {
   return (
     <div className="bg-gradient-to-br from-blue to-red w-screen min-h-screen  flex items-center mx-auto overflow-x-hidden justify-center">
-      <div className="relative min-h-[calc(100vh - 3.5rem)] h-full w-11/12 mobileS:w-full  mobileM:w-full">
+      <div className="relative min-h-[calc(100vh - 3.5rem)] h-full w-11/12 mobileS:w-full  mobileM:w-full mobileL:w-full">
         <Sidebar />
         <Bottombar />
         <FollowBar />

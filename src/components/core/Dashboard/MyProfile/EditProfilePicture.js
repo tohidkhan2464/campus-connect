@@ -58,11 +58,11 @@ const EditProfilePicture = () => {
 
   return (
     <div>
-      <div className="w-9/12 mobileS:w-full mobileM:w-full mx-auto ">
+      <div className="w-9/12 mobileS:w-full mobileL:w-full mobileM:w-full mx-auto ">
         <div className="relative flex flex-col justify-between mt-4  bg-white p-6 mobileS:p-3 mobileM:p-3 rounded-lg border-[3px] border-secondary-600 z-0">
           <RxCross2
             onClick={() => navigate("/my-profile")}
-            className="absolute right-7 mobileM:right-5 text-secondary-500 text-2xl cursor-pointer hover:text-secondary-900"
+            className="absolute right-7 mobileM:right-5 mobileL:right-5 mobileL:top-5 text-secondary-500 text-2xl cursor-pointer hover:text-secondary-900"
           />
           <div className="flex flex-row mobileS:flex-col mobileM:flex-col gap-x-6 w-full items-center ">
             <div className="p-1 border-[2px] border-secondary-500 rounded-full">
