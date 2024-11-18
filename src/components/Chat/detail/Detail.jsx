@@ -11,9 +11,9 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import ViewPhoto from "./ViewPhoto";
 import { FiDownload } from "react-icons/fi";
+import { FaArrowLeft } from "react-icons/fa6";
 
-
-const Detail = () => {
+const Detail = ({ handleDetailUnSelect }) => {
     const { currentUser } = useUserStore();
     const { user, chatId, isCurrentUserBlocked, changeBlock, isReceiverBlocked } = usechatStore();
     const [openDropDown, setOpenDropDown] = React.useState("");
@@ -63,6 +63,9 @@ const Detail = () => {
     return (
         <div className="detail">
             <div className="user">
+                <div onClick={() => handleDetailUnSelect()} className="back">
+                    <FaArrowLeft />
+                </div>
                 <img src={user?.avatar || "./assets/avatar.png"} alt="" />
                 <h2>{user?.username || "User"}</h2>
                 <p>{user?.additionalDetails?.about || "Write something about yourself."}</p>

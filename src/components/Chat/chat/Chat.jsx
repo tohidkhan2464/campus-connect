@@ -6,12 +6,12 @@ import { arrayUnion, doc, getDoc, getDocs, onSnapshot, updateDoc } from "firebas
 import { db } from "../../../lib/firebase.js";
 import { usechatStore } from "../../../lib/chatStore";
 import upload from "../../../lib/uploads";
-import { FaCircleInfo } from "react-icons/fa6";
+import { FaCircleInfo, FaArrowLeft } from "react-icons/fa6";
 
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const Chat = () => {
+const Chat = ({ handleDetailSelect, handleChatUnSelect }) => {
     const { currentUser } = useUserStore();
     const { chatId, user, isCurrentUserBlocked, isReceiverBlocked } = usechatStore();
     const [openEmoji, setOpenEmoji] = React.useState(false);
@@ -108,13 +108,28 @@ const Chat = () => {
         <div className="chat">
             <div className="top">
                 <div className="user">
+                    <div onClick={() => { handleChatUnSelect() }} className="back">
+                        <FaArrowLeft />
+                    </div>
                     <img src={user?.avatar || "./assets/avatar.png"} alt="" />
                     <div className="texts">
-                        <span onClick={() => navigate(`/profile/${user?.username}`)}>{user?.username || "User"}</span>
+                        <span
+                            onClick={() => {
+                                navigate(`/profile/${user?.username}`);
+                                handleChatUnSelect();
+                            }}>
+                            {user?.username || "User"}
+                        </span>
                         <p>{user?.additionalDetails?.about || "Write something about yourself."}</p>
                     </div>
                 </div>
-                <div className="icons" onClick={() => navigate(`/profile/${user?.username}`)}>
+                <div className="icons" onClick={() => {
+                    if (window.innerWidth > 1024) {
+                        navigate(`/profile/${user?.username}`);
+                        handleChatUnSelect();
+                    }
+                    handleDetailSelect();
+                }}>
                     <FaCircleInfo className="img" />
                 </div>
             </div>

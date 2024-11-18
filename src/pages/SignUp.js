@@ -60,13 +60,13 @@ const SignUp = () => {
   return (
     <div className="bg-gradient-to-br from-blue to-red w-screen min-h-screen flex items-center justify-center">
       <div>
-        <div className=" bg-white flex items-center justify-center mt-14 p-8 mobileS:mt-10 mobileS:p-4 mobileS:py-2 rounded-lg w-[600px] mobileS:w-[300px]">
+        <div className=" bg-white flex items-center justify-center mt-14 p-8 mobileS:mt-10 mobileM:mt-10 mobileM:py-2 mobileM:p-4 mobileM:max-w-[350px] mobileS:p-4 mobileS:py-2 rounded-lg w-[600px] mobileS:w-[300px]">
           <div className="flex flex-col items-center w-full">
-            <div className="text-4xl my-1 font-semibold mobileS:text-xl w-full text-center">
+            <div className="text-4xl my-1 font-semibold mobileS:text-xl mobileM:text-xl w-full text-center">
               SIGN UP
             </div>
             <form onSubmit={submitHandler} className="w-full">
-              <div className="flex flex-col items-center my-1 mobileS:m-0 mobileS:text-sm group w-full">
+              <div className="flex flex-col items-center my-1 mobileS:m-0 mobileM:m-0 mobileM:text-sm mobileS:text-sm group w-full">
                 <label className="label-style">
                   ACCOUNT TYPE<sup className=" text-red">*</sup>
                 </label>
@@ -94,9 +94,9 @@ const SignUp = () => {
                 </div>
               </div>
 
-              <div className="flex flex-row mobileS:flex-col gap-4 mobileS:gap-0  mobileS:text-sm">
+              <div className="flex flex-row mobileS:flex-col mobileM:flex-col mobileM:gap-0 mobileM:text-sm gap-4 mobileS:gap-0  mobileS:text-sm">
                 {/* First Name */}
-                <div className="flex flex-col items-center my-2 mobileS:my-1 group w-full">
+                <div className="flex flex-col items-center my-2 mobileS:my-1 mobileM:my-1 group w-full">
                   <label htmlFor="firstName" className="label-style">
                     FIRST NAME<sup className=" text-red">*</sup>
                   </label>
@@ -112,7 +112,7 @@ const SignUp = () => {
                 </div>
 
                 {/* Last Name */}
-                <div className="flex flex-col items-center my-2 mobileS:my-1 group w-full">
+                <div className="flex flex-col items-center my-2 mobileS:my-1 mobileM:my-1 group w-full">
                   <label htmlFor="lastName" className="label-style">
                     LAST NAME<sup className=" text-red">*</sup>
                   </label>
@@ -128,9 +128,9 @@ const SignUp = () => {
                 </div>
               </div>
 
-              <div className="flex flex-row mobileS:flex-col gap-4 mobileS:gap-0  mobileS:text-sm">
+              <div className="flex flex-row mobileS:flex-col gap-4 mobileM:flex-col mobileM:gap-0 mobileM:text-sm mobileS:gap-0  mobileS:text-sm">
                 {/* User-Name */}
-                <div className="flex flex-col items-center my-2 mobileS:my-1 group w-full">
+                <div className="flex flex-col items-center my-2 mobileS:my-1 mobileM:my-1 group w-full">
                   <label htmlFor="userName" className="label-style">
                     USER-NAME<sup className=" text-red">*</sup>
                   </label>
@@ -146,7 +146,7 @@ const SignUp = () => {
                 </div>
 
                 {/* Email  */}
-                <div className="flex flex-col items-center my-2 mobileS:my-1 group w-full">
+                <div className="flex flex-col items-center my-2 mobileS:my-1 mobileM:my-1 group w-full">
                   <label htmlFor="email" className="label-style">
                     EMAIL<sup className=" text-red">*</sup>
                   </label>
@@ -162,9 +162,9 @@ const SignUp = () => {
                 </div>
               </div>
 
-              <div className="flex flex-row mobileS:flex-col gap-4 mobileS:gap-0 mobileS:text-sm">
+              <div className="flex flex-row mobileS:flex-col gap-4 mobileM:flex-col mobileM:gap-0 mobileM:text-sm mobileS:gap-0 mobileS:text-sm">
                 {/* password  */}
-                <div className="flex flex-col items-center my-2 mobileS:my-1 group w-full">
+                <div className="flex flex-col items-center my-2 mobileS:my-1 mobileM:my-1 group w-full">
                   <label htmlFor="password" className="label-style">
                     PASSWORD<sup className=" text-red">*</sup>
                   </label>
@@ -180,7 +180,7 @@ const SignUp = () => {
                 </div>
 
                 {/* Confirm password  */}
-                <div className="flex flex-col items-center my-2 mobileS:my-1 group w-full">
+                <div className="flex flex-col items-center my-2 mobileS:my-1 mobileM:my-1 group w-full">
                   <label htmlFor="confirmPassword" className="label-style">
                     CONFIRM PASSWORD<sup className=" text-red">*</sup>
                   </label>
@@ -196,11 +196,11 @@ const SignUp = () => {
                 </div>
               </div>
 
-              <button type="submit" className="submit-button-style mobileS:my-2  mobileS:text-sm">
+              <button type="submit" className="submit-button-style mobileS:my-2 mobileM:my-2 mobileM:text-sm  mobileS:text-sm">
                 SUBMIT
               </button>
             </form>
-            <div className="mobileS:text-sm">
+            <div className="mobileS:text-sm mobileM:text-sm">
               <p>
                 Already have a Account?{" "}
                 <span

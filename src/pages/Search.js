@@ -44,28 +44,28 @@ const Search = () => {
 
   return (
     <div>
-      <div className="mt-16 mobileS:mt-4 w-full h-full flex items-center justify-center">
-        <div className="w-9/12 mobileS:w-full mx-auto h-full flex flex-col items-center justify-center">
-          <h2 className="text-center text-4xl mobileS:text-xl underline font-semibold">
+      <div className="mt-16 mobileS:mt-4 mobileM:mt-4 w-full h-full flex items-center justify-center">
+        <div className="w-9/12 mobileS:w-full mobileM:w-full mx-auto h-full flex flex-col items-center justify-center">
+          <h2 className="text-center text-4xl mobileS:text-xl mobileM:text-xl underline font-semibold">
             Search for ...{" "}
           </h2>
-          <div className="w-9/12 mobileS:w-full mx-auto">
-            <div className="flex flex-row justify-between gap-5 mobileS:gap-2 mobileS:mt-2 mobileS:p-1
+          <div className="w-9/12 mobileS:w-full mobileM:w-full mx-auto">
+            <div className="flex flex-row justify-between gap-5 mobileS:gap-2 mobileM:gap-2 mobileM:mt-2 mobileM:p-1 mobileM:mx-2 mobileS:mt-2 mobileS:p-1
              mt-10 mobileS:mx-2  mx-40 bg-white p-5 py-1 rounded-lg border-[3px] border-secondary-500 z-0 ">
               <button
-                className="submit-button-style mobileS:text-sm max-w-40 mobileS:my-1 mobileS:py-1"
+                className="submit-button-style mobileS:text-sm mobileM:text-sm mobileM:py-1 mobileM:my-1 max-w-40 mobileS:my-1 mobileS:py-1"
                 onClick={() => setSearch("posts")}
               >
                 Posts
               </button>
               <button
-                className="submit-button-style mobileS:text-sm max-w-40 mobileS:my-1 mobileS:py-1"
+                className="submit-button-style mobileS:text-sm mobileM:text-sm mobileM:my-1 mobileM:py-1 max-w-40 mobileS:my-1 mobileS:py-1"
                 onClick={() => setSearch("users")}
               >
                 Users
               </button>
               <button
-                className="submit-button-style mobileS:text-sm max-w-40 mobileS:my-1 mobileS:py-1"
+                className="submit-button-style mobileS:text-sm mobileM:text-sm mobileM:my-1 mobileM:py-1 max-w-40 mobileS:my-1 mobileS:py-1"
                 onClick={async () => {
                   setSearch("");
                   const result = await randomSearch(token);
@@ -80,7 +80,7 @@ const Search = () => {
                 Random
               </button>
               <button
-                className="submit-button-style mobileS:text-sm max-w-40 mobileS:my-1 mobileS:py-1"
+                className="submit-button-style mobileS:text-sm mobileM:text-sm mobileM:my-1 mobileM:py-1 max-w-40 mobileS:my-1 mobileS:py-1"
                 onClick={async () => {
                   setSearch("");
                   const result = await postByCollege(token);
@@ -99,14 +99,14 @@ const Search = () => {
 
           {search === "posts" && (
             <form
-              className="w-9/12 mx-auto mobileS:w-11/12"
+              className="w-9/12 mx-auto mobileS:w-11/12 mobileM:w-11/12"
               onSubmit={handleSubmit(submitSearch)}
             >
-              <div className="flex flex-col justify-between mt-16 mobileS:mt-5 bg-white p-5 
+              <div className="flex flex-col justify-between mt-16 mobileS:mt-5 mobileM:mt-5 mobileM:p-2 mobileM:py-4 bg-white p-5 
               mobileS:p-2 mobileS:py-4 mobileS:text-sm rounded-lg border-[3px] border-secondary-500 z-0">
                 <div>
-                  <div className="flex gap-x-10 mobileS:flex-col items-center justify-between">
-                    <div className="flex flex-col w-[48%] mobileS:w-full">
+                  <div className="flex gap-x-10 mobileS:flex-col items-center justify-between mobileM:flex-col">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full">
                       <input
                         type="text"
                         name="username"
@@ -116,8 +116,8 @@ const Search = () => {
                         {...register("username")}
                       />
                     </div>
-                    <div className="flex flex-col w-[38%] mobileS:w-fit">
-                      <button className="submit-button-style mobileS:text-sm mobileS:px-4" type="submit">
+                    <div className="flex flex-col w-[38%] mobileS:w-fit mobileM:w-fit">
+                      <button className="submit-button-style mobileS:text-sm mobileS:px-4 mobileM:px-4 mobileM:text-sm" type="submit">
                         Search by User
                       </button>
                     </div>
@@ -125,8 +125,8 @@ const Search = () => {
                 </div>
 
                 <div>
-                  <div className="flex gap-x-10 mobileS:flex-col items-center justify-between">
-                    <div className="flex flex-col w-[48%] mobileS:w-full">
+                  <div className="flex gap-x-10 mobileS:flex-col mobileM:flex-col items-center justify-between">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full">
                       <input
                         type="text"
                         name="tags"
@@ -136,8 +136,8 @@ const Search = () => {
                         {...register("tags")}
                       />
                     </div>
-                    <div className="flex flex-col w-[38%] mobileS:w-fit">
-                      <button className="submit-button-style mobileS:text-sm mobileS:px-4" type="submit">
+                    <div className="flex flex-col w-[38%] mobileS:w-fit mobileM:w-fit">
+                      <button className="submit-button-style mobileS:text-sm mobileM:text-sm mobileM:px-4 mobileS:px-4" type="submit">
                         Search by Tags
                       </button>
                     </div>
@@ -145,8 +145,8 @@ const Search = () => {
                 </div>
 
                 <div>
-                  <div className="flex gap-x-10 mobileS:flex-col items-center justify-between">
-                    <div className="flex flex-col w-[48%] mobileS:w-full">
+                  <div className="flex gap-x-10 mobileS:flex-col mobileM:flex-col items-center justify-between">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full">
                       <input
                         type="text"
                         name="captions"
@@ -156,8 +156,8 @@ const Search = () => {
                         {...register("captions")}
                       />
                     </div>
-                    <div className="flex flex-col w-[38%] mobileS:w-fit ">
-                      <button className="submit-button-style mobileS:text-sm mobileS:px-4 " type="submit">
+                    <div className="flex flex-col w-[38%] mobileS:w-fit mobileM:w-fit ">
+                      <button className="submit-button-style mobileS:text-sm mobileS:px-4 mobileM:text-sm mobileM:px-4 " type="submit">
                         Search by Captions
                       </button>
                     </div>
@@ -169,14 +169,14 @@ const Search = () => {
 
           {search === "users" && (
             <form
-              className="w-9/12 mx-auto mobileS:w-11/12"
+              className="w-9/12 mx-auto mobileS:w-11/12 mobileM:w-11/12"
               onSubmit={handleSubmit(submitSearch)}
             >
-              <div className="flex flex-col justify-between mt-16  mobileS:mt-5 bg-white p-5 
+              <div className="flex flex-col justify-between mt-16 mobileM:mt-5 mobileM:text-sm mobileM:p-2 mobileM:py-4  mobileS:mt-5 bg-white p-5 
               mobileS:p-2 mobileS:py-4 mobileS:text-sm rounded-lg border-[3px] border-secondary-500 z-0">
                 <div>
-                  <div className="flex gap-x-10 items-center mobileS:flex-col justify-between">
-                    <div className="flex flex-col w-[48%] mobileS:w-full">
+                  <div className="flex gap-x-10 items-center mobileS:flex-col mobileM:flex-col justify-between">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full">
                       <input
                         type="text"
                         name="firstName"
@@ -186,8 +186,8 @@ const Search = () => {
                         {...register("firstName")}
                       />
                     </div>
-                    <div className="flex flex-col w-[38%]  mobileS:w-fit">
-                      <button className="submit-button-style mobileS:text-sm mobileS:px-4 " type="submit">
+                    <div className="flex flex-col w-[38%]  mobileS:w-fit mobileM:w-fit">
+                      <button className="submit-button-style mobileS:text-sm mobileS:px-4  mobileM:px-4 mobileM:text-sm" type="submit">
                         Search by Name
                       </button>
                     </div>
@@ -195,8 +195,8 @@ const Search = () => {
                 </div>
 
                 <div>
-                  <div className="flex gap-x-10 items-center mobileS:flex-col justify-between">
-                    <div className="flex flex-col w-[48%] mobileS:w-full">
+                  <div className="flex gap-x-10 items-center mobileS:flex-col mobileM:flex-col justify-between">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full">
                       <input
                         type="text"
                         name="userName"
@@ -206,8 +206,8 @@ const Search = () => {
                         {...register("userName")}
                       />
                     </div>
-                    <div className="flex flex-col w-[38%]  mobileS:w-fit">
-                      <button className="submit-button-style mobileS:text-sm mobileS:px-4 " type="submit">
+                    <div className="flex flex-col w-[38%]  mobileS:w-fit mobileM:w-fit">
+                      <button className="submit-button-style mobileS:text-sm mobileS:px-4 mobileM:px-4 mobileM:text-sm " type="submit">
                         Search by Username
                       </button>
                     </div>
@@ -215,8 +215,8 @@ const Search = () => {
                 </div>
 
                 <div>
-                  <div className="flex gap-x-10 items-center mobileS:flex-col justify-between">
-                    <div className="flex flex-col w-[48%] mobileS:w-full">
+                  <div className="flex gap-x-10 items-center mobileS:flex-col mobileM:flex-col justify-between">
+                    <div className="flex flex-col w-[48%] mobileS:w-full mobileM:w-full">
                       <input
                         type="text"
                         name="collegeName"
@@ -226,8 +226,8 @@ const Search = () => {
                         {...register("collegeName")}
                       />
                     </div>
-                    <div className="flex flex-col w-[38%]  mobileS:w-fit">
-                      <button className="submit-button-style mobileS:text-sm mobileS:px-4 " type="submit">
+                    <div className="flex flex-col w-[38%]  mobileS:w-fit mobileM:w-fit">
+                      <button className="submit-button-style mobileS:text-sm mobileS:px-4 mobileM:text-sm mobileM:px-4 " type="submit">
                         Search by College
                       </button>
                     </div>

@@ -21,26 +21,28 @@ const SearchResults = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="mt-16 mobileS:mt-5 w-full h-full flex items-center justify-center ">
+    <div className="mt-16 mobileS:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center ">
       <div className="w-full h-full flex items-center justify-center ">
         {query !== "userSearch" ? (
           <div className="">
             {searchData?.length < 1 ? (
-              <div className="flex w-full mt-44 mobileS:mt-5 items-center justify-center ">
+              <div className="flex w-full mt-44 mobileS:mt-5 mobileM:mt-5 items-center justify-center ">
                 <div
-                  className="bg-white p-2 pb-0 mobileS:text-xl rounded-lg text-center w-full text-[3rem] font-semibold 
+                  className="bg-white p-2 pb-0 mobileS:text-xl mobileM:text-xl rounded-lg text-center w-full text-[3rem] font-semibold 
               text-transparent bg-clip-text bg-gradient-to-t from-[#b5faff] to-[#f1ff77] border-b-[2px]"
                 >
                   No Data Found
                 </div>
               </div>
             ) : (
-              <div className="rounded-md border-secondary-700 mobileS:max-w-[300px] mobileS:w-full mobileS:gap-y-2 
-              mobileS:gap-0 grid grid-cols-2 mobileS:grid-cols-1 gap-8 max-w-[750px]">
+              <div
+                className="rounded-md border-secondary-700 mobileS:max-w-[300px] mobileM:max-w-[350px] mobileM:w-full mobileM:gap-y-2 mobileM:gap-0
+               mobileS:w-full mobileS:gap-y-2 mobileS:gap-0 grid grid-cols-2 mobileS:grid-cols-1 mobileM:grid-cols-1 gap-8 max-w-[750px]"
+              >
                 {searchData?.map((post) => (
                   <div
                     key={post._id}
-                    className="bg-white p-2 mobileS:w-full rounded-md border-[1px] border-secondary-700 "
+                    className="bg-white p-2 mobileS:w-full mobileM:w-full rounded-md border-[1px] border-secondary-700 "
                     onClick={() => navigate(`/view-post/${post._id}`)}
                   >
                     {/* Post */}
@@ -98,7 +100,7 @@ const SearchResults = () => {
                         </div>
                       </div>
                       {post?.tags?.slice(0, 5).map((tag, index) => (
-                        <span key={index}>#{tag}{" "}</span>
+                        <span key={index}>#{tag} </span>
                       ))}
                       {post?.comments?.length > 0 && (
                         <div>
@@ -118,16 +120,16 @@ const SearchResults = () => {
         ) : (
           <div>
             {searchData?.length < 1 ? (
-              <div className="flex w-full mt-44 mobileS:mt-5 items-center justify-center ">
+              <div className="flex w-full mt-44 mobileS:mt-5 mobileM:mt-5 items-center justify-center ">
                 <div
                   className="bg-white p-2 pb-0 rounded-lg text-center w-full text-[3rem] font-semibold 
-              text-transparent bg-clip-text mobileS:text-xl bg-gradient-to-t from-[#b5faff] to-[#f1ff77] border-b-[2px]"
+              text-transparent bg-clip-text mobileS:text-xl mobileM:text-xl bg-gradient-to-t from-[#b5faff] to-[#f1ff77] border-b-[2px]"
                 >
                   No Data Found
                 </div>
               </div>
             ) : (
-              <div className="rounded-md border-secondary-700 mobileS:max-w-[310px] grid grid-cols-3 mobileS:grid-cols-1 gap-8">
+              <div className="rounded-md border-secondary-700 mobileS:max-w-[310px] mobileM:max-w-[350px] mobileM:grid-cols-1 grid grid-cols-3 mobileS:grid-cols-1 gap-8">
                 {searchData?.map((user) => (
                   <div
                     key={user._id}
@@ -139,7 +141,7 @@ const SearchResults = () => {
                       <img
                         src={user?.profileImage}
                         alt="post"
-                        className="w-20 h-20 mobileS:h-16 mobileS:w-16 object-contain rounded-[50%] border-[2px] border-secondary-600"
+                        className="w-20 h-20 mobileS:h-16 mobileS:w-16 mobileM:h-16 mobileM:w-16 object-contain rounded-[50%] border-[2px] border-secondary-600"
                       />
 
                       <div className="flex flex-col gap-0 justify-center items-start w-full">
@@ -151,7 +153,7 @@ const SearchResults = () => {
                           <span> {user?.following?.length} Followings </span>
                           <span> {user?.posts?.length} Posts</span>
                         </p>
-                        <p className="text-sm whitespace-nowrap opacity-50 mobileS:text-xs">
+                        <p className="text-sm whitespace-nowrap opacity-50 mobileS:text-xs mobileM:text-xs">
                           {user?.additionalDetails?.about}
                         </p>
                       </div>

@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
 
 
-const ChatList = () => {
+const ChatList = ({handleChatSelect}) => {
     const { currentUser } = useUserStore();
     const { changeChat } = usechatStore();
     const [addMode, setAddMode] = React.useState(false);
@@ -49,6 +49,7 @@ const ChatList = () => {
                 chats: userChats
             });
             changeChat(chat.chatId, chat.user);
+            handleChatSelect();
         } catch (error) {
             toast.error("Failed to update chat");
         }

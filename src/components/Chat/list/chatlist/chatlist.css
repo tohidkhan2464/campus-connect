@@ -7,10 +7,20 @@
   max-width: 350px;
   width: 100%;
   margin: auto;
+
   @media (max-width: 320px) {
     max-width: 310px;
     height: auto;
+    width: 100%;
+
   }
+
+  @media ((max-width: 375px) and (min-width: 321px)) {
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+  }
+
   .search {
     display: flex;
     padding: 10px;
@@ -25,10 +35,18 @@
       gap: 20px;
       border-radius: 10px;
       padding: 10px;
+
       @media (max-width: 320px) {
         padding: 10px;
         padding-right: 10px;
         gap: 5px;
+      }
+
+      @media ((max-width: 375px) and (min-width: 321px)) {
+        padding: 10px 20px;
+        padding-right: 10px;
+        justify-content: space-between;
+        gap: 10px;
       }
 
       input {
@@ -37,7 +55,12 @@
         outline: none;
         color: white;
         flex: 1;
+
         @media (max-width: 320px) {
+          font-size: 0.8rem;
+        }
+
+        @media ((max-width: 375px) and (min-width: 321px)) {
           font-size: 0.8rem;
         }
       }
@@ -45,7 +68,13 @@
       img {
         width: 20px;
         height: 20px;
+
         @media (max-width: 320px) {
+          width: 15px;
+          height: 15px;
+        }
+
+        @media ((max-width: 375px) and (min-width: 321px)) {
           width: 15px;
           height: 15px;
         }
@@ -60,7 +89,6 @@
       cursor: pointer;
       color: white;
       border-radius: 10px;
-      
     }
   }
 
@@ -74,6 +102,17 @@
     transform: all 0.1s;
     border-radius: 10px;
     position: relative;
+
+    @media (max-width: 320px) {
+      padding: 5px;
+      gap: 10px;
+
+    }
+
+    @media ((max-width: 375px) and (min-width: 321px)) {
+      padding: 5px;
+      gap: 10px;
+    }
 
     &:hover {
       background-color: rgba(17, 25, 40, 0.5);
@@ -97,6 +136,17 @@
       height: 50px;
       border-radius: 50%;
       object-fit: cover;
+
+      @media (max-width: 320px) {
+        width: 20px;
+        height: 20px;
+
+      }
+
+      @media ((max-width: 375px) and (min-width: 321px)) {
+        width: 25px;
+        height: 25px;
+      }
     }
 
     .texts {
@@ -104,15 +154,42 @@
       flex-direction: column;
       gap: 10px;
 
+      @media (max-width: 320px) {
+        gap: 0px;
+
+      }
+
+      @media ((max-width: 375px) and (min-width: 321px)) {
+        gap: 0px;
+      }
+
       span {
         font-weight: 500;
         color: white;
+
+        @media (max-width: 320px) {
+          font-size: 12px;
+
+        }
+
+        @media ((max-width: 375px) and (min-width: 321px)) {
+          font-size: 12px;
+        }
       }
 
       p {
         font-weight: 300;
         font-size: 14px;
         color: azure;
+
+        @media (max-width: 320px) {
+          font-size: 10px;
+
+        }
+
+        @media ((max-width: 375px) and (min-width: 321px)) {
+          font-size: 10px;
+        }
       }
     }
   }

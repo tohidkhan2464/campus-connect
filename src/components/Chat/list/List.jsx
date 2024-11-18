@@ -3,20 +3,13 @@ import "./list.css";
 import ChatList from "./chatlist/ChatList";
 import UserInfo from "./userInfo/UserInfo";
 
-const List = () => {
-    // const windowWidth = window.innerWidth;
-    // console.log("window", windowWidth);
-    // const isMobile = windowWidth <= 768;
+const List = ({handleChatSelect}) => {
 
-
-    // if (chatId && !isMobile) {
-    //     return null;
-    // };
 
     return (
         <div className="list">
             <UserInfo />
-            <ChatList />
+            <ChatList handleChatSelect={handleChatSelect} />
         </div>
     );
 };

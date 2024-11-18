@@ -35,23 +35,23 @@ const OtherUserProfile = () => {
 
   return (
     <div>
-      <div className="mt-16 mobileS:mt-5 w-full h-full flex items-center justify-center">
-        <div className="w-8/12 mobileS:w-full mx-auto h-full flex items-center justify-center">
+      <div className="mt-16 mobileS:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
+        <div className="w-8/12 mobileS:w-full mobileM:w-full mx-auto h-full flex items-center justify-center">
           {/* Heading */}
-          <div className="h-full w-11/12 mobileS:w-full flex flex-col items-center justify-center gap-y-5">
-            <p className="text-center mobileS:text-xl text-4xl underline font-semibold">
+          <div className="h-full w-11/12 mobileS:w-full mobileM:w-full flex flex-col items-center justify-center gap-y-5">
+            <p className="text-center mobileS:text-xl mobileM:text-xl text-4xl underline font-semibold">
               User Profile
             </p>
-            <div className="flex flex-col justify-center items-center mobileS:w-full w-10/12 gap-y-10">
+            <div className="flex flex-col justify-center items-center mobileS:w-full w-10/12 mobileM:w-full gap-y-10">
               {/* Details div */}
               <div
                 className="flex flex-row gap-x-10 items-center justify-between rounded-xl border-[3px] border-secondary-600
-               mx-auto w-11/12 mobileS:w-11/12 mobileS:flex-col bg-white p-8 px-14  mobileS:px-4"
+               mx-auto w-11/12 mobileS:w-11/12 mobileM:w-11/12 mobileM:flex-col mobileM:px-4 mobileS:flex-col bg-white p-8 px-14  mobileS:px-4"
               >
                 {/* Profile Photo Div */}
                 <div
                   onClick={() => setViewImage(userData?.profileImage)}
-                  className="relative border-[2px] border-secondary-600 cursor-pointer  p-2 rounded-full mobileS:h-28 mobileS:w-28  h-44 w-44"
+                  className="relative border-[2px] border-secondary-600 cursor-pointer  p-2 rounded-full mobileS:h-28 mobileS:w-28 mobileM:h-32 mobileM:w-32  h-44 w-44"
                 >
                   <img
                     src={userData?.profileImage}
@@ -62,29 +62,29 @@ const OtherUserProfile = () => {
                 {/* Details Div */}
                 <div>
                   <div className="">
-                    <div className="text-xl flex mobileS:text-sm flex-row gap-x-2 items-center justify-between font-semibold">
-                      <p className="underline mobileS:text-lg">{userData?.userName}</p>
+                    <div className="text-xl flex mobileS:text-sm mobileM:text-sm flex-row gap-x-2 items-center justify-between font-semibold">
+                      <p className="underline mobileS:text-lg mobileM:text-lg">{userData?.userName}</p>
 
                       <div className="flex flex-row gap-x-2 hover:text-primary-700 text-xl font-semibold cursor-pointer transition-all duration-200 items-center">
                         {userData?.follower?.includes(user?._id) ? (
-                          <span className="flex gap-x-2 items-center mobileS:text-lg">
-                            <FiCheckCircle className="mobileS:text-xl" /> Following
+                          <span className="flex gap-x-2 items-center mobileS:text-lg mobileM:text-lg">
+                            <FiCheckCircle className="mobileS:text-xl mobileM:text-xl" /> Following
                           </span>
                         ) : (
                           <span
-                            className="flex gap-x-2 items-center  mobileS:text-lg"
+                            className="flex gap-x-2 items-center mobileM:text-lg  mobileS:text-lg"
                             onClick={(e) => {
                               sendRequest(userData?._id);
                               // e.stopPropagation();
                             }}
                           >
-                            <FiUserPlus className="mobileS:text-xl"/> Follow{" "}
+                            <FiUserPlus className="mobileS:text-xl mobileM:text-xl"/> Follow{" "}
                           </span>
                         )}
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-row gap-x-2 mobileS:text-sm">
+                  <div className="flex flex-row gap-x-2 mobileS:text-sm mobileM:text-sm">
                     {/* no of posts */}
                     <p>{userData?.posts?.length} Posts</p>
                     {/* no of followers */}
@@ -92,7 +92,7 @@ const OtherUserProfile = () => {
                     {/* no of followings */}
                     <p>{userData?.following?.length} Followings</p>
                   </div>
-                  <div className="flex flex-row justify-between gap-x-2 mobileS:text-sm">
+                  <div className="flex flex-row justify-between gap-x-2 mobileS:text-sm mobileM:text-sm">
                     {/* name */}
                     <p>
                       {userData?.firstName} {userData?.lastName}
@@ -103,7 +103,7 @@ const OtherUserProfile = () => {
                     </p>
                   </div>
                   <p className="text-sm">{userData?.email}</p>{" "}
-                  <p className="mt-1 text-secondary-600 mobileS:text-sm">
+                  <p className="mt-1 text-secondary-600 mobileS:text-sm mobileM:text-sm">
                     {userData?.additionalDetails?.about}
                   </p>
                 </div>
