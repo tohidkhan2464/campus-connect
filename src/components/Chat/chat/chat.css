@@ -35,6 +35,13 @@
     border: none;
     /* font-size: smaller; */
   }
+  @media ((max-width: 1024px ) and ( min-width: 769px)) {
+    height: max-content;
+    max-width: 990px;
+    width: 100%;
+    border: none;
+    /* font-size: smaller; */
+  }
 
   .top {
     padding: 20px;
@@ -80,7 +87,7 @@
         font-size: 20px;
         color: white;
 
-        @media (min-width: 1024px) {
+        @media (min-width: 1025px) {
           display: none;
         }
       }
@@ -467,6 +474,10 @@
           bottom: 40px;
           left: -290px;
         }
+        @media ((max-width: 1024px ) and ( min-width: 769px)) {
+          bottom: 40px;
+          left: -300px;
+        }
 
         .emojiBox {
           @media (max-width: 320px) {
@@ -480,6 +491,10 @@
           }
           @media ((max-width: 425px ) and ( min-width: 376px)) {
             max-width: 410px;
+            max-height: 400px;
+          }
+          @media ((max-width: 1024px ) and ( min-width: 769px)) {
+            max-width: 400px;
             max-height: 400px;
           }
         }

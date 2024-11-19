@@ -14,7 +14,7 @@ const Bottombar = () => {
 
   return (
     <div
-      className={`bg-white max-h-[4.4rem] px-6 mobileL:px-3 tablet:px-3 rounded-t-xl tablet:rounded-t-3xl w-full fixed bottom-0 z-40 duration-500 translate-y-0 `}
+      className={`bg-white max-h-[4.4rem] px-6 mobileL:px-3 laptop:hidden tablet:px-3 rounded-t-xl tablet:rounded-t-3xl w-full fixed bottom-0 z-40 duration-500 translate-y-0 `}
     >
       <ul className="flex relative pb-1 mobileL:pb-4 tablet:pb-4">
         {NavbarLinks.map((menu, i) => {

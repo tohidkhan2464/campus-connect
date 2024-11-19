@@ -40,7 +40,7 @@ const Settings = () => {
 
   return (
     <div>
-      <div className="mt-16 mobileS:mt-5 mobileL:mt-5 tablet:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
+      <div className="mt-16 mobileS:mt-5 mobileL:mt-5 laptop:mt-5 tablet:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
         <div className="w-8/12 mobileS:w-full mobileM:w-full tablet:w-full mobileL:w-full mx-auto h-full flex items-center justify-center">
           {/* Heading */}
           <div className="h-full w-11/12 flex flex-col items-center justify-center gap-y-5">
@@ -54,14 +54,14 @@ const Settings = () => {
                   onClick={() => navigate("/my-profile")}
                   className="absolute right-7 mobileS:right-3 mobileM:right-3 text-secondary-500 text-2xl cursor-pointer hover:text-secondary-900"
                 />
-                <p className="text-center text-2xl mobileL:text-lg mobileS:text-lg mobileM:text-lg font-semibold underline text-secondary-500 mb-5 mobileM:mb-1 mobileS:mb-1">
+                <p className="text-center text-2xl mobileL:text-lg laptop:text-xl mobileS:text-lg mobileM:text-lg font-semibold underline text-secondary-500 mb-5 mobileM:mb-1 mobileS:mb-1">
                   CHANGE PASSWORD
                 </p>
                 <form
                   onSubmit={handleSubmit(submitProfileForm)}
                   className="w-full"
                 >
-                  <div className="flex flex-row mobileS:flex-col mobileL:flex-col mobileM:flex-col mobileM:text-sm gap-x-4 mobileS:text-sm">
+                  <div className="flex flex-row mobileS:flex-col laptop:flex-col mobileL:flex-col mobileM:flex-col mobileM:text-sm gap-x-4 mobileS:text-sm">
                     {/* Email */}
                     <div className="flex flex-col items-center my-2 mobileS:my-1 mobileM:my-1 group w-full">
                       <label htmlFor="currentPassword" className="label-style">
@@ -103,17 +103,17 @@ const Settings = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-row mobileS:flex-col-reverse mobileL:flex-col-reverse gap-x-4 tablet:max-w-full max-w-[70%] mobileM:w-full mobileM:flex-col-reverse mobileS:w-full w-full mx-auto ">
+                  <div className="flex flex-row mobileS:flex-col-reverse laptop:flex-col-reverse mobileL:flex-col-reverse gap-x-4 tablet:max-w-full max-w-[70%] mobileM:w-full mobileM:flex-col-reverse mobileS:w-full w-full mx-auto ">
                     <button
                       type="button"
                       onClick={() => navigate("/my-profile")}
-                      className="cancel-button-style mobileS:text-sm mobileM:text-sm mobileM:my-2 mobileL:my-2 mobileS:my-2"
+                      className="cancel-button-style mobileS:text-sm mobileM:text-sm mobileM:my-2 laptop:my-2 mobileL:my-2 mobileS:my-2"
                     >
                       CANCEL
                     </button>
                     <button
                       type="submit"
-                      className="submit-button-style mobileS:text-sm mobileS:my-2 mobileM:text-sm  mobileL:my-2 mobileM:my-2"
+                      className="submit-button-style mobileS:text-sm mobileS:my-2 mobileM:text-sm laptop:my-2 mobileL:my-2 mobileM:my-2"
                     >
                       CHANGE PASSWORD
                     </button>

@@ -33,14 +33,14 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="mt-16 mobileS:mt-3 tablet:mt-5 mobileL:mt-3 mobileM:mt-3 w-full h-full flex items-center justify-center">
+    <div className="mt-16 mobileS:mt-3 tablet:mt-5 mobileL:mt-3 laptop:mt-10 mobileM:mt-3 w-full h-full flex items-center justify-center">
       <div className="w-full h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="rounded-md border-secondary-500 flex mobileS:w-full mobileL:w-full mobileL:max-w-[400px] flex-col items-center max-w-[800px] mobileM:max-w-[350px] mobileS:max-w-[300px]
+          className="rounded-md border-secondary-500 flex mobileS:w-full laptop:my-0 mobileL:w-full mobileL:max-w-[400px] flex-col items-center max-w-[800px] mobileM:max-w-[350px] mobileS:max-w-[300px]
            justify-center border-[3px] bg-secondary-100 my-10 p-8 mobileS:p-4 mobileM:p-4 mobileM:text-sm space-y-4 mobileS:text-sm"
         >
-          <div className="flex mobileS:flex-col mobileL:w-full mobileM:flex-col mobileL:flex-col mobileM:w-full mobileS:w-full gap-x-10">
+          <div className="flex mobileS:flex-col laptop:flex-col laptop:w-full mobileL:w-full mobileM:flex-col mobileL:flex-col mobileM:w-full mobileS:w-full gap-x-10">
             {/* Post  Image */}
             <Upload
               name="postImage"

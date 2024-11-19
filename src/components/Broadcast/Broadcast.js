@@ -43,15 +43,15 @@ const Broadcast = () => {
   };
 
   return (
-    <div className="mt-16 mobileS:mt-5 mobileL:mt-5 tablet:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
+    <div className="mt-16 mobileS:mt-5 laptop:mt-5 mobileL:mt-5 tablet:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
       <div className="w-full h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="rounded-md border-secondary-700 mobileS:max-w-[300px] mobileL:max-w-[400px] mobileL:p-3 mobileL:space-y-1 mobileM:max-w-[350px] mobileM:text-sm 
-          mobileM:p-3 mobileM:space-y-1 mobileS:text-sm mobileS:p-3 flex flex-col items-center 
-          max-w-[800px] justify-center border-[1px]  bg-secondary-100 my-10 p-8 mobileS:space-y-1 space-y-4"
+          mobileM:p-3 mobileM:space-y-1 mobileS:text-sm mobileS:p-3 flex flex-col items-center laptop:mx-auto laptop:p-4 laptop:py-8
+          max-w-[800px] justify-center border-[1px]  bg-secondary-100 my-10 laptop:my-5 p-8 mobileS:space-y-1 space-y-4"
         >
-          <div className="w-full">
+          <div className="w-full laptop:w-11/12">
             <div className="w-full">
               <label
                 className="font-semibold w-fit group-focus-within:text-red group-focus-within:border-b-[2px] transition-colors duration-200 ease-linear"
@@ -82,7 +82,7 @@ const Broadcast = () => {
             </div>
           </div>
 
-          <div className="flex gap-x-10 w-full mobileS:flex-col mobileS:gap-2 mobileM:gap-2 mobileM:flex-col justify-between">
+          <div className="flex gap-x-10 w-full laptop:w-11/12 mobileS:flex-col mobileS:gap-2 mobileM:gap-2 mobileM:flex-col justify-between">
             <div className="w-full">
               <label
                 className="font-semibold w-fit group-focus-within:text-red group-focus-within:border-b-[2px] transition-colors duration-200 ease-linear"
@@ -155,7 +155,7 @@ const Broadcast = () => {
             </div>
           </div>
 
-          <div className="flex flex-row w-full gap-x-4">
+          <div className="flex flex-row w-full laptop:w-11/12 gap-x-4">
             <button
               type="submit"
               disabled={loading}

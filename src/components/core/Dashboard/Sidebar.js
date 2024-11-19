@@ -15,7 +15,7 @@ const Sidebar = () => {
   return (
     <div className="fixed top-[60px] mobileS:hidden tablet:hidden mobileM:hidden mobileL:hidden left-0 max-h-[calc(100vh-3.5rem)] h-full">
       {/* For Desktop Mode */}
-      <div className=" ml-10 flex flex-col min-w-[155px] h-[100%] w-full py-10 border-r-2 ">
+      <div className=" ml-10 laptop:ml-5 flex flex-col min-w-[155px] h-[100%] w-full py-10 border-r-2 ">
         <div className="flex flex-col gap-y-10">
           {NavbarLinks.map((link, index) => {
             let Icon = Icons[link.icon];

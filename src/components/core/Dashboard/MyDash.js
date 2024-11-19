@@ -48,7 +48,7 @@ const MyDash = () => {
   }
 
   return (
-    <div className="mt-16 mobileS:mt-3 mobileM:mt-3 mobileL:mt-3 w-full h-full flex items-center justify-center ">
+    <div className="mt-16 mobileS:mt-3 mobileM:mt-3 laptop:mt-10 mobileL:mt-3 w-full h-full flex items-center justify-center ">
       <div className="w-full h-full flex items-center justify-center ">
         <div className="">
           {postData?.length < 1 ? (
@@ -62,8 +62,8 @@ const MyDash = () => {
             </div>
           ) : (
             <div
-              className="rounded-md border-secondary-700  grid grid-cols-2 mobileS:grid-cols-1 mobileL:grid-cols-1
-             mobileM:grid-cols-1 mobileM:max-w-[350px] mobileS:max-w-[300px] mobileL:max-w-[400px] mobileS:gap-3 mobileL:gap-3 gap-8 flex-col max-w-[750px]  "
+              className="rounded-md border-secondary-700  grid grid-cols-2 mobileS:grid-cols-1 mobileL:grid-cols-1 laptop:grid-cols-1
+             mobileM:grid-cols-1 mobileM:max-w-[350px] mobileS:max-w-[300px] mobileL:max-w-[400px] mobileS:gap-3 mobileL:gap-3 gap-8 flex-col max-w-[750px]"
             >
               {postData?.map((post) => (
                 <div

@@ -39,7 +39,7 @@ export default function ChipInput({
   };
 
   return (
-    <div className="flex flex-col space-y-2 mobileL:w-full">
+    <div className="flex flex-col space-y-2 mobileL:w-full laptop:w-full">
       <label
         className="font-semibold w-fit group-focus-within:text-red group-focus-within:border-b-[2px] my-1 mobileS:mb-0 mobileL:mb-0 mobileM:mb-0 transition-colors duration-200 ease-linear"
         htmlFor={name}
@@ -47,11 +47,11 @@ export default function ChipInput({
         {label} <sup className="text-pink-200">*</sup>
       </label>
 
-      <div className="flex w-full max-w-[320px] mobileL:max-w-full mobileS:max-w-full mobileM:max-w-full flex-wrap gap-y-2">
+      <div className="flex w-full max-w-[320px] mobileL:max-w-full laptop:max-w-full mobileS:max-w-full mobileM:max-w-full flex-wrap gap-y-2">
         {chips.map((chip, index) => (
           <div
             key={index}
-            className="m-1 mobileS:py-0 mobileS:m-0 mobileM:m-0 mobileM:mx-1 mobileL:m-0 mobileL:mx-1 mobileS:mx-1 flex items-center rounded-full bg-primary-200 px-2 py-1 text-sm text-richblack-5"
+            className="m-1 mobileS:py-0 mobileS:m-0 mobileM:m-0 mobileM:mx-1 laptop:mx-1 laptop:m-0 laptop:py-0 mobileL:m-0 mobileL:mx-1 mobileS:mx-1 flex items-center rounded-full bg-primary-200 px-2 py-1 text-sm text-richblack-5"
           >
             {chip}
             <button
@@ -70,7 +70,7 @@ export default function ChipInput({
           type="text"
           placeholder={placeholder}
           onKeyDown={handleKeyDown}
-          className="outline-none border-[2px] border-slate-300 mobileL:w-full py-1 px-2 rounded-md w-[100%] outline-b"
+          className="outline-none border-[2px] border-slate-300 mobileL:w-full laptop:w-full py-1 px-2 rounded-md w-[100%] outline-b"
         />
       </div>
     </div>

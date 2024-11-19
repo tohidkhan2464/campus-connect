@@ -30,4 +30,10 @@
     width: 100%;
     margin: auto;
   }
+  @media ((max-width: 1024px ) and ( min-width: 769px)) {
+    height: auto;
+    max-width: 990px;
+    width: 100%;
+    margin: auto;
+  }
 }

@@ -52,7 +52,7 @@ export default function Upload({
   }, [selectedFile, setValue]);
 
   return (
-    <div className="flex flex-col mobileS:h-[200px] mobileL:max-h-[240px] mobileM:max-h-[220px]">
+    <div className="flex flex-col mobileS:h-[200px] mobileL:max-h-[240px] laptop:max-h-[300px] mobileM:max-h-[220px]">
       <label
         className="font-semibold mobileS:text-sm mobileM:text-sm w-fit group-focus-within:text-red group-focus-within:border-b-[2px] transition-colors duration-200 ease-linear"
         htmlFor={name}
@@ -64,7 +64,7 @@ export default function Upload({
       <div
         className={`${
           isDragActive ? "bg-richblack-600" : "bg-white"
-        } flex mobileS:flex-col mobileM:flex-col mobileL:flex-col mobileL:min-h-[190px] mobileL:p-0 mobileM:min-h-[170px] mobileM:p-0 min-h-[250px] mobileS:min-h-[150px] cursor-pointer items-center 
+        } flex mobileS:flex-col mobileM:flex-col mobileL:flex-col mobileL:min-h-[190px] laptop:min-h-[220px] laptop:p-0 mobileL:p-0 mobileM:min-h-[170px] mobileM:p-0 min-h-[250px] mobileS:min-h-[150px] cursor-pointer items-center 
          outline-none border-slate-300 p-2 mobileS:p-0 mt-2 justify-center rounded-md border-2 `}
         {...getRootProps()}
         onClick={() => inputRef.current.click()} // Ensure file explorer opens
@@ -78,12 +78,12 @@ export default function Upload({
         />
         {previewSource ? (
           // Show preview if file is selected
-          <div className="flex w-full flex-col px-6 mobileL:p-1 mobileS:p-1 mobileM:p-1 py-4">
+          <div className="flex w-full flex-col px-6 laptop:px-3 mobileL:p-1 mobileS:p-1 mobileM:p-1 py-4">
             {!video ? (
               <img
                 src={previewSource}
                 alt="Preview"
-                className="h-[165px] mobileS:h-[100px] mobileL:h-[140px] mobileM:h-[120px] w-full rounded-md object-contain"
+                className="h-[165px] mobileS:h-[100px] laptop:min-h-[170px] mobileL:h-[140px] mobileM:h-[120px] w-full rounded-md object-contain"
               />
             ) : (
               <Player aspectRatio="3:4" playsInline src={previewSource} />
@@ -113,7 +113,7 @@ export default function Upload({
               <span className="font-semibold text-primary-700">Browse</span> a
               file
             </p>
-            <ul className="mt-10 mobileS:mt-1 mobileM:mt-1 mobileL:mt-1 flex list-disc justify-between space-x-12 text-center  text-xs text-secondary-400">
+            <ul className="mt-10 mobileS:mt-1 mobileM:mt-1 mobileL:mt-1 laptop:mt-1 flex list-disc justify-between space-x-12 text-center  text-xs text-secondary-400">
               <li>Recommended Aspect ratio 3:4</li>
             </ul>
           </div>

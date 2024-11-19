@@ -23,7 +23,7 @@ const MyProfile = () => {
 
   return (
     <div>
-      <div className="mt-16 mobileL:mt-3 mobileS:mt-3 tablet:mt-3 mobileM:mt-3 w-full h-full flex items-center justify-center">
+      <div className="mt-16 mobileL:mt-3 mobileS:mt-3 laptop:mt-5 tablet:mt-3 mobileM:mt-3 w-full h-full flex items-center justify-center">
         <div className="w-8/12 mobileS:w-full mobileM:w-full tablet:w-full mobileL:w-full mx-auto h-full flex items-center justify-center">
           {/* Heading */}
           <div className="h-full w-11/12 flex flex-col items-center justify-center gap-y-5">
@@ -33,8 +33,8 @@ const MyProfile = () => {
             <div className="flex flex-col mobileS:w-full tablet:w-full mobileL:w-full mobileM:w-full justify-center items-center w-10/12 gap-y-10">
               {/* Details div */}
               <div
-                className="flex flex-row mobileS:flex-col mobileM:flex-col mobileL:flex-col gap-10 mobileM:gap-5 items-center justify-between rounded-xl border-[3px] border-secondary-600
-               mx-auto w-11/12 mobileS:w-full mobileM:w-full mobileM:px-4 mobileL:gap-5 mobileL:px-5 bg-white p-8 px-14 mobileS:px-4"
+                className="flex flex-row mobileS:flex-col laptop:flex-col mobileM:flex-col mobileL:flex-col gap-10 mobileM:gap-5 items-center justify-between rounded-xl border-[3px] border-secondary-600
+               mx-auto w-11/12 mobileS:w-full mobileM:w-full mobileM:px-4 laptop:px-0 laptop:w-full mobileL:gap-5 laptop:gap-5 mobileL:px-5 bg-white p-8 px-14 mobileS:px-4"
               >
                 {/* Profile Photo Div */}
                 <Link to={`/my-profile/${user?.userName}`}>
@@ -50,7 +50,7 @@ const MyProfile = () => {
                 </Link>
 
                 {/* Details Div */}
-                <div>
+                <div className="laptop:w-11/12 laptop:px-10">
                   <div className="">
                     <div className="text-xl mobileS:text-sm mobileM:text-sm flex flex-row gap-x-2 items-center justify-between font-semibold">
                       <p className="underline mobileS:text-lg mobileM:text-lg">{user?.userName}</p>
@@ -71,7 +71,7 @@ const MyProfile = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-row gap-x-2 mobileS:text-sm mobileM:text-sm">
+                  <div className="flex flex-row gap-x-2 laptop:whitespace-nowrap laptop:w-11/12 mobileS:text-sm mobileM:text-sm">
                     {/* no of posts */}
                     <p>{user?.posts?.length} Posts</p>
                     {/* no of followers */}

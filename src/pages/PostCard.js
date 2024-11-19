@@ -96,7 +96,7 @@ const PostCard = () => {
   if (IsLoading) return <div className="loader">Loading...</div>;
 
   return (
-    <div className="absolute h-screen w-screen mt-0 mobileS:-top-[4.5rem] tablet:left-0 mobileL:left-0 mobileM:left-0 mobileM:-top-[5.5rem] mobileS:left-0 -top-[5.8rem] -left-16 z-[1000]">
+    <div className="absolute h-screen w-screen mt-0 mobileS:-top-[4.5rem] laptop:-left-10 tablet:left-0 mobileL:left-0 mobileM:left-0 mobileM:-top-[5.5rem] mobileS:left-0 -top-[5.8rem] -left-16 z-[1000]">
       <div className="mt-16 mobileS:mt-10  mobileL:mt-10mobileM:mt-10  w-full h-full flex items-center justify-center bg-white bg-opacity-10 backdrop-blur-sm">
         <div className="w-10/12 mobileS:w-full mobileL:w-full mobileM:w-full tablet:w-full h-full flex items-center justify-center">
           <div
