@@ -40,8 +40,8 @@ const Settings = () => {
 
   return (
     <div>
-      <div className="mt-16 mobileS:mt-5 mobileL:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
-        <div className="w-8/12 mobileS:w-full mobileM:w-full mobileL:w-full mx-auto h-full flex items-center justify-center">
+      <div className="mt-16 mobileS:mt-5 mobileL:mt-5 tablet:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
+        <div className="w-8/12 mobileS:w-full mobileM:w-full tablet:w-full mobileL:w-full mx-auto h-full flex items-center justify-center">
           {/* Heading */}
           <div className="h-full w-11/12 flex flex-col items-center justify-center gap-y-5">
             <p className="text-center text-2xl mobileS:text-xl mobileL:text-2xl mobileM:text-xl font-semibold">
@@ -103,7 +103,7 @@ const Settings = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-row mobileS:flex-col-reverse mobileL:flex-col-reverse gap-x-4 max-w-[70%] mobileM:w-full mobileM:flex-col-reverse mobileS:w-full w-full mx-auto ">
+                  <div className="flex flex-row mobileS:flex-col-reverse mobileL:flex-col-reverse gap-x-4 tablet:max-w-full max-w-[70%] mobileM:w-full mobileM:flex-col-reverse mobileS:w-full w-full mx-auto ">
                     <button
                       type="button"
                       onClick={() => navigate("/my-profile")}

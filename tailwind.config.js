@@ -42,9 +42,12 @@ module.exports = {
       screens: {
         mobileS: { max: "320px" },
         mobileM: { min: "320px", max: "375px" },
+        mobileX: { min: "340px", max: "400px" },
         mobileL: { min: "375px", max: "425px" },
         tablet: { min: "425px", max: "768px" },
-        laptop: { min: "768px", max: "1024px" },
+        tabletX: { min: "570px", max: "890px" },
+        laptop: { min: "767px", max: "1024px" },
+        laptopX: { min: "890px", max: "1230px" },
         laptopL: { min: "1024px", max: "1440px" },
         display4K: { min: "1440px" },
       },

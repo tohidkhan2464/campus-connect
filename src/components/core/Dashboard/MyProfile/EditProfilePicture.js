@@ -58,7 +58,7 @@ const EditProfilePicture = () => {
 
   return (
     <div>
-      <div className="w-9/12 mobileS:w-full mobileL:w-full mobileM:w-full mx-auto ">
+      <div className="w-9/12 mobileS:w-full mobileL:w-full tablet:w-full mobileM:w-full mx-auto ">
         <div className="relative flex flex-col justify-between mt-4  bg-white p-6 mobileS:p-3 mobileM:p-3 rounded-lg border-[3px] border-secondary-600 z-0">
           <RxCross2
             onClick={() => navigate("/my-profile")}

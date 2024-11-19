@@ -27,8 +27,6 @@ if (mainJsFile && mainMapFile) {
   fs.writeFileSync(newJsFilePath, jsContent);
   fs.writeFileSync(newMapFilePath, mapContent);
 
-  console.log(`Duplicated ${mainJsFile} to ${newJsFileName}`);
-  console.log(`Duplicated ${mainMapFile} to ${newMapFileName}`);
 } else {
   console.error("Main JS file or map file not found.");
 }

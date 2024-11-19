@@ -18,14 +18,12 @@ export const getActivity = async (token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    // console.log("GET_ACTIVITY API response............", response);
 
     if (!response?.data?.success) {
       throw new Error("Could Not Fetch Activity");
     }
     result = response?.data?.data;
   } catch (error) {
-    // console.log("GET_ACTIVITY API ERROR............", error);
     toast.error(error.message);
   }
   toast.dismiss(toastId);
@@ -42,12 +40,10 @@ export const handleActivitySeen = async (activityId, token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    // console.log("SET_ACTIVITY_SEEN API RESPONSE............", response);
     if (!response?.data?.success) {
       throw new Error("Could Not Handle activity");
     }
   } catch (error) {
-    // console.log("SET_ACTIVITY_SEEN ERROR............", error);
     toast.error(error.message);
   }
   // toast.dismiss(toastId);

@@ -18,12 +18,6 @@ exports.broadcast = async (req, res) => {
     const { messageTitle, message, broadcastBy, broadcastTo } = req.body;
     const senderId = req.user.id;
 
-    console.log("broadcastBy", broadcastBy);
-    console.log("broadcastTo", broadcastTo);
-    console.log("messageTitle", messageTitle);
-    console.log("message", message);
-    console.log("senderId", senderId);
-
     if (
       !message ||
       !broadcastTo ||
@@ -53,7 +47,6 @@ exports.broadcast = async (req, res) => {
     });
     if (broadcastBy === "College") {
       const userList = await Profile.find({ college: broadcastTo });
-      console.log("userList College", userList);
       const profileIds = userList.map((user) => user._id);
       // let users = [];
       if (broadcastTo === "students") {
@@ -83,7 +76,6 @@ exports.broadcast = async (req, res) => {
       }
     } else if (broadcastBy === "Year") {
       const userList = await Profile.find({ year: broadcastTo });
-      console.log("userList Year", userList);
       const profileIds = userList.map((user) => user._id);
       const userslist = await User.aggregate([
         { $match: { accountType: "Student" } },
@@ -98,7 +90,6 @@ exports.broadcast = async (req, res) => {
       });
     } else if (broadcastBy === "Branch") {
       const userList = await Profile.find({ branchName: broadcastTo });
-      console.log("userList Branch", userList);
       const profileIds = userList.map((user) => user._id);
       const userslist = await User.aggregate([
         { $match: { accountType: "Student" } },
@@ -137,7 +128,6 @@ exports.broadcast = async (req, res) => {
     }
 
     const userIds = users.map((user) => user._id);
-    console.log("userIds", userIds);
     return res.status(200).json({
       success: true,
       message: "Message broadcasted successfully",
@@ -151,9 +141,9 @@ exports.broadcast = async (req, res) => {
       },
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
       success: false,
+      error,
       message: error.message + "error while sending the broadcast message.",
     });
   }
@@ -161,8 +151,6 @@ exports.broadcast = async (req, res) => {
 
 exports.sendNotification = async (req, res) => {
   const { messageBody, accessToken } = req.body;
-  // console.log("messageBody", messageBody);
-  // console.log("accessToken", accessToken);
   const response = await apiConnector({
     method: "POST",
     url: `https://fcm.googleapis.com/fcm/notification`,
@@ -174,7 +162,6 @@ exports.sendNotification = async (req, res) => {
       project_id: "531721096206",
     },
   });
-  // console.log("RESPONSE SEND_Notification", response);
   return res.status(200).json({
     success: true,
     message: "Notification Sent",

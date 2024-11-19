@@ -34,11 +34,9 @@ export function sendOtp(email, navigate) {
         throw new Error(response.data.message);
       }
 
-      // console.log("Send OTP Response", response);
       toast.success("OTP Sent Successfully");
       navigate("/verify-email");
     } catch (error) {
-      console.log("Send OTP Error", error);
       toast.error(
         error?.response?.data?.message || "Check Your mail and try again."
       );
@@ -49,7 +47,6 @@ export function sendOtp(email, navigate) {
 }
 
 export function login(data, navigate) {
-  // console.log("email", data.email, "pass", data.password);
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
@@ -62,7 +59,6 @@ export function login(data, navigate) {
           password: data.password,
         },
       });
-      // console.log("LOGIN API RESPONSE", response);
       if (!response.data.success) {
         throw new Error(response.data.message);
       } else {
@@ -72,7 +68,6 @@ export function login(data, navigate) {
           data.password
         );
 
-        // console.log("LOGIN API RESPONSE", response);
         toast.success("Login Successful");
         dispatch(setToken(response.data.token));
         dispatch(setAccessToken(response.data.accessToken));
@@ -88,7 +83,6 @@ export function login(data, navigate) {
       }
     } catch (error) {
       toast.error(error?.response?.data?.message || "Failed");
-      console.log("ERROR", error);
     }
     dispatch(setLoading(false));
     toast.dismiss(toastId);
@@ -129,9 +123,7 @@ export function signUp(
       if (!response.data.success) {
         throw new Error(response.data.message);
       } else {
-        console.log("Response", response);
         const res = await createUserWithEmailAndPassword(auth, email, password);
-        console.log("result type", typeof res.user.uid);
 
         await setDoc(doc(db, "users", response.data.user._id), {
           username: userName,
@@ -151,7 +143,6 @@ export function signUp(
         navigate("/login");
       }
     } catch (error) {
-      console.log("Error in sign up", error);
       toast.error(error?.response?.data?.message || "Failed");
       navigate("/signup");
     }

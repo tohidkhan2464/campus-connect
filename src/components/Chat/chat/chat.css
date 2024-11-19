@@ -28,6 +28,13 @@
     border: none;
     font-size: smaller;
   }
+  @media ((max-width: 768px ) and ( min-width: 425px)) {
+    height: max-content;
+    max-width: 750px;
+    width: 100%;
+    border: none;
+    /* font-size: smaller; */
+  }
 
   .top {
     padding: 20px;

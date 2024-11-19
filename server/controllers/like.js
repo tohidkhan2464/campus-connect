@@ -11,9 +11,7 @@ exports.likePost = async (req, res) => {
   try {
     const { postId } = req.body;
     const userId = req.user.id;
-    // console.log("POST ID", postId);
     const postDetails = await Post.findById(postId);
-    // console.log("POST DETAILS", postDetails);
     let updatedPost;
 
     if (postDetails.likes.includes(userId)) {
@@ -53,9 +51,9 @@ exports.likePost = async (req, res) => {
       data: updatedPost,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
+      err,
       message: err.message + "error while Liking",
     });
   }
@@ -67,8 +65,6 @@ exports.createComment = async (req, res) => {
     const { postId, body } = req.body;
 
     const userId = req.user.id;
-    // console.log("REQ->", req.body);
-    // console.log("postId", postId, "comment - ", body);
     // create a comment object
     if (!postId || !body) {
       return res.status(500).json({
@@ -114,9 +110,9 @@ exports.createComment = async (req, res) => {
       data: updatedPost,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
+      err,
       message: err.message + "error while commenting",
     });
   }
@@ -156,7 +152,6 @@ exports.savePost = async (req, res) => {
           if (err) {
             console.error(err);
           } else {
-            console.log("Image downloaded successfully");
             return res.json({
               success: true,
               message: "Image Dowunloaded successfully",
@@ -168,9 +163,9 @@ exports.savePost = async (req, res) => {
         console.error(error);
       });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
+      err,
       message: err.message + "error while saving the post",
     });
   }
@@ -194,7 +189,6 @@ exports.saveImage = async (req, res) => {
           if (err) {
             console.error(err);
           } else {
-            console.log("Image downloaded successfully");
             return res.json({
               success: true,
               message: "Image Dowunloaded successfully",
@@ -206,9 +200,8 @@ exports.saveImage = async (req, res) => {
         console.error(error);
       });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
-      success: false,
+      success: false,err,
       message: err.message + "error while saving the post",
     });
   }
@@ -243,9 +236,8 @@ exports.getComments = async (req, res) => {
       data: comments,
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
-      success: false,
+      success: false,error,
       message: error.message + "error while getting the comments of post",
     });
   }

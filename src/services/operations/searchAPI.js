@@ -11,7 +11,6 @@ const {
 
 export async function searchPost(token, data) {
   const toastId = toast.loading("loading...");
-  console.log("searchPost API", data);
   let result = [];
   try {
     const response = await apiConnector({
@@ -23,7 +22,6 @@ export async function searchPost(token, data) {
       },
     });
 
-    // console.log("POST_SEARCH_API RESPONSE", response);
 
     if (!response.data.success) {
       throw new Error(response.data.message);
@@ -31,7 +29,6 @@ export async function searchPost(token, data) {
 
     result = response?.data?.data;
   } catch (error) {
-    console.log("POST_SEARCH_API ERROR", error);
     toast.error(error.response.data.message);
   }
   toast.dismiss(toastId);
@@ -51,7 +48,6 @@ export async function postByCollege(token) {
       },
     });
 
-    // console.log("SEARCH_BY_COLLEGE_API RESPONSE", response);
 
     if (!response?.data?.success) {
       throw new Error(response?.data?.message);
@@ -59,7 +55,6 @@ export async function postByCollege(token) {
 
     result = response?.data?.data;
   } catch (error) {
-    console.log("SEARCH_BY_COLLEGE_API ERROR", error);
     toast.error(error.response.data.message);
   }
   toast.dismiss(toastId);
@@ -68,7 +63,6 @@ export async function postByCollege(token) {
 
 export async function searchUser(token, data) {
   const toastId = toast.loading("loading...");
-  console.log("searchUser API", data);
   let result = [];
   try {
     const response = await apiConnector({
@@ -80,7 +74,6 @@ export async function searchUser(token, data) {
       },
     });
 
-    // console.log("USER_SEARCH_API RESPONSE", response);
 
     if (!response.data.success) {
       throw new Error(response.data.message);
@@ -88,7 +81,6 @@ export async function searchUser(token, data) {
 
     result = response?.data?.data;
   } catch (error) {
-    console.log("USER_SEARCH_API ERROR", error);
     toast.error(error.response.data.message);
   }
   toast.dismiss(toastId);
@@ -108,15 +100,12 @@ export async function randomSearch(token) {
       },
     });
 
-    // console.log("RANDOM_SEARCH_API RESPONSE", response);
-
     if (!response.data.success) {
       throw new Error(response.data.message);
     }
 
     result = response?.data?.data;
   } catch (error) {
-    console.log("RANDOM_SEARCH_API ERROR", error);
     toast.error(error.response.data.message);
   }
   toast.dismiss(toastId);

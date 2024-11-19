@@ -23,6 +23,11 @@
     height: auto;
     width: 100%;
   }
+  @media ((max-width: 768px ) and ( min-width: 425px)) {
+    max-width: 750px;
+    height: auto;
+    width: 100%;
+  }
   .user {
     display: flex;
     align-items: center;

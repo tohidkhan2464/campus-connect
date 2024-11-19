@@ -21,13 +21,11 @@ const Post = () => {
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
   const location = useLocation();
-  // console.log("location", window.location.href);
   const [likedPost, setLikedPost] = useState([]);
 
   useEffect(() => {
     const getPostData = async () => {
       const result = await getUserPost(token);
-      console.log("result", result);
       setPostData(result);
     };
     getPostData();

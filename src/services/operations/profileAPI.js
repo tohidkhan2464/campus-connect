@@ -40,7 +40,6 @@ export async function getUserDetails(token) {
 
 export const getUserProfile = async (token, userName) => {
   const toastId = toast.loading("Loading...");
-  // console.log("userName IN", userName);
   let result = [];
   try {
     const response = await apiConnector({
@@ -50,14 +49,12 @@ export const getUserProfile = async (token, userName) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    // console.log("GET_USER_PROFILE_API API response............", response);
 
     if (!response?.data?.success) {
       throw new Error("Could Not Fetch User Profile");
     }
     result = response?.data?.data;
   } catch (error) {
-    // console.log("GET_USER_PROFILE_API API ERROR............", error);
     toast.error(error.message);
   }
   toast.dismiss(toastId);
@@ -74,7 +71,6 @@ export async function getAllUsers() {
       bodyData: null,
     });
 
-    // console.log("RESPONSE GET_ALL_USERS_API", response)
 
     if (!response.data.success) {
       throw new Error(response.data.message);
@@ -82,7 +78,6 @@ export async function getAllUsers() {
 
     result = response?.data?.data;
   } catch (error) {
-    console.log("GET_ALL_USERS_API error", error);
     // toast.error("Could not get Users Details.");
   }
   toast.dismiss(toastId);
@@ -91,8 +86,6 @@ export async function getAllUsers() {
 
 export async function sendFollowRequest(receivingUserId, token) {
   const toastId = toast.loading("loading...");
-  console.log("RECEIVER", receivingUserId);
-  console.log("token", token);
   let result = [];
   try {
     const response = await apiConnector({
@@ -104,7 +97,6 @@ export async function sendFollowRequest(receivingUserId, token) {
       },
     });
 
-    // console.log("RESPONSE SEND_FOLLOW_REQUEST_API", response);
 
     if (!response.data.success) {
       throw new Error(response.data.message);
@@ -132,7 +124,6 @@ export async function sendBroadcast(data, token, accessToken) {
       },
     });
 
-    // console.log("RESPONSE SEND_BROADCASTS_API", response);
 
     if (!response.data.success) {
       throw new Error(response.data.message);
@@ -143,7 +134,6 @@ export async function sendBroadcast(data, token, accessToken) {
       const querySnapShot = await getDocs(q);
       if (querySnapShot.empty) {
         toast.error("No matching users.");
-        console.log("No matching documents");
       } else {
         querySnapShot.forEach((doc) => {
           tokens = tokens.concat(doc.data().notificationToken);
@@ -162,7 +152,6 @@ export async function sendBroadcast(data, token, accessToken) {
     }
   } catch (error) {
     toast.error("Could not SEND_BROADCASTS_API.");
-    console.log("SEND_BROADCASTS_API error", error);
   }
   toast.dismiss(toastId);
   return result;
@@ -193,7 +182,6 @@ async function sendNotification(
         },
       },
     });
-    console.log("SEND_NOTIFICATION_API response", response);
     if (!response.data.success) {
       throw new Error(response.data.message);
     } else {
@@ -203,7 +191,6 @@ async function sendNotification(
         notificationDetails,
         token
       );
-      console.log("notificationResponse", notificationResponse);
       if (notificationResponse.success) {
         result = { success: true, message: "Message broadcasted successfully" };
       }
@@ -221,7 +208,6 @@ export async function sendBroadcastNotification(
   token
 ) {
   const toastId = toast.loading("loading...");
-  console.log(accessToken);
   let result = null;
   try {
     const response = await apiConnector({
@@ -241,7 +227,6 @@ export async function sendBroadcastNotification(
         Authorization: `Bearer ${accessToken}`,
       },
     });
-    console.log("RESPONSE Notification", response);
     if (!response.data.name.includes("projects")) {
       throw new Error(response.data.message);
     }
@@ -249,7 +234,6 @@ export async function sendBroadcastNotification(
     toast.success(response.data.message);
   } catch (error) {
     toast.error("Could not send Notification.");
-    console.log("Notification error", error);
   }
   toast.dismiss(toastId);
   return result;

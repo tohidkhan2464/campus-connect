@@ -39,14 +39,12 @@ exports.sendOTP = async (req, res) => {
 
     const otpPayload = { email, otp };
     const otpBody = await OTP.create(otpPayload);
-    console.log("otpbody -> ", otpBody);
     res.status(200).json({
       success: true,
       message: "OTP sent Successfully",
       otp: otpPayload.otp,
     });
   } catch (err) {
-    console.log("error -> ", err);
     res.status(500).json({
       success: false,
       message: err.message,
@@ -91,7 +89,6 @@ exports.signUp = async (req, res) => {
     }
 
     const existingUser = await User.findOne({ email });
-    console.log("existingUser", existingUser);
     if (existingUser) {
       return res.status(400).json({
         success: false,
@@ -100,7 +97,6 @@ exports.signUp = async (req, res) => {
     }
 
     const existingUserName = await User.findOne({ userName: userName });
-    console.log("existingUserName", existingUserName);
     if (existingUserName) {
       return res.status(400).json({
         success: false,
@@ -125,7 +121,6 @@ exports.signUp = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    console.log("hashedPassword", hashedPassword);
     const profileDetails = await Profile.create({
       about: "Write Something about yourself.",
       contactNumber: 1234567890,
@@ -148,7 +143,6 @@ exports.signUp = async (req, res) => {
       profileDetails,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       status: false,
       message: "User can't be registered. Please try again.",
@@ -207,10 +201,10 @@ exports.login = async (req, res) => {
       });
     }
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: "Login Failure, try again.",
+      err,
     });
   }
 };
@@ -258,9 +252,9 @@ exports.changePassword = async (req, res) => {
       message: "Current password is wrong.",
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
+      err,
       message: "Can't change Password, try again.",
     });
   }

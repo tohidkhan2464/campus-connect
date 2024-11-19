@@ -44,14 +44,14 @@ const Search = () => {
 
   return (
     <div>
-      <div className="mt-16 mobileS:mt-4 mobileL:mt-5 mobileM:mt-4 w-full h-full flex items-center justify-center">
-        <div className="w-9/12 mobileS:w-full mobileL:w-full mobileM:w-full mx-auto h-full flex flex-col items-center justify-center">
-          <h2 className="text-center text-4xl mobileL:text-xl mobileS:text-xl mobileM:text-xl underline font-semibold">
+      <div className="mt-16 mobileS:mt-4 mobileL:mt-5 tablet:mt-5 mobileM:mt-4 w-full h-full flex items-center justify-center">
+        <div className="w-9/12 mobileS:w-full mobileL:w-full tablet:w-full mobileM:w-full mx-auto h-full flex flex-col items-center justify-center">
+          <h2 className="text-center text-4xl tablet:text-2xl mobileL:text-xl mobileS:text-xl mobileM:text-xl underline font-semibold">
             Search for ...{" "}
           </h2>
-          <div className="w-9/12 mobileS:w-full mobileL:w-full mobileM:w-full mx-auto">
+          <div className="w-9/12 mobileS:w-full mobileL:w-full tablet:w-full mobileM:w-full mx-auto">
             <div className="flex flex-row justify-between gap-5 mobileL:gap-2 mobileL:mt-2 mobileL:p-1 mobileS:gap-2 mobileM:gap-2 mobileM:mt-2 mobileM:p-1 mobileM:mx-2 mobileS:mt-2 mobileS:p-1
-             mt-10 mobileS:mx-2 mobileL:mx-2 mx-40 bg-white p-5 py-1 rounded-lg border-[3px] border-secondary-500 z-0 ">
+             mt-10 tablet:mt-5 mobileS:mx-2 mobileL:mx-2 tablet:mx-20 mx-40 bg-white p-5 py-1 rounded-lg border-[3px] border-secondary-500 z-0 ">
               <button
                 className="submit-button-style mobileS:text-sm mobileM:text-sm mobileM:py-1 mobileM:my-1 max-w-40 mobileS:my-1 mobileS:py-1 mobileL:my-1 mobileL:py-1"
                 onClick={() => setSearch("posts")}
@@ -99,7 +99,7 @@ const Search = () => {
 
           {search === "posts" && (
             <form
-              className="w-9/12 mx-auto mobileS:w-11/12 mobileM:w-11/12 mobileL:w-11/12"
+              className="w-9/12 mx-auto mobileS:w-11/12 mobileM:w-11/12 mobileL:w-11/12 tablet:w-11/12"
               onSubmit={handleSubmit(submitSearch)}
             >
               <div className="flex flex-col justify-between mt-16 mobileS:mt-5 mobileL:mt-5 mobileL:py-4 mobileL:p-2 mobileM:mt-5 mobileM:p-2 mobileM:py-4 bg-white p-5 
@@ -169,7 +169,7 @@ const Search = () => {
 
           {search === "users" && (
             <form
-              className="w-9/12 mx-auto mobileS:w-11/12 mobileM:w-11/12 mobileL:w-11/12"
+              className="w-9/12 mx-auto mobileS:w-11/12 mobileM:w-11/12 mobileL:w-11/12  tablet:w-11/12"
               onSubmit={handleSubmit(submitSearch)}
             >
               <div className="flex flex-col justify-between mt-16 mobileM:mt-5 mobileL:mt-5 mobileL:p-2 mobileL:py-4 mobileM:text-sm mobileM:p-2 mobileM:py-4  mobileS:mt-5 bg-white p-5 

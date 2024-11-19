@@ -26,16 +26,13 @@ async function sendVerificationEmail(email, otp) {
       "Verification email from Campus Connect",
       emailVerification(otp)
     );
-    console.log("Email sent successfully", otp);
   } catch (err) {
-    console.log("Error occured while sending Mail -> ", err);
     throw err;
   }
 }
 
 OTPschema.pre("save", async function (next) {
   await sendVerificationEmail(this.email, this.otp);
-  console.log("OTP", this.otp);
   next();
 });
 

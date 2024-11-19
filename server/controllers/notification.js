@@ -23,9 +23,9 @@ exports.getActivity = async (req, res) => {
       data: activities,
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
       success: false,
+      error,
       message: error.message + "error while getting the comments of post",
     });
   }
@@ -45,9 +45,9 @@ exports.setActivitySeen = async (req, res) => {
       data: activity,
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
       success: false,
+      error,
       message: error.message + "error while updating activity",
     });
   }

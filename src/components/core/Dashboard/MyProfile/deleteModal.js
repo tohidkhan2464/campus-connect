@@ -25,7 +25,7 @@ const DeleteModal = ({ token, user, deleteModal, setDeleteModal }) => {
   };
 
   return (
-    <div className="absolute h-screen w-screen mt-0 -top-[5.8rem] mobileS:top-0 mobileL:left-0 mobileS:left-0 mobileM:top-0 mobileM:left-0 -left-16 z-[1000]">
+    <div className="absolute h-screen w-screen mt-0 -top-[5.8rem] mobileS:top-0 tablet:left-0 mobileL:left-0 mobileS:left-0 mobileM:top-0 mobileM:left-0 -left-16 z-[1000]">
       <div className="mt-16 mobileS:-mt-2 mobileM:-mt-2 w-full h-full flex items-center justify-center bg-primary-200 bg-opacity-40 backdrop-blur-md">
         <div className="w-full h-full flex items-center justify-center">
           <div className="relative w-11/12 flex flex-col items-center  justify-center bg-white py-10 mobileS:p-4 mobileM:p-4

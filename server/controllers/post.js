@@ -23,8 +23,7 @@ exports.getPostPic = async (req, res) => {
       data: posts,
     });
   } catch (err) {
-    console.log(err);
-    return res.status(500).json({
+     return res.status(500).json({
       success: false,
       message: err.message + "error while fetching post pic",
     });
@@ -52,7 +51,6 @@ exports.getUserPosts = async (req, res) => {
       data: posts,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: err.message + "error while fetching post pic",
@@ -62,7 +60,6 @@ exports.getUserPosts = async (req, res) => {
 
 async function uploadFileToCloud(file, folder, quality) {
   const options = { folder };
-  console.log("tempFilePath", file.tempFilePath);
   if (quality) {
     options.quality = quality;
   }
@@ -111,7 +108,6 @@ exports.sendPostPic = async (req, res) => {
       data: { postData, userDetails },
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: err.message + "error while posting pic",
@@ -138,7 +134,6 @@ exports.getPostDetails = async (req, res) => {
             commentsDetails.push(commentDetails);
           }
         } catch (error) {
-          console.log(error);
           return res
             .status(500)
             .json({ success: false, message: error.message });
@@ -158,7 +153,6 @@ exports.getPostDetails = async (req, res) => {
       data: { postDetails, commentsDetails },
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: err.message + "error while fetching post pic",

@@ -38,7 +38,7 @@ const FollowBar = () => {
   }, [requestSent, user, token]);
 
   return (
-    <div className="fixed top-[60px] mobileS:hidden mobileM:hidden mobileL:hidden right-0 max-h-[calc(100vh-3.5rem)] h-full">
+    <div className="fixed top-[60px] mobileS:hidden tablet:hidden mobileM:hidden mobileL:hidden right-0 max-h-[calc(100vh-3.5rem)] h-full">
       {/* For Desktop Mode */}
       <div className=" mx-auto flex flex-col items-center min-w-[250px] h-[100%] w-full py-10 mobileS:border-none border-l-2 ">
         <div className="flex flex-col mx-auto gap-y-2 justify-end ">

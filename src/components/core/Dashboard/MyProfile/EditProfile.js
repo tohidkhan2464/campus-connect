@@ -36,10 +36,10 @@ const EditProfile = () => {
 
   return (
     <div>
-      <div className="mt-16 mobileS:mt-5 mobileL:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
-        <div className="w-8/12 mobileS:w-11/12 mobileL:w-11/12 mobileM:w-11/12 mx-auto h-full flex items-center justify-center">
+      <div className="mt-16 mobileS:mt-5 mobileL:mt-5 tablet:mt-10 mobileM:mt-5 w-full h-full flex items-center justify-center">
+        <div className="w-8/12 mobileS:w-11/12 mobileL:w-11/12 tablet:w-11/12 mobileM:w-11/12 mx-auto h-full flex items-center justify-center">
           <div className="h-full w-full">
-            <h1 className="text-center text-4xl mobileL:text-xl mobileS:text-xl mobileM:text-xl underline font-semibold">
+            <h1 className="text-center text-4xl mobileL:text-xl tablet:text-2xl mobileS:text-xl mobileM:text-xl underline font-semibold">
               Edit Profile
             </h1>
             <div>
@@ -48,11 +48,11 @@ const EditProfile = () => {
 
             <form
               onSubmit={handleSubmit(submitProfileForm)}
-              className="w-9/12 mx-auto mobileS:w-full mobileL:w-full mobileM:w-full"
+              className="w-9/12 mx-auto mobileS:w-full mobileL:w-full tablet:w-full mobileM:w-full"
             >
-              <div className="flex flex-col justify-between mt-16 mobileS:mt-5 mobileM:mt-5 mobileM:p-3  bg-white p-6 mobileS:p-3 rounded-lg border-[3px] border-secondary-600 z-0">
+              <div className="flex flex-col justify-between mt-16 mobileS:mt-5 tablet:mt-5 tablet:mb-10 mobileM:mt-5 mobileM:p-3 tablet:p-3 tablet:px-6  bg-white p-6 mobileS:p-3 rounded-lg border-[3px] border-secondary-600 z-0">
                 <div className="flex flex-row w-full items-center justify-center">
-                  <p className="text-4xl underline mobileS:text-xl mobileL:text-xl mobileM:text-xl font-semibold">
+                  <p className="text-4xl underline mobileS:text-xl mobileL:text-xl tablet:text-2xl mobileM:text-xl font-semibold">
                     Public Information
                   </p>
                 </div>
@@ -237,8 +237,8 @@ const EditProfile = () => {
                   </div>
                 </div>
 
-                <div className="flex w-full mt-10 mobileS:mt-5 mobileM:mt-5 mobileL:mt-5 items-center justify-center">
-                  <p className="text-4xl mobileS:text-xl mobileL:text-xl mobileM:text-xl underline font-semibold">
+                <div className="flex w-full mt-10  mobileS:mt-5 mobileM:mt-5 mobileL:mt-5 items-center justify-center">
+                  <p className="text-4xl mobileS:text-xl tablet:text-2xl mobileL:text-xl mobileM:text-xl underline font-semibold">
                     College Information
                   </p>
                 </div>
@@ -380,8 +380,8 @@ const EditProfile = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-row mobileS:flex-col-reverse  mobileL:flex-col-reverse mobileM:flex-col-reverse gap-x-4 ml-[53%] mobileS:ml-0 mobileL:ml-0 mobileM:ml-0 
-                mobileM:max-w-[100%] mobileS:max-w-[100%] mobileL:max-w-[100%]  max-w-[49%] my-10 mobileS:my-5 mobileL:my-5 mobileM:my-5 justify-end items-center">
+                <div className="flex flex-row mobileS:flex-col-reverse mobileL:flex-col-reverse mobileM:flex-col-reverse gap-x-4 ml-[53%] mobileS:ml-0 mobileL:ml-0 mobileM:ml-0 
+                mobileM:max-w-[100%] mobileS:max-w-[100%] mobileL:max-w-[100%] tablet:max-w-[100%] tablet:ml-0 max-w-[49%] my-10 tablet:my-5 mobileS:my-5 mobileL:my-5 mobileM:my-5 justify-end items-center">
                   <button
                     type="button"
                     onClick={() => navigate("/my-profile")}

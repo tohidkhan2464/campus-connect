@@ -35,18 +35,18 @@ const OtherUserProfile = () => {
 
   return (
     <div>
-      <div className="mt-16 mobileS:mt-5 mobileL:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
-        <div className="w-8/12 mobileS:w-full mobileM:w-full mobileL:w-full mx-auto h-full flex items-center justify-center">
+      <div className="mt-16 mobileS:mt-5 mobileL:mt-5 tablet:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
+        <div className="w-8/12 mobileS:w-full mobileM:w-full tablet:w-full mobileL:w-full mx-auto h-full flex items-center justify-center">
           {/* Heading */}
-          <div className="h-full w-11/12 mobileS:w-full mobileL:w-full mobileM:w-full flex flex-col items-center justify-center gap-y-5">
-            <p className="text-center mobileS:text-xl mobileM:text-xl mobileL:text-2xl text-4xl underline font-semibold">
+          <div className="h-full w-11/12 mobileS:w-full mobileL:w-full tablet:w-full mobileM:w-full flex flex-col items-center justify-center gap-y-5">
+            <p className="text-center mobileS:text-xl mobileM:text-xl tablet:text-2xl mobileL:text-2xl text-4xl underline font-semibold">
               User Profile
             </p>
-            <div className="flex flex-col justify-center mobileL:w-full items-center mobileS:w-full w-10/12 mobileM:w-full gap-y-10">
+            <div className="flex flex-col justify-center mobileL:w-full tablet:w-full items-center mobileS:w-full w-10/12 mobileM:w-full gap-y-10">
               {/* Details div */}
               <div
                 className="flex flex-row gap-x-10 mobileL:gap-5 mobileS:gap-5 mobileM:gap-5 items-center justify-between rounded-xl border-[3px] border-secondary-600 mx-auto w-11/12 mobileS:w-11/12 mobileM:w-11/12
-                 mobileL:w-11/12 mobileL:flex-col mobileM:flex-col mobileM:px-4 mobileS:flex-col bg-white p-8 px-14 mobileL:px-4 mobileS:px-4"
+                 mobileL:w-11/12 mobileL:flex-col mobileM:flex-col mobileM:px-4  mobileS:flex-col bg-white p-8 px-14 mobileL:px-4 mobileS:px-4"
               >
                 {/* Profile Photo Div */}
                 <div

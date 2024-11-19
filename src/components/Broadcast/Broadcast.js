@@ -9,14 +9,12 @@ const years = [1, 2, 3, 4];
 const Broadcast = () => {
   const { register, handleSubmit } = useForm();
   const { token, accessToken } = useSelector((state) => state.auth);
-  // console.log(accessToken);
   const [loading, setLoading] = useState(false);
   const [broadcastBy, setBroadcastBy] = useState("College");
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     setLoading(true);
-    console.log("data", data);
     try {
       const formData = new FormData();
       if (broadcastBy === "College") {
@@ -35,19 +33,17 @@ const Broadcast = () => {
       formData.append("broadcastBy", data.broadcastBy);
 
       const response = await sendBroadcast(formData, token, accessToken);
-      console.log("response in broadcast", response);
       setLoading(false);
       if (response.success) {
         navigate("/my-profile");
       }
     } catch (error) {
-      console.log("error", error);
       setLoading(false);
     }
   };
 
   return (
-    <div className="mt-16 mobileS:mt-5 mobileL:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
+    <div className="mt-16 mobileS:mt-5 mobileL:mt-5 tablet:mt-5 mobileM:mt-5 w-full h-full flex items-center justify-center">
       <div className="w-full h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}

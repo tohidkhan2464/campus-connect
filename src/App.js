@@ -31,7 +31,6 @@ function App() {
   const { user } = useSelector((state) => state.profile);
   const { loading } = useSelector((state) => state.auth);
 
-  // console.log("user", user);
   const { fetchUserInfo } = useUserStore();
 
   useEffect(() => {

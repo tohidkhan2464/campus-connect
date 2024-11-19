@@ -9,7 +9,6 @@ exports.cloudinaryConnect = () => {
     });
     console.log("Connection successfull with cloudiary.");
   } catch (err) {
-    console.log(err);
-    console.log("Could not connect to cloudinary.");
+   console.error(err);
   }
 };

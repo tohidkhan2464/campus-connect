@@ -14,9 +14,9 @@ const Bottombar = () => {
 
   return (
     <div
-      className={`bg-white max-h-[4.4rem] laptop:hidden px-6 rounded-t-xl w-full fixed bottom-0 z-40 duration-500 translate-y-0 `}
+      className={`bg-white max-h-[4.4rem] px-6 mobileL:px-3 tablet:px-3 rounded-t-xl tablet:rounded-t-3xl w-full fixed bottom-0 z-40 duration-500 translate-y-0 `}
     >
-      <ul className="flex relative pb-1">
+      <ul className="flex relative pb-1 mobileL:pb-4 tablet:pb-4">
         {NavbarLinks.map((menu, i) => {
           let Icon = Icons[menu.icon];
           if (menu.type && user?.accountType !== menu.type) return null;
@@ -24,14 +24,14 @@ const Bottombar = () => {
           return (
             <li key={i} className="w-full mx-auto">
               <NavLink
-                className="flex flex-col pt-2"
+                className="flex flex-col pt-2 tablet:pt-4"
                 to={menu.path}
                 onClick={() => handleClick(i)}
               >
                 <span
-                  className={`cursor-pointer text-xl mx-auto duration-500 ${
+                  className={`cursor-pointer text-xl mobileL:text-4xl mobileM:text-2xl tablet:text-5xl mx-auto duration-500 ${
                     location.pathname === menu.path &&
-                    "-mt-6 text-white border-2 border-blue bg-blue rounded-full p-2 "
+                    "-mt-6 mobileL:-mt-8 tablet:-mt-10 text-white border-2 border-blue bg-blue rounded-full p-2 "
                   }`}
                 >
                   <Icon />

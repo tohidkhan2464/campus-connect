@@ -32,8 +32,8 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 flex items-center justify-center w-screen bg-white border-b-2 border-b-secondary-600 z-50">
-      <div className="flex flex-col items-center max-w-[70vw] w-11/12 mobileS:max-w-[100vw] mobileM:max-w-[100vw] mobileL:max-w-[100vw] ">
-        <div className="w-11/12 mobileS:w-full mobileM:w-full mobileL:w-full">
+      <div className="flex flex-col items-center max-w-[70vw] w-11/12 mobileS:max-w-[100vw] tablet:w-full tablet:max-w-[100vw] tablet:mx-10 mobileM:max-w-[100vw] mobileL:max-w-[100vw] ">
+        <div className="w-11/12 mobileS:w-full mobileM:w-full mobileL:w-full tablet:w-full">
           <div className="relative flex flex-row gap-x-2 items-center justify-between py-2">
             <div
               onClick={() => navigate("/")}

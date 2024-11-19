@@ -52,7 +52,6 @@ exports.getCollegeNews = async (req, res) => {
       data: posts,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: err.message + "error while getting college posts",
@@ -63,16 +62,12 @@ exports.getCollegeNews = async (req, res) => {
 exports.searchUser = async (req, res) => {
   try {
     const { firstName = "", userName = "", collegeName = "" } = req.body;
-    console.log("First Name-> ", firstName);
-    console.log("Username-> ", userName);
-    console.log("College Name-> ", collegeName);
     let users = [];
 
     if (userName) {
       const profileDetails = await User.find({ userName: userName })
         .populate("additionalDetails")
         .exec();
-      console.log("UserName Profile Details-> ", profileDetails);
       users = users.concat(profileDetails);
     }
 
@@ -82,7 +77,6 @@ exports.searchUser = async (req, res) => {
       const collegeDetails = await User.find({ _id: { $in: userIds } })
         .populate("additionalDetails")
         .sort({ createdAt: -1 });
-      console.log("collegeName College Details-> ", collegeDetails);
       users = users.concat(collegeDetails);
     }
 
@@ -92,7 +86,6 @@ exports.searchUser = async (req, res) => {
       })
         .populate("additionalDetails")
         .exec();
-      console.log("First Name Search-> ", search);
       users = users.concat(search);
     }
 
@@ -111,7 +104,6 @@ exports.searchUser = async (req, res) => {
       data: users,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: err.message + "error while searching for user",
@@ -124,13 +116,9 @@ exports.searchPost = async (req, res) => {
     const { tags = "", username = "", captions = "" } = req.body;
 
     let posts = [];
-    console.log("Tags-> ", tags);
-    console.log("Username-> ", username);
-    console.log("Captions-> ", captions);
 
     if (username) {
       const userDetails = await User.findOne({ userName: username });
-      console.log("Post Search User Details-> ", userDetails);
       if (!userDetails) {
         return res.status(404).json({
           success: false,
@@ -140,13 +128,11 @@ exports.searchPost = async (req, res) => {
       const postDetails = await Post.find({ user: userDetails._id }).sort({
         postedAt: -1,
       });
-      console.log("User PostDetails-> ", postDetails);
       posts = posts.concat(postDetails);
     }
 
     if (tags) {
       const postDetails = await Post.find({ tags: { $in: tags.split(" ") } });
-      console.log("Tags PostDetails-> ", postDetails);
       posts = posts.concat(postDetails);
     }
 
@@ -154,7 +140,6 @@ exports.searchPost = async (req, res) => {
       const postDetails = await Post.find({
         $text: { $search: captions },
       }).sort({ postedAt: -1 });
-      console.log("Caption PostDetails-> ", postDetails);
       posts = posts.concat(postDetails);
     }
 
@@ -171,7 +156,6 @@ exports.searchPost = async (req, res) => {
       data: posts,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: err.message + " error while searching for posts",
@@ -196,7 +180,6 @@ exports.searchHome = async (req, res) => {
       data: postDetails,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: err.message + "error while searching for posts",

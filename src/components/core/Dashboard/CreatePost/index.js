@@ -33,7 +33,7 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="mt-16 mobileS:mt-3 mobileL:mt-3 mobileM:mt-3 w-full h-full flex items-center justify-center">
+    <div className="mt-16 mobileS:mt-3 tablet:mt-5 mobileL:mt-3 mobileM:mt-3 w-full h-full flex items-center justify-center">
       <div className="w-full h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}

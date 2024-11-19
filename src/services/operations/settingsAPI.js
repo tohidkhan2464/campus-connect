@@ -15,7 +15,6 @@ const {
 } = settingsEndpoints;
 
 export function updateProfile(token, data) {
-  console.log("DATA", data);
   return async (dispatch) => {
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
@@ -28,7 +27,6 @@ export function updateProfile(token, data) {
           Authorization: `Bearer ${token}`,
         },
       });
-      // console.log("UPDATE PROFILE RESPONSE", response);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -46,7 +44,6 @@ export function updateProfile(token, data) {
             ...response.data.updatedUserDetails.additionalDetails,
           })
         );
-        console.log("h");
         localStorage.setItem(
           "user",
           JSON.stringify(response.data.updatedUserDetails)
@@ -54,7 +51,6 @@ export function updateProfile(token, data) {
         toast.success("Update Successful");
       }
     } catch (error) {
-      console.log("UPDATE PROFILE ERROR", error);
       toast.error(error?.response?.data?.message);
     }
     dispatch(setLoading(false));
@@ -76,7 +72,6 @@ export function updateDisplayPicture(token, formData) {
         },
       });
 
-      // console.log("UPDATE_DISPLAY_PICTURE_API RESPONSE .... ", response);
       if (!response.data.success) {
         throw new Error(response.data.message);
       } else {
@@ -107,7 +102,6 @@ export function updateDisplayPicture(token, formData) {
 
 export function updateCurrentPassword(token, navigate, data) {
   return async (dispatch) => {
-    console.log("DATA updatePassword", data);
     const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     try {
@@ -120,7 +114,6 @@ export function updateCurrentPassword(token, navigate, data) {
         },
       });
 
-      // console.log("UPDATE PASSWORD RESPONSE", response);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -128,12 +121,10 @@ export function updateCurrentPassword(token, navigate, data) {
         const user = auth.currentUser;
         updatePassword(user, data?.newPassword)
           .then(() => {
-            console.log("Password Updated Successfully");
             toast.success("Password Updated Successfully");
             navigate("/my-profile");
           })
           .catch((error) => {
-            console.log("ERROR Firebase", error);
             toast.error("Could Not Update Password");
           });
       }
@@ -159,7 +150,6 @@ export function deleteProfile(token, data, navigate) {
         },
       });
 
-      // console.log("DELETE PROFILE RESPONSE", response);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -176,7 +166,6 @@ export function deleteProfile(token, data, navigate) {
         toast.success("Account Deleted Successful");
       }
     } catch (error) {
-      console.log("Error in delete profile", error);
       toast.error(error?.response?.data?.message || "Failed");
     }
     dispatch(setLoading(false));

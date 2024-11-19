@@ -54,7 +54,6 @@ exports.updateProfile = async (req, res) => {
       updatedUserDetails: updatedUserDetails,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: "Unable to update profile.",
@@ -103,7 +102,6 @@ exports.deleteAccount = async (req, res) => {
       message: "Unable to delete profile. Wrong Password",
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: "Unable to delete profile.",
@@ -131,7 +129,6 @@ exports.getUserDetails = async (req, res) => {
       data: userDetails,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: "Unable to get user Details.",
@@ -158,7 +155,6 @@ exports.getUserProfile = async (req, res) => {
       data: userProfile,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: "Unable to get user Profile.",
@@ -220,7 +216,6 @@ exports.getAllUsers = async (req, res) => {
       data: allUsers,
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       success: false,
       message: "Unable to get users.",

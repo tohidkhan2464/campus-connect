@@ -30,8 +30,6 @@ export const generateToken = async (user) => {
         "BEnCq1eUY06syEmm6f2lU-Mlt3Ky6z1H7Sb7a6C1IJQonja1zaBE0LVm676yD7FGlwVofBTLnA4HkDL0WFSty8w",
     });
 
-    console.log("user", user);
-    console.log(notificationToken);
     const userRef = collection(db, "users");
 
     await updateDoc(doc(userRef, user._id), {

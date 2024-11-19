@@ -15,7 +15,6 @@ const MyProfile = () => {
       if (user) {
         generateToken(user);
         onMessage(messaging, (payload) => {
-          console.log("Message received. ", payload);
         });
       }
     };
@@ -24,14 +23,14 @@ const MyProfile = () => {
 
   return (
     <div>
-      <div className="mt-16 mobileL:mt-3 mobileS:mt-3 mobileM:mt-3 w-full h-full flex items-center justify-center">
-        <div className="w-8/12 mobileS:w-full mobileM:w-full mobileL:w-full mx-auto h-full flex items-center justify-center">
+      <div className="mt-16 mobileL:mt-3 mobileS:mt-3 tablet:mt-3 mobileM:mt-3 w-full h-full flex items-center justify-center">
+        <div className="w-8/12 mobileS:w-full mobileM:w-full tablet:w-full mobileL:w-full mx-auto h-full flex items-center justify-center">
           {/* Heading */}
           <div className="h-full w-11/12 flex flex-col items-center justify-center gap-y-5">
             <p className="text-center text-4xl mobileS:text-xl mobileL:text-2xl mobileM:text-xl underline font-semibold">
               My Profile
             </p>
-            <div className="flex flex-col mobileS:w-full mobileL:w-full mobileM:w-full justify-center items-center w-10/12 gap-y-10">
+            <div className="flex flex-col mobileS:w-full tablet:w-full mobileL:w-full mobileM:w-full justify-center items-center w-10/12 gap-y-10">
               {/* Details div */}
               <div
                 className="flex flex-row mobileS:flex-col mobileM:flex-col mobileL:flex-col gap-10 mobileM:gap-5 items-center justify-between rounded-xl border-[3px] border-secondary-600
