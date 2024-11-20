@@ -62,7 +62,7 @@ const Post = () => {
             </div>
           ) : (
             <div
-              className="rounded-md border-secondary-700 grid mobileL:grid-cols-1 mobileL:max-w-[400px] grid-cols-2 mobileM:grid-cols-1 mobileM:max-w-[350px] mobileM:gap-3
+              className="rounded-md border-secondary-700 grid mobileL:grid-cols-1 mobileL:max-w-[400px] display4K:grid-cols-5 display4K:min-w-[1920px] grid-cols-2 mobileM:grid-cols-1 mobileM:max-w-[350px] mobileM:gap-3
              mobileS:grid-cols-1 mobileS:max-w-[300px] mobileS:gap-3 gap-8 flex-col max-w-[750px] "
             >
               {postData?.map((post) => (

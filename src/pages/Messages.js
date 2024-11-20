@@ -37,9 +37,10 @@ const Messages = () => {
     } else {
       setShowChat(true);
       setShowDetail(true);
-      setShowList(true)
+      setShowList(true);
     }
   };
+
   const handleChatUnSelect = () => {
     if (windowSize.width <= 1024) {
       setShowChat(false);
@@ -104,14 +105,12 @@ const Messages = () => {
   if (isLoading) return <div className="loader">Loading...</div>;
 
   return (
-    <div className="w-10/12 mobileS:w-11/12 laptop:w-9/12 mobileL:w-11/12 tablet:w-11/12 mobileM:w-11/12 h-full mx-auto flex items-start justify-center">
-      <div className="w-11/12 mobileS:w-full laptop:w-10/12 mobileM:w-full mobileL:w-full tablet:w-full mx-auto h-full flex items-start justify-start bg-[#111928bf] tablet:mb-10 rounded-xl mt-10">
+    <div className="w-10/12 mobileS:w-11/12 laptop:w-9/12 mobileL:w-11/12 tablet:w-11/12 mobileM:w-11/12 h-full mx-auto flex  items-start justify-center">
+      <div className="w-11/12 mobileS:w-full laptopL:w-10/12 laptop:w-10/12 mobileM:w-full mobileL:w-full tablet:w-full mx-auto h-full flex items-start justify-start bg-[#111928bf] tablet:mb-10 rounded-xl mt-10">
         <div
           className={`h-[800px] mobileS:h-[80vh] laptop:h-[80vh] laptop:flex-col mobileL:h-[80vh] mobileL:flex-col tablet:h-[80vh] mobileM:h-[80vh] tablet:flex-col mobileM:flex-col w-[100%] mx-auto flex mobileS:flex-col  items-start justify-start `}
         >
-          {showList && (
-            <List handleChatSelect={handleChatSelect} />
-          )}
+          {showList && <List handleChatSelect={handleChatSelect} />}
           {showChat && chatId && (
             <Chat
               handleDetailSelect={handleDetailSelect}

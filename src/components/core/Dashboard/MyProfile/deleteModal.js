@@ -25,10 +25,10 @@ const DeleteModal = ({ token, user, deleteModal, setDeleteModal }) => {
   };
 
   return (
-    <div className="absolute h-screen w-screen mt-0 -top-[5.8rem] mobileS:top-0 tablet:left-0 laptop:-left-11 mobileL:left-0 mobileS:left-0 mobileM:top-0 mobileM:left-0 -left-16 z-[1000]">
+    <div className="absolute h-screen w-screen mt-0 -top-[5.8rem] mobileS:top-0 tablet:left-0 laptop:-left-11 display4K:-left-28 mobileL:left-0 mobileS:left-0 mobileM:top-0 mobileM:left-0 -left-16 z-[1000]">
       <div className="mt-16 mobileS:-mt-2 mobileM:-mt-2 w-full h-full flex items-center justify-center bg-primary-200 bg-opacity-40 backdrop-blur-md">
-        <div className="w-full h-full flex items-center justify-center">
-          <div className="relative w-11/12 flex flex-col items-center  justify-center bg-white py-10 mobileS:p-4 mobileM:p-4
+        <div className="w-full h-full flex items-center justify-center display4K:max-w-[1920px]">
+          <div className="relative w-11/12 flex flex-col items-center display4K:w-9/12 justify-center bg-white py-10 mobileS:p-4 mobileM:p-4
            px-8 rounded-xl border-[3px] border-secondary-600">
             <RxCross2
               onClick={() => {
@@ -66,7 +66,7 @@ const DeleteModal = ({ token, user, deleteModal, setDeleteModal }) => {
                   name="currentPassword"
                   placeholder="Enter your Current Password"
                   {...register("currentPassword", { required: true })}
-                  className="input-style w-8/12 mobileS:w-full mobileL:w-full mobileM:w-full mt-1"
+                  className="input-style w-8/12 display4K:w-1/2 mobileS:w-full mobileL:w-full mobileM:w-full mt-1"
                 />
                 {errors.currentPassword && (
                   <span className=" text-red underline animate-bounce">
@@ -75,7 +75,7 @@ const DeleteModal = ({ token, user, deleteModal, setDeleteModal }) => {
                 )}
               </div>
 
-              <div className="flex flex-row mobileS:flex-col mobileM:flex-col gap-x-4 w-full mx-auto">
+              <div className="flex flex-row mobileS:flex-col display4K:w-8/12 mobileM:flex-col gap-x-4 w-full mx-auto">
                 <button
                   type="button"
                   onClick={() => {

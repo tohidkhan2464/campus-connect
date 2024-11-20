@@ -4,7 +4,7 @@ import { RxCross1 } from "react-icons/rx";
 const ViewImageModal = ({ image, setViewImage }) => {
   return (
     <div>
-      <div className="absolute h-screen w-screen mt-0 mobileS:-left-0 tablet:left-0 mobileM:left-0 -top-[5.75rem] -left-20 z-[1000]">
+      <div className="absolute h-screen w-screen mt-0 mobileS:-left-0 display4K:-left-28 tablet:left-0 mobileM:left-0 -top-[5.75rem] -left-20 z-[1000]">
         <div
           className="mt-16 w-full h-full flex items-center justify-center bg-primary-200 bg-opacity-40 backdrop-blur-lg"
           onClick={() => setViewImage(null)}
