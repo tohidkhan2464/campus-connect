@@ -10,6 +10,7 @@ const Bottombar = () => {
   const [active, setActive] = useState(0);
   const handleClick = (index) => {
     setActive(index);
+    console.log(active);
   };
 
   return (

@@ -12,7 +12,6 @@ const Activity = () => {
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [requestSent, setRequestSent] = useState(false);
   const [isSeen, setIsSeen] = useState(false);
   const navigate = useNavigate();
@@ -20,12 +19,10 @@ const Activity = () => {
 
   useEffect(() => {
     const getActivityData = async () => {
-      setLoading(true);
       const result = await getActivity(token);
       if (result) {
         setData(result);
       }
-      setLoading(false);
     };
     getActivityData();
   }, [token, requestSent, isSeen]);

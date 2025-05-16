@@ -7,22 +7,29 @@
     height: 100%;
   }
 
+  @media (min-width:1441px) {
+    height: 80vh;
+  }
+
   @media ((max-width: 375px) and (min-width: 321px)) {
     max-width: 360px;
     width: 100%;
     height: 100%;
   }
-  @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+  @media ((max-width: 425px) and (min-width: 376px)) {
     max-width: 410px;
     width: 100%;
     height: 100%;
   }
-  @media ((max-width: 768px ) and ( min-width: 425px)) {
+
+  @media ((max-width: 768px) and (min-width: 425px)) {
     max-width: 750px;
     width: 100%;
     height: 100%;
   }
-  @media ((max-width: 1024px ) and ( min-width: 769px)) {
+
+  @media ((max-width: 1024px) and (min-width: 769px)) {
     max-width: 990px;
     width: 100%;
     height: 100%;
@@ -50,7 +57,8 @@
       width: 330px;
       /* justify-content: center; */
     }
-    @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+    @media ((max-width: 425px) and (min-width: 376px)) {
       gap: 10px;
       padding: 10px;
       width: 410px;
@@ -67,10 +75,12 @@
       @media (min-width: 1025px) {
         display: none;
       }
-      @media ((max-width: 768px ) and ( min-width: 425px)) {
+
+      @media ((max-width: 768px) and (min-width: 425px)) {
         left: 10px;
       }
-      @media ((max-width: 1024px ) and ( min-width: 769px)) {
+
+      @media ((max-width: 1024px) and (min-width: 769px)) {
         left: 20px;
         top: 30px;
       }
@@ -91,7 +101,8 @@
         width: 50px;
         height: 50px;
       }
-      @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+      @media ((max-width: 425px) and (min-width: 376px)) {
         width: 50px;
         height: 50px;
       }
@@ -109,7 +120,8 @@
       @media ((max-width: 375px) and (min-width: 321px)) {
         font-size: 14px;
       }
-      @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+      @media ((max-width: 425px) and (min-width: 376px)) {
         font-size: 14px;
       }
     }
@@ -126,7 +138,8 @@
       @media ((max-width: 375px) and (min-width: 321px)) {
         font-size: 10px;
       }
-      @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+      @media ((max-width: 425px) and (min-width: 376px)) {
         font-size: 10px;
       }
     }
@@ -147,7 +160,8 @@
       gap: 10px;
       padding: 10px;
     }
-    @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+    @media ((max-width: 425px) and (min-width: 376px)) {
       gap: 10px;
       padding: 10px;
     }
@@ -166,7 +180,8 @@
         @media ((max-width: 375px) and (min-width: 321px)) {
           font-size: 14px;
         }
-        @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+        @media ((max-width: 425px) and (min-width: 376px)) {
           font-size: 14px;
         }
 
@@ -194,6 +209,12 @@
         color: white;
         padding-top: 10px;
 
+        @media (min-width:1441px) {
+          /* height: 80vh; */
+          overflow-y: scroll;
+          max-height: 100px;
+        }
+
         .privacyMessage {
           font-size: 14px;
           color: lightgray;
@@ -207,7 +228,8 @@
           @media ((max-width: 375px) and (min-width: 321px)) {
             font-size: 10px;
           }
-          @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+          @media ((max-width: 425px) and (min-width: 376px)) {
             font-size: 10px;
           }
 
@@ -234,7 +256,8 @@
           gap: 10px;
           margin-top: 10px;
         }
-        @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+        @media ((max-width: 425px) and (min-width: 376px)) {
           gap: 10px;
           margin-top: 10px;
         }
@@ -256,7 +279,8 @@
             padding: 5px;
             font-size: 12px;
           }
-          @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+          @media ((max-width: 425px) and (min-width: 376px)) {
             padding: 5px;
             font-size: 12px;
           }
@@ -278,7 +302,8 @@
               padding: 5px;
               font-size: 12px;
             }
-            @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+            @media ((max-width: 425px) and (min-width: 376px)) {
               padding: 5px;
               font-size: 12px;
             }
@@ -302,7 +327,8 @@
         @media ((max-width: 375px) and (min-width: 321px)) {
           margin-top: 5px;
         }
-        @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+        @media ((max-width: 425px) and (min-width: 376px)) {
           margin-top: 5px;
         }
 
@@ -321,7 +347,8 @@
           @media ((max-width: 375px) and (min-width: 321px)) {
             padding: 5px 0;
           }
-          @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+          @media ((max-width: 425px) and (min-width: 376px)) {
             padding: 5px 0;
           }
 
@@ -343,7 +370,8 @@
             @media ((max-width: 375px) and (min-width: 321px)) {
               gap: 10px;
             }
-            @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+            @media ((max-width: 425px) and (min-width: 376px)) {
               gap: 10px;
             }
 
@@ -362,7 +390,8 @@
                 width: 30px;
                 height: 30px;
               }
-              @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+              @media ((max-width: 425px) and (min-width: 376px)) {
                 width: 30px;
                 height: 30px;
               }
@@ -380,7 +409,8 @@
               @media ((max-width: 375px) and (min-width: 321px)) {
                 font-size: 10px;
               }
-              @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+              @media ((max-width: 425px) and (min-width: 376px)) {
                 font-size: 10px;
               }
             }
@@ -409,7 +439,8 @@
               width: 30px;
               height: 30px;
             }
-            @media ((max-width: 425px ) and ( min-width: 376px)) {
+
+            @media ((max-width: 425px) and (min-width: 376px)) {
               width: 30px;
               height: 30px;
             }

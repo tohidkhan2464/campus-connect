@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "./chat.css";
 import EmojiPicker from "emoji-picker-react";
 import { useUserStore } from "../../../lib/userStore.js";
-import { arrayUnion, doc, getDoc, getDocs, onSnapshot, updateDoc } from "firebase/firestore";
+import { arrayUnion, doc, getDoc,  onSnapshot, updateDoc } from "firebase/firestore";
 import { db } from "../../../lib/firebase.js";
 import { usechatStore } from "../../../lib/chatStore";
 import upload from "../../../lib/uploads";

@@ -17,19 +17,24 @@ const Home = () => {
 
   return (
     // Relative div
-    <div className=" w-screen max-h-screen flex items-center justify-center">
-      <div className="relative flex items-center justify-center max-w-[70vw] w-11/12 h-[calc(100%-1rem)]">
+    <div
+      className="w-screen max-h-screen flex items-center justify-center"
+      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+    >
+      <style>{`
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      `}</style>
+      <div className="relative flex items-center justify-center max-w-[70vw] w-11/12 ">
         <div className="z-10 w-11/12">
-          
-
           {/* main content */}
-          <div className="flex flex-col my-96 mobileS:my-40 mobileM:my-40 items-center justify-center">
+          <div className="flex flex-col mt-64 mobileS:my-40 mobileM:my-40 items-center justify-center">
             {/* tagline */}
             <p className="text-4xl text-center font-semibold mobileS:text-sm mobileL:text-base mobileM:text-sm ">
               Campus Connect - Bridging Students and Professors to Foster a
               Vibrant and Collaborative{" "}
               <span className="  text-richblue-200 mobileS:text-sm mobileM:text-sm mobileL:text-base text-transparent bg-clip-text bg-gradient-to-t from-[#c471ed] to-[#f64f59]">
-                
                 Academic Community
               </span>
             </p>

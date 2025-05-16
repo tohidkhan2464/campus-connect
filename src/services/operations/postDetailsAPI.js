@@ -41,7 +41,7 @@ export const sendPost = async (data, token) => {
 
 export const createComment = async (data, token) => {
   let result = null;
-  // const toastId = toast.loading("Loading...");
+  const toastId = toast.loading("Loading...");
   try {
     const response = await apiConnector({
       method: "POST",
@@ -60,7 +60,7 @@ export const createComment = async (data, token) => {
   } catch (error) {
     toast.error(error.message);
   }
-  // toast.dismiss(toastId);
+  toast.dismiss(toastId);
   return result;
 };
 
@@ -155,7 +155,7 @@ export const saveImage = async (imageURL, token) => {
 };
 
 export const getComments = async (postId, token) => {
-  // const toastId = toast.loading("Loading...");
+  const toastId = toast.loading("Loading...");
   let result = [];
   try {
     const response = await apiConnector({
@@ -173,13 +173,13 @@ export const getComments = async (postId, token) => {
   } catch (error) {
     toast.error(error.message);
   }
-  // toast.dismiss(toastId);
+  toast.dismiss(toastId);
   return result;
 };
 
 export const handleLiking = async (postId, token) => {
   let result = null;
-  // const toastId = toast.loading("Loading...");
+  const toastId = toast.loading("Loading...");
   try {
     const response = await apiConnector({
       method: "POST",
@@ -198,12 +198,12 @@ export const handleLiking = async (postId, token) => {
   } catch (error) {
     toast.error(error.message);
   }
-  // toast.dismiss(toastId);
+  toast.dismiss(toastId);
   return result;
 };
 
 export const getPostDetails = async (postId, token) => {
-  // const toastId = toast.loading("Loading...");
+  const toastId = toast.loading("Loading...");
   let result = [];
   try {
     const response = await apiConnector({
@@ -222,6 +222,6 @@ export const getPostDetails = async (postId, token) => {
   } catch (error) {
     toast.error(error.message);
   }
-  // toast.dismiss(toastId);
+  toast.dismiss(toastId);
   return result;
 };

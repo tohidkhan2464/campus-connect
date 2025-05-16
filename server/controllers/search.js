@@ -21,7 +21,7 @@ exports.getCollegeNews = async (req, res) => {
     if (!userCollege) {
       return res.status(404).json({
         success: false,
-        message: "No college found for the user",
+        message: "College Details is not added",
       });
     }
 
@@ -30,7 +30,7 @@ exports.getCollegeNews = async (req, res) => {
     if (!usersCollegues) {
       return res.status(200).json({
         success: true,
-        message: "No collegues found",
+        message: "No collegues found for your college",
       });
     }
 
@@ -42,7 +42,7 @@ exports.getCollegeNews = async (req, res) => {
     if (!posts) {
       return res.status(200).json({
         success: true,
-        message: "No posts found",
+        message: "Your college has no posts",
       });
     }
 

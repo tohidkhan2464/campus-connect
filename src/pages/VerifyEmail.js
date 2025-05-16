@@ -23,7 +23,7 @@ const VerifyEmail = () => {
     if (!signupData) {
       navigate("/signup");
     }
-  }, []);
+  }, [navigate, signupData]);
   const submitHandler = (event) => {
     event.preventDefault();
 

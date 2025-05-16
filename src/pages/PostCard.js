@@ -24,7 +24,6 @@ const PostCard = () => {
   const { postId } = useParams();
   const [postData, setPostData] = useState({});
   const [comment, setComment] = useState(false);
-  const [IsLoading, setIsLoading] = useState(false);
   const [commentsData, setCommentsData] = useState([]);
   const [likedPost, setLikedPost] = useState(false);
   const { token } = useSelector((state) => state.auth);
@@ -40,8 +39,6 @@ const PostCard = () => {
 
   useEffect(() => {
     const getPostData = async () => {
-      // const toastId = toast.loading("Loading...");
-      setIsLoading(true);
       const result = await getPostDetails(postId, token);
 
       setPostData(result?.postDetails);
@@ -50,8 +47,6 @@ const PostCard = () => {
           a.createdAt < b.createdAt ? 1 : -1
         )
       );
-      // toast.dismiss(toastId);
-      setIsLoading(false);
     };
     getPostData();
   }, [postId, comment, commentBody, likedPost]);

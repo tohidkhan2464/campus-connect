@@ -59,6 +59,7 @@ export function login(data, navigate) {
           password: data.password,
         },
       });
+      console.log('login response', response);
       if (!response.data.success) {
         throw new Error(response.data.message);
       } else {

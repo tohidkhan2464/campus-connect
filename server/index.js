@@ -32,13 +32,11 @@ app.use("/api/v1/broadcast", broadcastRoutes);
 app.use("/api/v1/post", postRoutes);
 app.use("/api/v1/search", searchRoutes);
 
-
 app.get("/", (req, res) => {
   res.json({
     success: true,
     message: "Your server is up and running...",
   });
-  res.send(`<h1>Backend is Running and this is '/' Route</h1>`);
 });
 
 app.listen(PORT, () => {

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { login } from "../services/operations/authAPI";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const {
@@ -16,9 +15,7 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    setLoading(true);
     dispatch(login(data, navigate));
-    setLoading(false);
   };
 
   useEffect(() => {

@@ -36,7 +36,7 @@ const Settings = () => {
         newPassword: "",
       });
     }
-  }, []);
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <div>

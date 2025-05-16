@@ -21,15 +21,13 @@ import Activity from "./pages/Activity";
 import Messages from "./pages/Messages";
 import { onAuthStateChanged } from "firebase/auth";
 import { useUserStore } from "./lib/userStore";
-import { auth, generateToken, messaging } from "./lib/firebase";
+import { auth,  } from "./lib/firebase";
 import Search from "./pages/Search";
 import SearchResults from "./pages/SearchResults";
-import { onMessage } from "firebase/messaging";
 import Broadcast from "./components/Broadcast/Broadcast";
 
 function App() {
   const { user } = useSelector((state) => state.profile);
-  const { loading } = useSelector((state) => state.auth);
 
   const { fetchUserInfo } = useUserStore();
 

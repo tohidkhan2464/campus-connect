@@ -36,4 +36,8 @@
     width: 100%;
     margin: auto;
   }
+
+  @media (min-width:1441px){
+    height: 80vh;
+  }
 }

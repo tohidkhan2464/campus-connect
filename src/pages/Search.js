@@ -72,9 +72,7 @@ const Search = () => {
                   if (result.length > 0) {
                     dispatch(setSearchData(result));
                     navigate("/search/random");
-                  } else {
-                    toast.error("Error in fetching data");
-                  }
+                  } 
                 }}
               >
                 Random
@@ -87,9 +85,7 @@ const Search = () => {
                   if (result.length > 0) {
                     dispatch(setSearchData(result));
                     navigate("/search/college");
-                  } else {
-                    toast.error("Error in fetching data");
-                  }
+                  } 
                 }}
               >
                 College

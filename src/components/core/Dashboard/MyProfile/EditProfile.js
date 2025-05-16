@@ -32,11 +32,11 @@ const EditProfile = () => {
     if (isSubmitSuccessful) {
       navigate("/my-profile");
     }
-  }, [isSubmitSuccessful]);
+  }, [isSubmitSuccessful, navigate]);
 
   return (
     <div>
-      <div className="mt-16 mobileS:mt-5 mobileL:mt-5 tablet:mt-10 mobileM:mt-5 laptop:mt-10 w-full h-full flex items-center justify-center">
+      <div className="my-16 mobileS:mt-5 mobileL:mt-5 tablet:mt-10 mobileM:mt-5 laptop:mt-10 w-full h-full flex items-center justify-center">
         <div className="w-8/12 mobileS:w-11/12 mobileL:w-11/12 tablet:w-11/12 mobileM:w-11/12 mx-auto h-full flex items-center justify-center">
           <div className="h-full w-full">
             <h1 className="text-center text-4xl mobileL:text-xl tablet:text-2xl mobileS:text-xl mobileM:text-xl underline font-semibold">
@@ -50,7 +50,7 @@ const EditProfile = () => {
               onSubmit={handleSubmit(submitProfileForm)}
               className="w-9/12 mx-auto mobileS:w-full mobileL:w-full tablet:w-full mobileM:w-full"
             >
-              <div className="flex flex-col justify-between mt-16 mobileS:mt-5 laptop:mt-10 tablet:mt-5 tablet:mb-10 mobileM:mt-5 mobileM:p-3 tablet:p-3 tablet:px-6  bg-white p-6 mobileS:p-3 rounded-lg border-[3px] border-secondary-600 z-0">
+              <div className="flex flex-col justify-between mt-16 mobileS:mt-5 laptop:mt-10 tablet:mt-5 tablet:mb-10 mobileM:mt-5 mobileM:p-3 tablet:p-3 tablet:px-6  bg-white p-6 pb-0 mobileS:p-3 rounded-lg border-[3px] border-secondary-600 z-0">
                 <div className="flex flex-row w-full items-center justify-center">
                   <p className="text-4xl laptop:text-2xl underline mobileS:text-xl mobileL:text-xl tablet:text-2xl mobileM:text-xl font-semibold">
                     Public Information

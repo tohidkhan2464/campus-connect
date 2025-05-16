@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getAllUsers,
   sendFollowRequest,
 } from "../../../services/operations/profileAPI";
 import { FiUserPlus, FiCheckCircle } from "react-icons/fi";
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import {
   setRequestSent,
   setUsersData,
@@ -18,7 +18,6 @@ const FollowBar = () => {
   const { token } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const location = useLocation();
 
   async function sendRequest(userId) {
     const res = await sendFollowRequest(userId, token);
@@ -35,7 +34,7 @@ const FollowBar = () => {
       );
       dispatch(setUsersData(filteredData));
     })();
-  }, [requestSent, user, token]);
+  }, [requestSent, user, token, dispatch]);
 
   return (
     <div className="fixed top-[60px] mobileS:hidden tablet:hidden mobileM:hidden mobileL:hidden right-0 max-h-[calc(100vh-3.5rem)] h-full">

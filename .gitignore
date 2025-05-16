@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/server/node_modules
 /src/data/service-account.json
 /server/firebase-admin.json
 /.pnp

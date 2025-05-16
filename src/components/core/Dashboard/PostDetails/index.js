@@ -13,14 +13,13 @@ import {
   RiHeartFill,
   RiShareForwardLine,
 } from "react-icons/ri";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Post = () => {
   const [postData, setPostData] = useState([]);
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
-  const location = useLocation();
   const [likedPost, setLikedPost] = useState([]);
 
   useEffect(() => {

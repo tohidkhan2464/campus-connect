@@ -18,7 +18,19 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <App />
-        <Toaster />
+        <Toaster
+          position="bottom-right"
+          reverseOrder={false}
+          gutter={8}
+          toastOptions={{
+            className: "",
+            duration: 3000,
+            style: {
+              background: "#333",
+              color: "#fff",
+            },
+          }}
+        />
       </BrowserRouter>
     </Provider>
   </React.Fragment>

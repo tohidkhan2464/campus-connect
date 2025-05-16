@@ -62,7 +62,7 @@ const MyDash = () => {
             </div>
           ) : (
             <div
-              className="rounded-md border-secondary-700  grid grid-cols-2 mobileS:grid-cols-1 mobileL:grid-cols-1 display4K:grid-cols-5 display4K:min-w-[1920px] laptop:grid-cols-1
+              className="rounded-md border-secondary-700  grid grid-cols-2 mobileS:grid-cols-1 mobileL:grid-cols-1 display4K:grid-cols-3 display4K:min-w-[1000px] laptop:grid-cols-1
              mobileM:grid-cols-1 mobileM:max-w-[350px] mobileS:max-w-[300px] mobileL:max-w-[400px] mobileS:gap-3 mobileL:gap-3 gap-8 flex-col max-w-[750px]"
             >
               {postData?.map((post) => (

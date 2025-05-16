@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import Upload from "./Upload";
 import ChipInput from "./ChipInput";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +15,6 @@ const CreatePost = () => {
     formState: { errors },
   } = useForm();
   const { token } = useSelector((state) => state.auth);
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
@@ -24,16 +22,14 @@ const CreatePost = () => {
     formData.append("caption", data.postCaption);
     formData.append("tags", JSON.stringify(data.postTags));
     formData.append("postImageUrl", data.postImage);
-    setLoading(true);
     const result = await sendPost(formData, token);
     if (result) {
       navigate("/user-posts");
     }
-    setLoading(false);
   };
 
   return (
-    <div className="mt-16 mobileS:mt-3 tablet:mt-5 mobileL:mt-3 laptop:mt-10 mobileM:mt-3 w-full h-full flex items-center justify-center">
+    <div className="mt-16 display4K:mt-5 mobileS:mt-3 tablet:mt-5 mobileL:mt-3 laptop:mt-10 mobileM:mt-3 w-full h-full flex items-center justify-center">
       <div className="w-full h-full flex items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
